@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flexbox Grid Mixins</title>
+<link rel="stylesheet" href="./css/example.css">
+</head>
+<body>
+<div class="header header--hero">
+
+<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.0</span></h1>
+
+<p class="header-description">Sass Mixins to generate Flexbox grid</p>
+
+<ul class="header-nav">
+<li><a href="#Basic-Example">Basic Example</a></li>
+<li><a href="#Grid-System-Example">Grid System Example</a></li>
+<li><a href="#Installation">Installation</a></li>
+<li><a href="#Getting-Started">Getting Started</a></li>
+<li><a href="#Mixins-Reference">Mixins Reference</a></li>
+<li><a href="#Contribute">Contribute</a></li>
+<li><a href="#License">License</a></li>
+</ul>
+
+</div>
+
+
+<h2>Feature</h2>
+
+<p><strong>Flexbox Grid Mixins</strong> is Sass Mixins library to help you write well-structured, readable, maintainable, component-based grid using Flexbox (CSS Flexible Box Layout Module).</p>
+
+<h2 id="Basic-Example">Basic Example</h2>
+
+<h3>Demo</h3>
+
+<div class="grid">
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-9">
+    9
+</div>
+</div>
+
+<h3>HTML</h3>
+
+<pre>
+<code>&lt;div class="grid"&gt;
+&lt;div class="grid__col-3"&gt;
+    3
+&lt;/div&gt;
+&lt;div class="grid__col-9"&gt;
+    9
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>Sass</h3>
+<pre>
+<code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2%;
+
+.grid {
+	@include grid($gutter: $default-grid-gutter);
+
+    &gt; .grid__col-3 {
+        @include grid-col($col: 3, $gutter: $default-grid-gutter);
+    }
+    &gt; .grid__col-9 {
+        @include grid-col($col: 9, $gutter: $default-grid-gutter);
+    }
+}
+</code></pre>
+
+<h3>CSS</h3>
+
+<pre class="scrollable">
+<code>.grid {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  margin: 0 -1%;
+}
+
+.grid &gt; .grid__col-3 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 23%;
+  -ms-flex: 0 0 23%;
+  flex: 0 0 23%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-9 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 73%;
+  -ms-flex: 0 0 73%;
+  flex: 0 0 73%;
+  margin: 0 1% 2%;
+}
+</code></pre>
+
+<h2 id="Grid-System-Example">Grid System Example</h2>
+
+<h3>Demo</h3>
+
+<div class="grid">
+<div class="grid__col-12">
+    12
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-1">
+    1
+</div>
+<div class="grid__col-11">
+    11
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-2">
+    2
+</div>
+<div class="grid__col-10">
+    10
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-9">
+    9
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-4">
+    4
+</div>
+<div class="grid__col-8">
+    8
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-5">
+    5
+</div>
+<div class="grid__col-7">
+    7
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-6">
+    6
+</div>
+<div class="grid__col-6">
+    6
+</div>
+</div>
+
+<h3>HTML</h3>
+
+<pre class="scrollable"><code>&lt;div class="grid"&gt;
+&lt;div class="grid__col-12"&gt;
+    12
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+&lt;div class="grid__col-1"&gt;
+    1
+&lt;/div&gt;
+&lt;div class="grid__col-11"&gt;
+    11
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+&lt;div class="grid__col-2"&gt;
+    2
+&lt;/div&gt;
+&lt;div class="grid__col-10"&gt;
+    10
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+&lt;div class="grid__col-3"&gt;
+    3
+&lt;/div&gt;
+&lt;div class="grid__col-9"&gt;
+    9
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+&lt;div class="grid__col-4"&gt;
+    4
+&lt;/div&gt;
+&lt;div class="grid__col-8"&gt;
+    8
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+&lt;div class="grid__col-5"&gt;
+    5
+&lt;/div&gt;
+&lt;div class="grid__col-7"&gt;
+    7
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+&lt;div class="grid__col-6"&gt;
+    6
+&lt;/div&gt;
+&lt;div class="grid__col-6"&gt;
+    6
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>Sass</h3>
+
+<pre>
+<code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid {
+	@include grid($gutter: $default-grid-gutter);
+
+	@for $i from 1 through $default-grid-columns {
+		&gt; .grid__col-#{$i} {
+			@include grid-col($col: $i, $gutter: $default-grid-gutter);
+		}
+	}
+}
+</code></pre>
+
+<h3>CSS</h3>
+
+<pre class="scrollable">
+<code>
+.grid {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  margin: 0 -1%;
+}
+
+.grid &gt; .grid__col-1 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 6.33333%;
+  -ms-flex: 0 0 6.33333%;
+  flex: 0 0 6.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-2 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 14.66667%;
+  -ms-flex: 0 0 14.66667%;
+  flex: 0 0 14.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-3 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 23%;
+  -ms-flex: 0 0 23%;
+  flex: 0 0 23%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-4 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 31.33333%;
+  -ms-flex: 0 0 31.33333%;
+  flex: 0 0 31.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-5 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 39.66667%;
+  -ms-flex: 0 0 39.66667%;
+  flex: 0 0 39.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-6 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 48%;
+  -ms-flex: 0 0 48%;
+  flex: 0 0 48%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-7 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 56.33333%;
+  -ms-flex: 0 0 56.33333%;
+  flex: 0 0 56.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-8 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 64.66667%;
+  -ms-flex: 0 0 64.66667%;
+  flex: 0 0 64.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-9 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 73%;
+  -ms-flex: 0 0 73%;
+  flex: 0 0 73%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-10 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 81.33333%;
+  -ms-flex: 0 0 81.33333%;
+  flex: 0 0 81.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-11 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 89.66667%;
+  -ms-flex: 0 0 89.66667%;
+  flex: 0 0 89.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid &gt; .grid__col-12 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 98%;
+  -ms-flex: 0 0 98%;
+  flex: 0 0 98%;
+  margin: 0 1% 2%;
+}
+</code></pre>
+
+<h3>Other Examples</h3>
+
+<ul>
+<li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
+<li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
+<li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
+<li><a href="example/grid-type.html">Grid Type</a></li>
+</ul>
+
+<h2 id="Installation">Installation</h2>
+
+<h3>npm</h3>
+
+<pre>
+<code>$ npm install flexbox-grid-mixins --save-dev</code>
+</pre>
+
+<h3>bower</h3>
+
+<pre>
+<code>$ bower install flexbox-grid-mixins --save</code>
+</pre>
+
+<h3>Manual Install</h3>
+
+Include sass/_flexbox-grid-mixins.scss in the appropriate location in your project.
+
+<h2 id="Getting-Started">Getting Started</h2>
+
+<h3>1. Import Flexbox Grid Mixins in Sass/SCSS file</h3>
+
+<pre><code>@import 'flexbox-grid-mixins';</code></pre>
+
+Example : import form node_modules
+
+<pre><code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';</code></pre>
+
+
+<h3>2. Define the grid container</h3>
+
+<pre>
+<code>.grid {
+    @include grid();
+}
+</code></pre>
+
+<h3>3. Generate the grid columns</h3>
+
+<pre>
+<code>.grid__col-3 {
+    @include grid-col(3);
+}
+.grid__col-9 {
+    @include grid-col(9);
+}
+</code></pre>
+
+<h2 id="Mixins-Reference">Mixins Reference</h2>
+
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-flow: row nowrap, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton);</h3>
+
+<p>Define the grid container.</p>
+
+<table>
+    <tr>
+    <th>Arguments</th>
+    <th>Default value</th>
+    <th>Values</th>
+    <th>Description</th>
+    </tr>
+    <tr>
+    <td>$display</td>
+    <td>flex</td>
+    <td>flex | inline-flex</td>
+    <td>generate a block-level or an inline-level grid container</td>
+    </tr>
+    <tr>
+    <td>$flex-flow</td>
+    <td>row nowrap *</td>
+    <td>[row | row-reverse | column | column-reverse] [nowrap | wrap | wrap-reverse]</td>
+    <td>a shorthand for setting the flex-direction and flex-wrap properties</td>
+    </tr>
+    <tr>
+    <td>$justify-content</td>
+    <td>null</td>
+    <td>null | flex-start | flex-end | center | space-between | space-around</td>
+    <td>defines the alignment along the main axis.</td>
+    </tr>
+    <tr>
+    <td>$align-items</td>
+    <td>null</td>
+    <td>null | flex-start | flex-end | center | baseline | stretch</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$align-content</td>
+    <td>null</td>
+    <td>null | flex-start | flex-end | center | space-between | space-around | stretch</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$gutter</td>
+    <td>null</td>
+    <td>null | &lt;percentage&gt; | &lt;width&gt;</td>
+    <td><code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> and <code>&lt;width&gt;</code> generates a margin of both ends of the grid.</td>
+    </tr>
+    <tr>
+    <td>$grid-type</td>
+    <td>skeleton</td>
+    <td>skeleton | margin-offset</td>
+    <td>the type of grid</td>
+    </tr>
+</table>
+
+* The same initial value as the property of Flexbox
+
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false);</h3>
+
+<p>Generate the grid columns.</p>
+
+<table>
+    <tr>
+    <th>Arguments</th>
+    <th>Default value</th>
+    <th>Values</th>
+    <th>Description</th>
+    </tr>
+    <tr>
+    <td>$col</td>
+    <td>null</td>
+    <td>null | initial | &lt;number&gt; | auto | equal | none | breakpoint | &lt;width&gt;</td>
+    <td><code>null</code> is no set columns. <code>&lt;number&gt;</code> is number of columns. <code>initial</code>, <code>auto</code>, <code>equal</code>, <code>none</code> and <code>breakpoint</code> are preset columns. <code>&lt;width&gt;</code> is unit set columns (Experimental stage).</td>
+    </tr>
+    <tr>
+    <td>$grid-columns</td>
+    <td>12</td>
+    <td>&lt;number&gt;</td>
+    <td>the total number of columns in the grid.</td>
+    </tr>
+    <tr>
+    <td>$col-offset</td>
+    <td>null</td>
+    <td>null | &lt;percentage&gt;</td>
+    <td><code>&lt;percentage&gt;</code> offset a width of columns.</td>
+    </tr>
+    <tr>
+    <td>$gutter</td>
+    <td>null</td>
+    <td>null | &lt;percentage&gt;</td>
+    <td><code>null</code> is no margin between columns. <code>&lt;percentage&gt;</code> generate a margin of between columns.</td>
+    </tr>
+    <tr>
+    <td>$condensed</td>
+    <td>false</td>
+    <td>true | false</td>
+    <td>cutting the top and bottom margins of the columns.</td>
+    </tr>
+    <tr>
+    <td>$align-self</td>
+    <td>null</td>
+    <td>null | auto | flex-start | flex-end | center | baseline | stretch</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$flex-grow</td>
+    <td>0 *</td>
+    <td>&lt;number&gt;</td>
+    <td>grow relative to the rest of the columns in the grid</td>
+    </tr>
+    <tr>
+    <td>$flex-shrink</td>
+    <td>1 *</td>
+    <td>&lt;number&gt;</td>
+    <td>shrink relative to the rest of the columns in the grid</td>
+    </tr>
+    <tr>
+    <td>$flex-basis</td>
+    <td>auto *</td>
+    <td>&lt;length&gt; | auto</td>
+    <td>initial main size of the columns</td>
+    </tr>
+    <tr>
+    <td>$order</td>
+    <td>null</td>
+    <td>null | &lt;integer&gt;</td>
+    <td>control the order in which appear in the grid container</td>
+    </tr>
+    <tr>
+    <td>$grid-type</td>
+    <td>skeleton</td>
+    <td>skeleton | margin-offset</td>
+    <td>the type of grid</td>
+    </tr>
+    <tr>
+    <td>$last-child</td>
+    <td>false</td>
+    <td>true | false</td>
+    <td>adjust the last-child of the columns, if the $grid-type is <code>margin-offset</code></td>
+    </tr>
+</table>
+
+* The same initial value as the property of Flexbox
+
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid-margin</span>($margin: null, $margin-top: null, $margin-right: null, $margin-bottom: null, $margin-left: null);</h3>
+
+<p>Generate the margins around grids.</p>
+
+<table>
+    <tr>
+    <th>Arguments</th>
+    <th>Default value</th>
+    <th>Values</th>
+    <th>Description</th>
+    </tr>
+    <tr>
+    <td>$margin</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-top</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-right</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-bottom</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-left</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+</table>
+
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col-margin</span>($margin: null, $margin-top: null, $margin-right: null, $margin-bottom: null, $margin-left: null);</h3>
+
+<p>Generate the margins around columns. Work as alias grid-margin().</p>
+
+<table>
+    <tr>
+    <th>Arguments</th>
+    <th>Default value</th>
+    <th>Values</th>
+    <th>Description</th>
+    </tr>
+    <tr>
+    <td>$margin</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-top</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-right</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-bottom</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$margin-left</td>
+    <td>null</td>
+    <td>null | &lt;margin-width&gt;</td>
+    <td></td>
+    </tr>
+</table>
+
+<h2 id="Resources">Resources</h2>
+
+<ul>
+    <li><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank">CSS Flexible Box Layout Module Level 1</a></li>
+    <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a></li>
+    <li><a href="http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/" target="_blank">Holy Grail Layout - Solved by Flexbox</a></li>
+</ul>
+
+<h2 id="Contribute">Contribute</h2>
+
+See <a href="https://github.com/thingsym/flexbox-grid-mixins">GitHub - Flexbox Grid Mixins</a>
+
+<h2 id="License">License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2016 Thingsym</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+.DS_Store
+gh-pages
+node_modules
+vendor
+.bundle
+Gemfile.lock
+.sass-cache

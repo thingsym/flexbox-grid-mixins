@@ -1,0 +1,86 @@
+@import '../../sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 4%;
+$default-col-offset: -($default-grid-gutter / 3);
+
+$default-breakpoints: (
+  lg: 1200px,
+  md: 980px,
+  sm: 768px,
+  xs: 480px
+);
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.HolyGrail-container {
+  width: 980px;
+  height: 100%;
+  @include grid($flex-flow: column nowrap);
+  margin: auto;
+}
+
+.HolyGrail-body {
+  @include grid-col($flex-grow: 1, $flex-shrink: 0, $flex-basis: auto);
+  @include grid($justify-content: space-between);
+}
+
+.HolyGrail-content {
+  @include grid-col($col: 6, $col-offset: $default-col-offset, $flex-shrink: 1);
+}
+.HolyGrail-nav {
+  @include grid-col($col: 3, $col-offset: $default-col-offset, $flex-shrink: 1, $order: -1);
+}
+.HolyGrail-aside {
+  @include grid-col($col: 3, $col-offset: $default-col-offset, $flex-shrink: 1);
+}
+
+header,
+footer {
+  @include grid-col($col: none);
+}
+
+@each $key in sm, xs {
+  @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
+    .HolyGrail-container {
+      width: 100%;
+    }
+
+    .HolyGrail-body {
+      @include grid($flex-flow: column nowrap, $justify-content: flex-start);
+    }
+
+    .HolyGrail-content,
+    .HolyGrail-aside {
+      @include grid-col($col: breakpoint);
+    }
+
+    .HolyGrail-nav {
+      @include grid-col($col: breakpoint, $order: 0);
+    }
+  }
+}
+
+.HolyGrail-body {
+  background: #a5c3e2;
+  border: 1px solid #130e7d;
+}
+
+header,
+footer,
+.HolyGrail-content,
+.HolyGrail-nav,
+.HolyGrail-aside {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: 1em;
+  color: #fff;
+  text-align: center;;
+}

@@ -1,0 +1,106 @@
+@import '../../sass/flexbox-grid-mixins';
+
+$default-base-color: #0466e0;
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+$default-condensed: false;
+
+$default-breakpoints: (
+  lg: 1200px,
+  md: 980px,
+  sm: 768px,
+  xs: 480px
+);
+
+.header {
+  background-color: $default-base-color;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  min-height: 320px;
+  @include grid($flex-flow: column nowrap, $justify-content: center);
+
+  &--hero {
+    height: 100vh;
+  }
+
+  .header-title {
+    font-size: 320%;
+    margin-bottom: 0;
+  }
+  .version {
+    font-size: 25%;
+    font-weight: normal;
+  }
+  .header-description {
+    margin-top: 0;
+  }
+}
+
+h2 {
+  border-bottom: solid 1px #ccc;
+}
+
+
+.grid,
+.grid-margin-offset {
+  background: #a5c3e2;
+}
+[class*="grid__col"] {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: .4em;
+  color: #fff;
+  text-align: center;
+}
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: $default-condensed);
+    }
+  }
+}
+
+@each $key in sm, xs {
+  @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
+    .grid--responsive {
+      @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
+
+      > [class*="grid__col"] {
+        @include grid-col($col: breakpoint, $gutter: $default-grid-gutter, $condensed: $default-condensed);
+      }
+    }
+  }
+}
+
+.grid-margin-offset {
+  @include grid($gutter: $default-grid-gutter, $grid-type: margin-offset);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: $default-condensed, $grid-type: margin-offset);
+    }
+  }
+
+  > [class*="grid__col"] {
+    &:last-child {
+      @include grid-col-margin($margin-right: 0);
+    }
+  }
+}
+
+@each $key in sm, xs {
+  @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
+    .grid-margin-offset--responsive {
+      @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $grid-type: margin-offset);
+
+      > [class*="grid__col"] {
+        @include grid-col($col: breakpoint, $gutter: $default-grid-gutter, $condensed: $default-condensed, $grid-type: margin-offset);
+      }
+    }
+  }
+}

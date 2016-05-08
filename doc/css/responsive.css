@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.HolyGrail-container {
+  width: 980px;
+  height: 100%;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  margin: auto;
+}
+
+.HolyGrail-body {
+  box-sizing: border-box;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.HolyGrail-content {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 48.66667%;
+  -ms-flex: 0 0 48.66667%;
+  flex: 0 0 48.66667%;
+}
+
+.HolyGrail-nav {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 23.66667%;
+  -ms-flex: 0 0 23.66667%;
+  flex: 0 0 23.66667%;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+.HolyGrail-aside {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 23.66667%;
+  -ms-flex: 0 0 23.66667%;
+  flex: 0 0 23.66667%;
+}
+
+header,
+footer {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .HolyGrail-container {
+    width: 100%;
+  }
+  .HolyGrail-body {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .HolyGrail-content,
+  .HolyGrail-aside {
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+  .HolyGrail-nav {
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .HolyGrail-container {
+    width: 100%;
+  }
+  .HolyGrail-body {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .HolyGrail-content,
+  .HolyGrail-aside {
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+  .HolyGrail-nav {
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+}
+
+.HolyGrail-body {
+  background: #a5c3e2;
+  border: 1px solid #130e7d;
+}
+
+header,
+footer,
+.HolyGrail-content,
+.HolyGrail-nav,
+.HolyGrail-aside {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: 1em;
+  color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flexbox Grid Mixins - Grid Example</title>
+<link rel="stylesheet" href="../css/margin-offset.css">
+</head>
+<body>
+
+<div class="header">
+
+<h1 class="header-title">Flexbox Grid Mixins</h1>
+
+<p class="header-description">Sass Mixins to generate Flexbox grid</p>
+
+</div>
+
+<h2>Grid Example</h2>
+
+<div class="grid">
+<div class="grid__col-12">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-1">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-11">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-2">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-10">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-9">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-4">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-8">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-5">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-7">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<h3>No Gutters Grid</h3>
+
+<div class="grid--no-margin">
+<div class="grid__col-12">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--no-margin">
+<div class="grid__col-1">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-11">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--no-margin">
+<div class="grid__col-2">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-10">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--no-margin">
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-9">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--no-margin">
+<div class="grid__col-4">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-8">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--no-margin">
+<div class="grid__col-5">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-7">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--no-margin">
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<h3>Condensed Grid - @include grid-col($condensed: true);</h3>
+
+<div class="grid--condensed">
+<div class="grid__col-12">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--condensed">
+<div class="grid__col-1">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-11">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--condensed">
+<div class="grid__col-2">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-10">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--condensed">
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-9">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--condensed">
+<div class="grid__col-4">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-8">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--condensed">
+<div class="grid__col-5">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-7">
+    hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid--condensed">
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<h3>Auto Size Grid</h3>
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+</div>
+
+
+<h3>Equal Size Grid</h3>
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<h3>Nesting Grid</h3>
+
+<div class="grid">
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+
+    <div class="grid--no-margin">
+    <div class="grid__col-3">
+        hello hello hello hello hello hello
+    </div>
+    <div class="grid__col-3">
+        hello hello hello hello hello hello
+    </div>
+    <div class="grid__col-3">
+        hello hello hello hello hello hello
+    </div>
+    <div class="grid__col-3">
+        hello hello hello hello hello hello
+    </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="grid">
+<div class="grid__col-2">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-10">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+
+    <div class="grid--no-margin">
+    <div class="grid__col-2">
+        hello hello hello hello hello hello
+    </div>
+    <div class="grid__col-10">
+        hello hello hello hello hello hello
+        hello hello hello hello hello hello
+        hello hello hello hello hello hello
+
+        <div class="grid--no-margin">
+        <div class="grid__col-2">
+            hello hello hello hello hello hello
+        </div>
+        <div class="grid__col-10">
+            hello hello hello hello hello hello
+            hello hello hello hello hello hello
+            hello hello hello hello hello hello
+
+            <div class="grid--no-margin">
+            <div class="grid__col-2">
+                hello hello hello hello hello hello
+            </div>
+            <div class="grid__col-10">
+                hello hello hello hello hello hello
+                hello hello hello hello hello hello
+                hello hello hello hello hello hello
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+</div>
+
+<h2>Multi-line Grid</h2>
+
+<div class="grid--multi-line">
+<div class="grid__col-12">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-1">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-11">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-2">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-10">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-9">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-4">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-8">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-5">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-7">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-6">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<h3>Multi-line Grid using ul</h3>
+
+<ul class="grid">
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+    <li class="grid__col-3">hello hello hello hello hello hello</li>
+</ul>
+
+<h2>Preset Grid Columns</h2>
+
+<h3>@include grid-col($col: null);</h3>
+
+<div class="grid">
+<div class="grid__col">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col">
+    hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+
+
+<h3>@include grid-col($col: initial);</h3>
+
+<div class="grid">
+<div class="grid__col--initial">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--initial">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--initial">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+
+<div class="grid">
+<div class="grid__col--initial">
+    hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+<h3>@include grid-col($col: &lt;number&gt;);</h3>
+
+<div class="grid">
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+
+<div class="grid">
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+</div>
+
+<h3>@include grid-col($col: auto);</h3>
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--auto">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+
+<div class="grid">
+<div class="grid__col--auto">
+    hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+<h3>@include grid-col($col: equal);</h3>
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--equal">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+
+<div class="grid">
+<div class="grid__col--equal">
+    hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+<h3>@include grid-col($col: none);</h3>
+
+<div class="grid">
+<div class="grid__col--none">
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col--none">
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+    hello hello hello hello hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+<div class="grid">
+<div class="grid__col--none">
+    hello hello
+</div>
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-3">
+    3
+</div>
+</div>
+
+
+</body>
+</html>

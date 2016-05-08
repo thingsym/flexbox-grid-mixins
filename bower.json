@@ -1,0 +1,25 @@
+{
+  "name": "flexbox-grid-mixins",
+  "version": "0.1.0",
+  "homepage": "https://github.com/thingsym/flexbox-grid-mixins",
+  "author": "Thingsym",
+  "description": "Sass Mixins to generate Flexbox grid",
+  "license" : "MIT",
+  "main": [
+    "sass/_flexbox-grid-mixins.scss"
+  ],
+  "ignore": [
+    "*",
+    "!sass/_flexbox-grid-mixins.scss",
+    "!readme.md",
+    "!LICENSE"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "sass",
+    "css",
+    "flexbox",
+    "mixin"
+  ]
+}

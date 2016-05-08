@@ -1,0 +1,480 @@
+@import '../../sass/flexbox-grid-mixins';
+
+$default-base-color: #0466e0;
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.header {
+  background-color: $default-base-color;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  min-height: 320px;
+  @include grid($flex-flow: column nowrap, $justify-content: center);
+
+  &--hero {
+    height: 100vh;
+  }
+
+  .header-title {
+    font-size: 320%;
+    margin-bottom: 0;
+  }
+  .version {
+    font-size: 25%;
+    font-weight: normal;
+  }
+  .header-description {
+    margin-top: 0;
+  }
+
+  .header-nav {
+    margin: 0;
+    padding: 0;
+    margin-top: 3em;
+
+    li {
+      font-size: 90%;
+      display: inline;
+      list-style: none;
+      margin-right: 1.2rem;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+h2 {
+  border-bottom: solid 1px #ccc;
+}
+
+pre {
+  overflow: auto;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  padding: 1em;
+  border-radius: .4em;
+
+  &.scrollable {
+    max-height: 240px;
+    overflow-y: scroll;
+  }
+
+  > code {
+    background: transparent;
+  }
+}
+
+code {
+  padding: .2em;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: .2em;
+}
+
+.reference {
+  background-color: $default-base-color;
+  color: #fff;
+  padding: 1em;
+  border-radius: .4em;
+
+  .small {
+    font-size: 80%;
+    font-weight: normal;
+  }
+  .big {
+    font-size: 160%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 2px solid #ccc;
+  margin: 0 0 1.625em;
+  width: 100%;
+}
+th {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .2em;
+  font-weight: bold;
+  background-color: #eee;
+}
+td {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .2em;
+}
+
+
+.grid,
+[class*="grid--"] {
+  background: #a5c3e2;
+}
+[class*="grid__col"] {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: .4em;
+  color: #fff;
+  text-align: center;
+}
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  .grid__col {
+    @include grid-col($gutter: $default-grid-gutter);
+
+    &--auto {
+      @include grid-col($col: auto, $gutter: $default-grid-gutter);
+    }
+
+    &--equal {
+      @include grid-col($col: equal, $gutter: $default-grid-gutter);
+    }
+
+    &--fixed {
+      @include grid-col($col: fixed, $gutter: $default-grid-gutter);
+    }
+
+    &--none {
+      @include grid-col($col: none, $gutter: $default-grid-gutter);
+    }
+
+    &--initial {
+      @include grid-col($col: initial, $gutter: $default-grid-gutter);
+    }
+  }
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid--multi-line {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
+
+  .grid__col {
+    @include grid-col($gutter: $default-grid-gutter);
+  }
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+
+ul.grid {
+  margin: 0;
+  padding: 0;
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
+
+  li {
+    list-style: none;
+    padding: 2em;
+  }
+}
+
+.grid--no-margin {
+  @include grid();
+
+  .grid__col {
+    @include grid-col();
+  }
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i);
+    }
+  }
+}
+
+.grid--condensed {
+  @include grid($gutter: $default-grid-gutter);
+
+  .grid__col {
+    @include grid-col($gutter: $default-grid-gutter, $condensed: true);
+  }
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+
+.grid--row-reverse {
+  @include grid($flex-flow: row-reverse nowrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid--unit-set {
+  @include grid($gutter: 5%);
+
+  .grid__col {
+    @include grid-col($gutter: $default-grid-gutter);
+
+    &--200px {
+      @include grid-col($col: 200px, $gutter: 5%);
+    }
+    &--10em {
+      @include grid-col($col: 10em, $gutter: 5%);
+    }
+    &--20rem {
+      @include grid-col($col: 20rem, $gutter: 5%);
+    }
+    &--30per {
+      @include grid-col($col: 30%, $gutter: 5%);
+    }
+  }
+}
+
+.grid--row {
+  @include grid($flex-flow: row nowrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--row-reverse {
+  @include grid($flex-flow: row-reverse nowrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--column {
+  @include grid($flex-flow: column nowrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--column-reverse {
+  @include grid($flex-flow: column-reverse nowrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid--left-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: flex-start);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--center-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: center);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--right-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: flex-end);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--space-around-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: space-between);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--space-between-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: space-around);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid--top-row {
+  @include grid($gutter: $default-grid-gutter, $align-items: flex-start);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--middle-row {
+  @include grid($gutter: $default-grid-gutter, $align-items: center);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--bottom-row {
+  @include grid($gutter: $default-grid-gutter, $align-items: flex-end);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--stretch-row {
+  @include grid($gutter: $default-grid-gutter, $align-items: stretch);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--baseline-row {
+  @include grid($gutter: $default-grid-gutter, $align-items: baseline);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid--column-alignment {
+  @include grid($gutter: $default-grid-gutter);
+  > .grid__col {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: none);
+  }
+  > .grid__col-top {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-start);
+  }
+  > .grid__col-middle {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: center);
+  }
+  > .grid__col-bottom {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-end);
+  }
+  > .grid__col-stretch {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: stretch);
+  }
+  > .grid__col-baseline {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: baseline);
+  }
+}
+
+.grid--order {
+  @include grid($gutter: $default-grid-gutter);
+  > .grid__col-1 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: 1);
+  }
+  > .grid__col-2 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: 1);
+  }
+  > .grid__col-3 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter);
+  }
+  > .grid__col-4 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: -1);
+  }
+  > .grid__col-5 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: -1);
+  }
+}
+
+.grid--multi-line-top {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: flex-start) {
+    height: 18em;
+  }
+
+  @for $i from 1 through 6 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+.grid--multi-line-middle {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: center) {
+    height: 18em;
+  }
+
+  @for $i from 1 through 6 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+.grid--multi-line-bottom {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: flex-end) {
+    height: 18em;
+  }
+
+  @for $i from 1 through 6 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+.grid--multi-line-space-between {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: space-between) {
+    height: 18em;
+  }
+
+  @for $i from 1 through 6 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+.grid--multi-line-space-around {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: space-around) {
+    height: 18em;
+  }
+
+  @for $i from 1 through 6 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+.grid--multi-line-stretch {
+  @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: stretch) {
+    height: 18em;
+  }
+
+  @for $i from 1 through 6 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+    }
+  }
+}
+
