@@ -34,13 +34,13 @@ body {
 }
 
 .HolyGrail-content {
-  @include grid-col($col: 6, $col-offset: $default-col-offset, $flex-shrink: 1);
+  @include grid-col($col: 6, $col-offset: $default-col-offset);
 }
 .HolyGrail-nav {
-  @include grid-col($col: 3, $col-offset: $default-col-offset, $flex-shrink: 1, $order: -1);
+  @include grid-col($col: 3, $col-offset: $default-col-offset, $order: -1);
 }
 .HolyGrail-aside {
-  @include grid-col($col: 3, $col-offset: $default-col-offset, $flex-shrink: 1);
+  @include grid-col($col: 3, $col-offset: $default-col-offset);
 }
 
 header,
