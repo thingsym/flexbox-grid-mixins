@@ -54,7 +54,7 @@ $default-grid-gutter: 2%;
   margin: 0 -1%;
 }
 
-.grid &gt; .grid__col-3 {
+.grid > .grid__col-3 {
   box-sizing: border-box;
   -webkit-flex: 0 0 23%;
   -ms-flex: 0 0 23%;
@@ -62,7 +62,7 @@ $default-grid-gutter: 2%;
   margin: 0 1% 2%;
 }
 
-.grid &gt; .grid__col-9 {
+.grid > .grid__col-9 {
   box-sizing: border-box;
   -webkit-flex: 0 0 73%;
   -ms-flex: 0 0 73%;
@@ -167,7 +167,7 @@ If you would like to contribute, here are some notes and guidlines.
 * Version 0.1.0
   * Initial release.
 
-# License
+## License
 
 The MIT License (MIT)
 
