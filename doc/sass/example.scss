@@ -5,6 +5,10 @@ $default-base-color: #0466e0;
 $default-grid-columns: 12;
 $default-grid-gutter: 2%;
 
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+}
+
 .header {
   background-color: $default-base-color;
   color: #fff;
