@@ -243,7 +243,7 @@ $default-grid-gutter: 2%;
 
 	@for $i from 1 through $default-grid-columns {
 		&gt; .grid__col-#{$i} {
-			@include grid-col($col: $i, $gutter: $default-grid-gutter);
+			@include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
 		}
 	}
 }
@@ -464,8 +464,8 @@ Example : import form node_modules
     <tr>
     <td>$gutter</td>
     <td>null</td>
-    <td>null | &lt;percentage&gt; | &lt;width&gt;</td>
-    <td><code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> and <code>&lt;width&gt;</code> generates a margin of both ends of the grid.</td>
+    <td>null | &lt;percentage&gt;</td>
+    <td><code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> generate a margin of both ends of the grid.</td>
     </tr>
     <tr>
     <td>$grid-type</td>
