@@ -176,9 +176,9 @@ h2 {
   .grid--responsive > [class*="grid__col"] {
     box-sizing: border-box;
     width: 100%;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
     margin: 0 1% 2%;
   }
 }
@@ -197,9 +197,9 @@ h2 {
   .grid--responsive > [class*="grid__col"] {
     box-sizing: border-box;
     width: 100%;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
     margin: 0 1% 2%;
   }
 }
@@ -339,9 +339,9 @@ h2 {
   .grid-margin-offset--responsive > [class*="grid__col"] {
     box-sizing: border-box;
     width: 100%;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
     margin-right: 0;
     margin-bottom: 2%;
   }
@@ -360,9 +360,9 @@ h2 {
   .grid-margin-offset--responsive > [class*="grid__col"] {
     box-sizing: border-box;
     width: 100%;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
     margin-right: 0;
     margin-bottom: 2%;
   }
