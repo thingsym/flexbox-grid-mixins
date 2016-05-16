@@ -92,7 +92,7 @@
 	} @else if type-of($col) == string and $col == 'breakpoint' {
 		$flex-grow: 0;
 		$flex-shrink: 1;
-		$flex-basis: 100%;
+		$flex-basis: auto;
 		width: 100%;
 	}
 
