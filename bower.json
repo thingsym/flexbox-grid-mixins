@@ -1,6 +1,6 @@
 {
   "name": "flexbox-grid-mixins",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/thingsym/flexbox-grid-mixins",
   "author": "Thingsym",
   "description": "Sass Mixins to generate Flexbox grid",

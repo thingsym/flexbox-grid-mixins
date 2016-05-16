@@ -164,6 +164,10 @@ If you would like to contribute, here are some notes and guidlines.
 
 ## Changelog
 
+* Version 0.1.1
+  * fix breakpoint preset column
+  * fix example
+  * fix Holy Grail Layout
 * Version 0.1.0
   * Initial release.
 
