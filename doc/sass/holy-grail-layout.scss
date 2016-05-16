@@ -15,7 +15,7 @@ body {
 }
 
 .HolyGrail-container {
-  width: 980px;
+  width: 100%;
   height: 100%;
   @include grid($flex-flow: column nowrap);
   margin: auto;
@@ -27,13 +27,14 @@ body {
 }
 
 .HolyGrail-content {
-  @include grid-col($col: 6, $col-offset: $default-col-offset, $flex-shrink: 1);
+  @include grid-col($col: auto, $flex-shrink: 0 );
+  margin: 0 2%;
 }
 .HolyGrail-nav {
-  @include grid-col($col: 3, $col-offset: $default-col-offset, $flex-shrink: 1, $order: -1);
+  @include grid-col($col: 240px, $flex-shrink: 0, $order: -1);
 }
 .HolyGrail-aside {
-  @include grid-col($col: 3, $col-offset: $default-col-offset, $flex-shrink: 1);
+  @include grid-col($col: 120px, $flex-shrink: 0);
 }
 
 header,
@@ -43,7 +44,6 @@ footer {
 
 .HolyGrail-body {
   background: #a5c3e2;
-  border: 1px solid #130e7d;
 }
 
 header,
