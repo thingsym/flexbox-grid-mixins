@@ -44,67 +44,6 @@ h2 {
   border-bottom: solid 1px #ccc;
 }
 
-pre {
-  overflow: auto;
-  line-height: 1.45;
-  background-color: #f7f7f7;
-  padding: 1em;
-  border-radius: .4em;
-}
-
-pre.scrollable {
-  max-height: 240px;
-  overflow-y: scroll;
-}
-
-pre > code {
-  background: transparent;
-}
-
-code {
-  padding: .2em;
-  background-color: rgba(0, 0, 0, 0.04);
-  border-radius: .2em;
-}
-
-.reference {
-  background-color: #0466e0;
-  color: #fff;
-  padding: 1em;
-  border-radius: .4em;
-}
-
-.reference .small {
-  font-size: 80%;
-  font-weight: normal;
-}
-
-.reference .big {
-  font-size: 160%;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 2px solid #ccc;
-  margin: 0 0 1.625em;
-  width: 100%;
-}
-
-th {
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: .2em;
-  font-weight: bold;
-  background-color: #eee;
-}
-
-td {
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: .2em;
-}
-
 .grid,
 [class*="grid--"] {
   background: #a5c3e2;
@@ -767,61 +706,6 @@ ul.grid li {
   flex: 0 0 100%;
   margin-right: 2%;
   margin-bottom: 2%;
-}
-
-.grid--unit-set {
-  box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-}
-
-.grid--unit-set .grid__col {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  margin-right: 2%;
-  margin-bottom: 2%;
-}
-
-.grid--unit-set .grid__col--200px {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 200px;
-  -ms-flex: 0 1 200px;
-  flex: 0 1 200px;
-  margin-right: 5%;
-  margin-bottom: 5%;
-}
-
-.grid--unit-set .grid__col--10em {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 10em;
-  -ms-flex: 0 1 10em;
-  flex: 0 1 10em;
-  margin-right: 5%;
-  margin-bottom: 5%;
-}
-
-.grid--unit-set .grid__col--20rem {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 20rem;
-  -ms-flex: 0 1 20rem;
-  flex: 0 1 20rem;
-  margin-right: 5%;
-  margin-bottom: 5%;
-}
-
-.grid--unit-set .grid__col--30per {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 30%;
-  -ms-flex: 0 1 30%;
-  flex: 0 1 30%;
-  margin-right: 5%;
-  margin-bottom: 5%;
 }
 
 .grid--row {

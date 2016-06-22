@@ -51,65 +51,6 @@ h2 {
   border-bottom: solid 1px #ccc;
 }
 
-pre {
-  overflow: auto;
-  line-height: 1.45;
-  background-color: #f7f7f7;
-  padding: 1em;
-  border-radius: .4em;
-
-  &.scrollable {
-    max-height: 240px;
-    overflow-y: scroll;
-  }
-
-  > code {
-    background: transparent;
-  }
-}
-
-code {
-  padding: .2em;
-  background-color: rgba(0,0,0,0.04);
-  border-radius: .2em;
-}
-
-.reference {
-  background-color: $default-base-color;
-  color: #fff;
-  padding: 1em;
-  border-radius: .4em;
-
-  .small {
-    font-size: 80%;
-    font-weight: normal;
-  }
-  .big {
-    font-size: 160%;
-  }
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 2px solid #ccc;
-  margin: 0 0 1.625em;
-  width: 100%;
-}
-th {
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: .2em;
-  font-weight: bold;
-  background-color: #eee;
-}
-td {
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: .2em;
-}
-
-
 .grid,
 [class*="grid--"] {
   background: #a5c3e2;
@@ -216,27 +157,6 @@ ul.grid {
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
       @include grid-col($col: $i, $gutter: $default-grid-gutter, $grid-type: $default-grid-type);
-    }
-  }
-}
-
-.grid--unit-set {
-  @include grid($gutter: 5%, $grid-type: $default-grid-type);
-
-  .grid__col {
-    @include grid-col($gutter: $default-grid-gutter, $grid-type: $default-grid-type);
-
-    &--200px {
-      @include grid-col($col: 200px, $gutter: 5%, $grid-type: $default-grid-type);
-    }
-    &--10em {
-      @include grid-col($col: 10em, $gutter: 5%, $grid-type: $default-grid-type);
-    }
-    &--20rem {
-      @include grid-col($col: 20rem, $gutter: 5%, $grid-type: $default-grid-type);
-    }
-    &--30per {
-      @include grid-col($col: 30%, $gutter: 5%, $grid-type: $default-grid-type);
     }
   }
 }

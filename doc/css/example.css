@@ -746,57 +746,6 @@ ul.grid li {
   margin: 0 1% 2%;
 }
 
-.grid--unit-set {
-  box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  margin: 0 -2.5%;
-}
-
-.grid--unit-set .grid__col {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  margin: 0 1% 2%;
-}
-
-.grid--unit-set .grid__col--200px {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 200px;
-  -ms-flex: 0 1 200px;
-  flex: 0 1 200px;
-  margin: 0 2.5% 5%;
-}
-
-.grid--unit-set .grid__col--10em {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 10em;
-  -ms-flex: 0 1 10em;
-  flex: 0 1 10em;
-  margin: 0 2.5% 5%;
-}
-
-.grid--unit-set .grid__col--20rem {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 20rem;
-  -ms-flex: 0 1 20rem;
-  flex: 0 1 20rem;
-  margin: 0 2.5% 5%;
-}
-
-.grid--unit-set .grid__col--30per {
-  box-sizing: border-box;
-  -webkit-flex: 0 1 30%;
-  -ms-flex: 0 1 30%;
-  flex: 0 1 30%;
-  margin: 0 2.5% 5%;
-}
-
 .grid--row {
   box-sizing: border-box;
   display: -webkit-flex;

@@ -155,15 +155,21 @@ If you would like to contribute, here are some notes and guidlines.
 
 
 ### Development
-
-1. Forking on GitHub
-2. run ```$ npm install```
-3. run ```$ bundle install --path vendor/bundle```
-4. run ```$ gulp serve```
-5. Access URL http://localhost:3000
+1. run ```$ sudo yum install nodejs npm```
+2. run ```$ sudo npm install --global gulp-cli```
+3. Forking on GitHub
+4. run ```$ cd /path/to/flexbox-grid-mixins```
+5. run ```$ npm install```
+6. run ```$ bundle install --path vendor/bundle```
+7. run ```$ gulp serve```
+8. Access URL http://localhost:3000
 
 ## Changelog
 
+* Version 0.1.2
+  * update document
+  * update example
+  * improve unit-set column, using CSS calc()
 * Version 0.1.1
   * fix breakpoint preset column
   * fix example
