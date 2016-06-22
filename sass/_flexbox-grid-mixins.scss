@@ -43,31 +43,35 @@
 {
 	box-sizing: border-box;
 
-	@if type-of($col) == number and unitless($col) == false {
-		$flex-basis: $col;
-	} @else if type-of($col) == number and unitless($col) == true {
+	@if type-of($col) == number and unitless($col) == true {
 		$flex-grow: 0;
 		$flex-shrink: 0;
+		$flex-basis: percentage($col / $grid-columns);
 
 		@if $grid-type == skeleton {
-			$flex-basis: percentage($col / $grid-columns);
-
 			@if $gutter and unit($gutter) == '%' {
 				$flex-basis: $flex-basis - $gutter;
+			} @else if $gutter and unitless($gutter) == false {
+				$flex-basis: calc( #{$flex-basis} - #{$gutter});
 			}
 
 		} @else if $grid-type == margin-offset {
 			@if $gutter and unit($gutter) == '%' {
 				$flex-basis: (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
-			} @else {
-				$flex-basis: percentage($col / $grid-columns);
+			} @else if $gutter and unitless($gutter) == false {
+				$flex-basis: calc( #{$flex-basis} - #{$gutter * ($grid-columns / $col - 1) / ($grid-columns / $col)});
 			}
 		}
 
 		@if $col-offset and unit($col-offset) == '%' {
 			$flex-basis: $flex-basis + $col-offset;
+		} @else if $col-offset and unitless($col-offset) == false {
+			$flex-basis: calc( #{$flex-basis} + #{$col-offset});
 		}
-
+	} @else if type-of($col) == number and unitless($col) == false {
+		$flex-grow: 0;
+		$flex-shrink: 0;
+		$flex-basis: $col;
 	} @else if type-of($col) == string and $col == 'auto' {
 		$flex-grow: 1;
 		$flex-shrink: 1;
@@ -106,7 +110,7 @@
 		order: $order;
 	}
 
-	@if $gutter and unit($gutter) == '%' {
+	@if $gutter and unitless($gutter) == false {
 		@if $grid-type == skeleton {
 			@if $condensed == true {
 				@include grid-col-margin($margin: 0 $gutter / 2);
