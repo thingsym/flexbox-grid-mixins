@@ -224,27 +224,6 @@ ul.grid {
   }
 }
 
-.grid--unit-set {
-  @include grid($gutter: 5%);
-
-  .grid__col {
-    @include grid-col($gutter: $default-grid-gutter);
-
-    &--200px {
-      @include grid-col($col: 200px, $gutter: 5%);
-    }
-    &--10em {
-      @include grid-col($col: 10em, $gutter: 5%);
-    }
-    &--20rem {
-      @include grid-col($col: 20rem, $gutter: 5%);
-    }
-    &--30per {
-      @include grid-col($col: 30%, $gutter: 5%);
-    }
-  }
-}
-
 .grid--row {
   @include grid($flex-flow: row nowrap, $gutter: $default-grid-gutter);
 
