@@ -48,9 +48,6 @@ $default-grid-gutter: 2%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
   margin: 0 -1%;
 }
 
@@ -134,6 +131,7 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 * [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example/example.html)
 * [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/holy-grail-layout.html)
 * [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/responsive.html)
+* [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example/unit-set.html)
 * [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
 
 ## Contribute
