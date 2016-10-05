@@ -21,6 +21,11 @@
 <li><a href="#License">License</a></li>
 </ul>
 
+<ul class="header-nav">
+<li><a href="https://github.com/thingsym/flexbox-grid-mixins" class="btn">GitHub</a></li>
+<li><a href="https://www.npmjs.com/package/flexbox-grid-mixins" class="btn">npm</a></li>
+</ul>
+
 </div>
 
 <h2>Feature</h2>
@@ -79,9 +84,6 @@ $default-grid-gutter: 2%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
   margin: 0 -1%;
 }
 
@@ -257,9 +259,6 @@ $default-grid-gutter: 2%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
   margin: 0 -1%;
 }
 
@@ -420,7 +419,7 @@ Example : import form node_modules
 
 <h2 id="Mixins-Reference">Mixins Reference</h2>
 
-<h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-flow: row nowrap, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton);</h3>
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton);</h3>
 
 <p>Define the grid container.</p>
 
@@ -438,9 +437,21 @@ Example : import form node_modules
     <td>generate a block-level or an inline-level grid container</td>
     </tr>
     <tr>
+    <td>$flex-direction</td>
+    <td>null</td>
+    <td>null | row | row-reverse | column | column-reverse</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$flex-wrap</td>
+    <td>null</td>
+    <td>null | nowrap | wrap | wrap-reverse</td>
+    <td></td>
+    </tr>
+    <tr>
     <td>$flex-flow</td>
-    <td>row nowrap *</td>
-    <td>[row | row-reverse | column | column-reverse] [nowrap | wrap | wrap-reverse]</td>
+    <td>null</td>
+    <td>null | [row | row-reverse | column | column-reverse] [nowrap | wrap | wrap-reverse]</td>
     <td>a shorthand for setting the flex-direction and flex-wrap properties</td>
     </tr>
     <tr>
@@ -475,13 +486,11 @@ Example : import form node_modules
     </tr>
 </table>
 
-* The same initial value as the property of Flexbox
-
 <h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false);</h3>
 
 <p>Generate the grid columns.</p>
 
-<p>The use of CSS cal() is experimental stage. If $col sets <code>&lt;number&gt;</code> and $gutter sets <code>&lt;length&gt;</code>, use CSS cal().</p>
+<p>The use of CSS calc() is experimental stage. If $col sets <code>&lt;number&gt;</code> or <code>&lt;width&gt;</code> and $gutter sets <code>&lt;length&gt;</code>, use CSS calc().</p>
 
 <table>
     <tr>
@@ -564,7 +573,7 @@ Example : import form node_modules
     </tr>
 </table>
 
-* The same initial value as the property of Flexbox
+<p>* The same initial value as the property of Flexbox</p>
 
 <h3 class="reference"><span class="small">@include</span> <span class="big">grid-margin</span>($margin: null, $margin-top: null, $margin-right: null, $margin-bottom: null, $margin-left: null);</h3>
 
