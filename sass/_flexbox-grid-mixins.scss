@@ -1,6 +1,6 @@
 // ===================================================================
 // Flexbox Grid Mixins
-// Version 0.1.2
+// Version 0.1.3
 // Description: Sass Mixins to generate Flexbox grid
 // Author: thingsym
 // GitHub: https://github.com/thingsym/flexbox-grid-mixins
@@ -9,13 +9,21 @@
 
 @charset 'utf-8';
 
-@mixin grid($display: flex, $flex-flow: row nowrap, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton)
+@mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton)
 {
 	box-sizing: border-box;
 
 	@if $display {
 		display: $display;
 	}
+
+	@if $flex-direction {
+		flex-direction: $flex-direction;
+	}
+	@if $flex-wrap {
+		flex-wrap: $flex-wrap;
+	}
+
 	@if $flex-flow {
 		flex-flow: $flex-flow;
 	}
