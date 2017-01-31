@@ -164,6 +164,11 @@ If you would like to contribute, here are some notes and guidlines.
 
 ## Changelog
 
+* Version 0.1.3
+  * rename folder to docs from doc, change gh-pages
+  * update document
+  * update example
+  * add optional arguments $flex-direction and $flex-wrap to the mixin grid
 * Version 0.1.2
   * update document
   * update example
