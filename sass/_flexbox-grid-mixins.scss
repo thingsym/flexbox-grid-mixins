@@ -109,6 +109,7 @@
 	}
 
 	flex: $flex-grow $flex-shrink $flex-basis;
+	max-width: $flex-basis;
 
 	@if $align-self {
 		align-self: $align-self;
