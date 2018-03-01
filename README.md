@@ -4,7 +4,7 @@ Sass Mixins to generate Flexbox grid.
 
 **Flexbox Grid Mixins** is Sass Mixins library to help you write well-structured, readable, maintainable, component-based grid using Flexbox (CSS Flexible Box Layout Module).
 
-Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-mixins/](http://thingsym.github.io/flexbox-grid-mixins/)
+Flexbox Grid Mixins documentation: [https://thingsym.github.io/flexbox-grid-mixins/](https://thingsym.github.io/flexbox-grid-mixins/)
 
 ## Example
 
@@ -134,25 +134,8 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 * [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example/unit-set.html)
 * [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
 
-## Contribute
-
-### Patches and Bug Fixes
-
-Small patches and bug reports can be submitted a issue tracker in GitHub. Forking on GitHub is another good way. You can send a pull request.
-
-GitHub: [https://github.com/thingsym/flexbox-grid-mixins](https://github.com/thingsym/flexbox-grid-mixins)
-
-### Guidlines
-
-If you would like to contribute, here are some notes and guidlines.
-
-* All development happens on the **develop** branch, so it is always the most up-to-date
-* The **master** branch only contains tagged releases
-* If you are going to be submitting a pull request, please submit your pull request to the **develop** branch
-* See about [forking](https://help.github.com/articles/fork-a-repo/) and [pull requests](https://help.github.com/articles/using-pull-requests/)
-
-
 ### Development
+
 1. run ```$ sudo yum install nodejs npm```
 2. run ```$ sudo npm install --global gulp-cli```
 3. Forking on GitHub
@@ -161,6 +144,18 @@ If you would like to contribute, here are some notes and guidlines.
 6. run ```$ bundle install --path vendor/bundle```
 7. run ```$ gulp serve```
 8. Access URL http://localhost:3000
+
+## Contribution
+
+### Patches and Bug Fixes
+
+Small patches and bug reports can be submitted a issue tracker in Github. Forking on Github is another good way. You can send a pull request.
+
+1. Fork [Flexbox Grid Mixins](https://github.com/thingsym/flexbox-grid-mixins) from GitHub repository
+2. Create a feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Create new Pull Request
 
 ## Changelog
 
@@ -182,24 +177,10 @@ If you would like to contribute, here are some notes and guidlines.
 
 ## License
 
-The MIT License (MIT)
+Licensed under the MIT License.
 
-Copyright (c) 2016 Thingsym
+## Author
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+[thingsym](https://github.com/thingsym)
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Copyright (c) 2016 thingsym
