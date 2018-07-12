@@ -81,23 +81,24 @@
 		$flex-shrink: 0;
 		$flex-basis: $col;
 	} @else if type-of($col) == string and $col == 'auto' {
+		// flex: auto;
 		$flex-grow: 1;
 		$flex-shrink: 1;
 		$flex-basis: auto;
 		max-width: 100%;
 		width: auto;
-	// flex: 1;
 	} @else if type-of($col) == string and $col == 'equal' {
+		// flex: 1;
 		$flex-grow: 1;
 		$flex-shrink: 1;
 		$flex-basis: 0;
-	// flex: none;
 	} @else if type-of($col) == string and $col == 'none' {
+		// flex: none;
 		$flex-grow: 0;
 		$flex-shrink: 0;
 		$flex-basis: auto;
-	// flex: initial;
 	} @else if type-of($col) == string and $col == 'initial' {
+		// flex: initial;
 		$flex-grow: 0;
 		$flex-shrink: 1;
 		$flex-basis: auto;
