@@ -52,7 +52,6 @@
 	box-sizing: border-box;
 
 	@if type-of($col) == number and unitless($col) == true {
-		$flex-grow: 0;
 		$flex-shrink: 0;
 		$flex-basis: percentage($col / $grid-columns);
 
