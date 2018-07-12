@@ -107,6 +107,12 @@
 		$flex-shrink: 1;
 		$flex-basis: auto;
 		width: 100%;
+	} @else if type-of($col) == string and $col == 'positive' {
+		@if $flex-grow == 0 {
+			$flex-grow: 1;
+		}
+		$flex-shrink: 0;
+		$flex-basis: 0;
 	}
 
 	flex: $flex-grow $flex-shrink $flex-basis;
