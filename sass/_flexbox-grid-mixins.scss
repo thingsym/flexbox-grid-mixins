@@ -114,7 +114,7 @@
 
 	flex: $flex-grow $flex-shrink $flex-basis;
 
-	@if $align-self {
+	@if $align-self != null {
 		align-self: $align-self;
 	}
 
@@ -158,7 +158,7 @@
 
 	@if $gutter and unitless($gutter) == false {
 		@if $grid-type == skeleton {
-			@if $condensed == true {
+			@if type-of($condensed) == bool and $condensed == true {
 				@include grid-col-margin($margin: 0 $gutter / 2);
 			} @else {
 				@include grid-col-margin($margin: 0 $gutter / 2 $gutter);
@@ -166,7 +166,7 @@
 		} @else if $grid-type == margin-offset {
 			@if type-of($col) == string and $col == 'breakpoint' {
 				@include grid-col-margin($margin-right: 0);
-			} @else if $last-child {
+			} @else if type-of($last-child) == bool and $last-child == true {
 				@include grid-col-margin($margin-right: 0);
 			} @else {
 				@include grid-col-margin($margin-right: $gutter);
