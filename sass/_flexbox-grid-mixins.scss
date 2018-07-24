@@ -47,7 +47,7 @@
 	@content;
 }
 
-@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false)
+@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
 	box-sizing: border-box;
 
@@ -84,8 +84,6 @@
 		$flex-grow: 1;
 		$flex-shrink: 1;
 		$flex-basis: auto;
-		max-width: 100%;
-		width: auto;
 	} @else if type-of($col) == string and $col == 'equal' {
 		// flex: 1;
 		$flex-grow: 1;
@@ -105,7 +103,7 @@
 		$flex-grow: 0;
 		$flex-shrink: 1;
 		$flex-basis: auto;
-		width: 100%;
+		$width: 100%;
 	} @else if type-of($col) == string and $col == 'positive' {
 		@if $flex-grow == 0 {
 			$flex-grow: 1;
@@ -122,6 +120,40 @@
 
 	@if type-of($order) == number {
 		order: $order;
+	}
+
+	@if type-of($width) == bool and $width == true {
+		width: $flex-basis;
+	} @else if type-of($width) == number and unitless($width) == false {
+		width: $width;
+	} @else if type-of($width) == string and $width == 'auto' {
+		width: auto;
+	}
+
+	@if type-of($max-width) == bool and $max-width == true {
+		max-width: $flex-basis;
+	} @else if type-of($max-width) == number and unitless($max-width) == false {
+		max-width: $max-width;
+	} @else if type-of($max-width) == string and $max-width == 'auto' {
+		max-width: auto;
+	}
+
+	@if type-of($min-width) == bool and $min-width == true {
+		min-width: $flex-basis;
+	} @else if type-of($min-width) == number and unitless($min-width) == false {
+		min-width: $min-width;
+	} @else if type-of($min-width) == string and $min-width == 'auto' {
+		min-width: auto;
+	}
+
+	@if $height != null {
+		height: $height;
+	}
+	@if $max-height != null {
+		max-height: $max-height;
+	}
+	@if $min-height != null {
+		min-height: $min-height;
 	}
 
 	@if $gutter and unitless($gutter) == false {
