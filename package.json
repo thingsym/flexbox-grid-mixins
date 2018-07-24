@@ -21,22 +21,21 @@
     "grid"
   ],
   "devDependencies": {
-    "es6-promise": "^3.1.2",
+    "es6-promise": "^4.2.4",
     "gulp": "~3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-load-plugins": "~1.0.0-rc.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-load-plugins": "~1.5.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-scss-lint": "^0.3.9",
-    "gulp-watch": "~4.1.1",
-    "browser-sync": "~2.12.5",
-    "run-sequence": "~1.1.5"
+    "gulp-sass": "^4.0.1",
+    "gulp-scss-lint": "^0.6.1",
+    "gulp-watch": "~5.0.1",
+    "browser-sync": "~2.24.6",
+    "run-sequence": "~2.2.1"
   },
   "scripts": {
     "default": "gulp",
     "lint": "gulp lint",
     "serve": "gulp serve",
-    "watch": "gulp watch",
-    "gh_pages": "gulp gh_pages"
+    "watch": "gulp watch"
   }
 }
