@@ -24,12 +24,7 @@ var dest_paths = {
 
 gulp.task('lint:sass', function() {
   return gulp.src(src_paths.sass)
-    .pipe($.plumber({
-      errorHandler: function(err) {
-        console.log(err.messageFormatted);
-        this.emit('end');
-      }
-    }))
+    .pipe($.plumber())
     .pipe(scsslint({
         'reporterOutputFormat': 'Checkstyle',
         'bundleExec': true,
