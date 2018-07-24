@@ -5,122 +5,9 @@ $default-base-color: #0466e0;
 $default-grid-columns: 12;
 $default-grid-gutter: 2%;
 
-body {
-  font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
-}
-
-.header {
-  background-color: $default-base-color;
-  color: #fff;
-  text-align: center;
-  padding: 1em;
-  min-height: 320px;
-  @include grid($flex-flow: column nowrap, $justify-content: center);
-
-  &--hero {
-    height: 100vh;
-  }
-
-  .header-title {
-    font-size: 320%;
-    margin-bottom: 0;
-  }
-  .version {
-    font-size: 25%;
-    font-weight: normal;
-  }
-  .header-description {
-    margin-top: 0;
-  }
-
-  .header-nav {
-    margin: 0;
-    padding: 0;
-    margin-top: 3em;
-
-    li {
-      font-size: 90%;
-      display: inline;
-      list-style: none;
-      margin-right: 1.2rem;
-    }
-  }
-
-  a {
-    color: #fff;
-  }
-
-  .btn {
-    padding: .8em;
-    border: solid rgba(255, 255, 255, .4) 1px;
-    border-radius: .4em;
-  }
-}
-
-h2 {
-  border-bottom: solid 1px #ccc;
-}
-
-pre {
-  overflow: auto;
-  line-height: 1.45;
-  background-color: #f7f7f7;
-  padding: 1em;
-  border-radius: .4em;
-
-  &.scrollable {
-    max-height: 240px;
-    overflow-y: scroll;
-  }
-
-  > code {
-    background: transparent;
-  }
-}
-
-code {
-  padding: .2em;
-  background-color: rgba(0,0,0,0.04);
-  border-radius: .2em;
-}
-
-.reference {
-  background-color: $default-base-color;
-  color: #fff;
-  padding: 1em;
-  border-radius: .4em;
-
-  .small {
-    font-size: 80%;
-    font-weight: normal;
-  }
-  .big {
-    font-size: 160%;
-  }
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 2px solid #ccc;
-  margin: 0 0 1.625em;
-  width: 100%;
-}
-th {
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: .2em;
-  font-weight: bold;
-  background-color: #eee;
-}
-td {
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: .2em;
-}
-
-
 .grid,
+.grid-3-columns,
+.grid-24-columns,
 [class*="grid--"] {
   background: #a5c3e2;
 }
@@ -137,6 +24,10 @@ td {
 
   .grid__col {
     @include grid-col($gutter: $default-grid-gutter);
+
+    &--null {
+      @include grid-col($col: null, $gutter: $default-grid-gutter);
+    }
 
     &--auto {
       @include grid-col($col: auto, $gutter: $default-grid-gutter);
@@ -157,11 +48,43 @@ td {
     &--initial {
       @include grid-col($col: initial, $gutter: $default-grid-gutter);
     }
+
+    &--positive {
+      @include grid-col($col: positive, $gutter: $default-grid-gutter);
+    }
+    &--positive-2 {
+      @include grid-col($col: positive, $flex-grow: 2, $gutter: $default-grid-gutter);
+    }
+    &--positive-3 {
+      @include grid-col($col: positive, $flex-grow: 3, $gutter: $default-grid-gutter);
+    }
+    &--positive-4 {
+      @include grid-col($col: positive, $flex-grow: 4, $gutter: $default-grid-gutter);
+    }
   }
 
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
       @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid-3-columns {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $grid-columns: 3, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid-24-columns {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through 24 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $grid-columns: 24, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -220,18 +143,8 @@ ul.grid {
   }
 }
 
-.grid--row-reverse {
-  @include grid($flex-flow: row-reverse nowrap, $gutter: $default-grid-gutter);
-
-  @for $i from 1 through $default-grid-columns {
-    > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter);
-    }
-  }
-}
-
 .grid--row {
-  @include grid($flex-flow: row nowrap, $gutter: $default-grid-gutter);
+  @include grid($flex-direction: row, $gutter: $default-grid-gutter);
 
   @for $i from 1 through 3 {
     > .grid__col-#{$i} {
@@ -240,7 +153,7 @@ ul.grid {
   }
 }
 .grid--row-reverse {
-  @include grid($flex-flow: row-reverse nowrap, $gutter: $default-grid-gutter);
+  @include grid($flex-direction: row-reverse, $gutter: $default-grid-gutter);
 
   @for $i from 1 through 3 {
     > .grid__col-#{$i} {
@@ -249,7 +162,26 @@ ul.grid {
   }
 }
 .grid--column {
-  @include grid($flex-flow: column nowrap, $gutter: $default-grid-gutter);
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $width: true);
+    }
+  }
+}
+.grid--column-reverse {
+  @include grid($flex-direction: column-reverse, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $width: true);
+    }
+  }
+}
+
+.grid--wrap-null {
+  @include grid($flex-wrap: null, $gutter: $default-grid-gutter);
 
   @for $i from 1 through 3 {
     > .grid__col-#{$i} {
@@ -257,8 +189,26 @@ ul.grid {
     }
   }
 }
-.grid--column-reverse {
-  @include grid($flex-flow: column-reverse nowrap, $gutter: $default-grid-gutter);
+.grid--wrap-nowrap {
+  @include grid($flex-wrap: nowrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--wrap {
+  @include grid($flex-wrap: wrap, $gutter: $default-grid-gutter);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--wrap-reverse {
+  @include grid($flex-wrap: wrap-reverse, $gutter: $default-grid-gutter);
 
   @for $i from 1 through 3 {
     > .grid__col-#{$i} {
@@ -294,7 +244,7 @@ ul.grid {
     }
   }
 }
-.grid--space-around-row {
+.grid--space-between-row {
   @include grid($gutter: $default-grid-gutter, $justify-content: space-between);
 
   @for $i from 1 through 3 {
@@ -303,8 +253,17 @@ ul.grid {
     }
   }
 }
-.grid--space-between-row {
+.grid--space-around-row {
   @include grid($gutter: $default-grid-gutter, $justify-content: space-around);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+.grid--space-evenly-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: space-evenly);
 
   @for $i from 1 through 3 {
     > .grid__col-#{$i} {
@@ -357,9 +316,20 @@ ul.grid {
       @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
+  > .grid__col-2 {
+    padding: 30px 0;
+  }
+}
+.grid--centered-row {
+  @include grid($gutter: $default-grid-gutter, $justify-content: center, $align-items: center);
+  height: 18em;
+
+  > .grid__col-centered {
+    @include grid-col($col: 3, $gutter: $default-grid-gutter);
+  }
 }
 
-.grid--column-alignment {
+.grid--items-row-alignment {
   @include grid($gutter: $default-grid-gutter);
   > .grid__col {
     @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: none);
@@ -381,7 +351,60 @@ ul.grid {
   }
 }
 
-.grid--order {
+.grid--left-column {
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter, $align-items: flex-start);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $width: true);
+    }
+  }
+}
+.grid--center-column {
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter, $align-items: center);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $width: true);
+    }
+  }
+}
+.grid--right-column {
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter, $align-items: flex-end);
+
+  @for $i from 1 through 3 {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $width: true);
+    }
+  }
+}
+
+.grid--centered-column {
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter, $justify-content: center, $align-items: center);
+  height: 18em;
+
+  > .grid__col-centered {
+    @include grid-col($col: 3, $gutter: $default-grid-gutter, $width: true);
+  }
+}
+
+.grid--items-column-alignment {
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter);
+  > .grid__col {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: none, $width: true);
+  }
+  > .grid__col-top {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-start, $width: true);
+  }
+  > .grid__col-middle {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: center, $width: true);
+  }
+  > .grid__col-bottom {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-end, $width: true);
+  }
+}
+
+.grid--order-row {
   @include grid($gutter: $default-grid-gutter);
   > .grid__col-1 {
     @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: 1);
@@ -397,6 +420,25 @@ ul.grid {
   }
   > .grid__col-5 {
     @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: -1);
+  }
+}
+
+.grid--order-column {
+  @include grid($flex-direction: column, $gutter: $default-grid-gutter);
+  > .grid__col-1 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: 1, $width: true);
+  }
+  > .grid__col-2 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: 1, $width: true);
+  }
+  > .grid__col-3 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $width: true);
+  }
+  > .grid__col-4 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: -1, $width: true);
+  }
+  > .grid__col-5 {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $order: -1, $width: true);
   }
 }
 
@@ -467,3 +509,16 @@ ul.grid {
   }
 }
 
+.grid--width {
+  @include grid($gutter: $default-grid-gutter);
+
+  > .grid__col-3 {
+    @include grid-col($col: 3, $gutter: $default-grid-gutter);
+  }
+  > .grid__col-100 {
+    @include grid-col($col: auto, $gutter: $default-grid-gutter, $max-width: 100px);
+  }
+  > .grid__col-200 {
+    @include grid-col($col: auto, $gutter: $default-grid-gutter, $max-width: 200px, $min-width: 100px);
+  }
+}
