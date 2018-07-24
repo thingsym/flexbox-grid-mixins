@@ -1,0 +1,237 @@
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  background-color: #0466e0;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  min-height: 320px;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.header--hero {
+  height: 100vh;
+}
+
+.header .header-title {
+  font-size: 320%;
+  margin-bottom: 0;
+}
+
+.header .version {
+  font-size: 25%;
+  font-weight: normal;
+}
+
+.header .header-description {
+  margin-top: 0;
+}
+
+.header .header-nav {
+  margin: 0;
+  padding: 0;
+  margin-top: 3em;
+}
+
+.header .header-nav li {
+  font-size: 90%;
+  display: inline;
+  list-style: none;
+  margin-right: 1.2rem;
+}
+
+.header a {
+  color: #fff;
+}
+
+.header .btn {
+  padding: .8em;
+  border: solid rgba(255, 255, 255, 0.4) 1px;
+  border-radius: .4em;
+}
+
+.container {
+  margin: 0 2rem;
+}
+
+h2 {
+  border-bottom: solid 1px #ccc;
+}
+
+pre {
+  overflow: auto;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  padding: 1em;
+  border-radius: .4em;
+}
+
+pre.scrollable {
+  max-height: 240px;
+  overflow-y: scroll;
+}
+
+pre > code {
+  background: transparent;
+}
+
+code {
+  padding: .2em;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: .2em;
+}
+
+.reference {
+  background-color: #0466e0;
+  color: #fff;
+  padding: 1em;
+  border-radius: .4em;
+}
+
+.reference .small {
+  font-size: 80%;
+  font-weight: normal;
+}
+
+.reference .big {
+  font-size: 160%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 2px solid #ccc;
+  margin: 0 0 1.625em;
+  width: 100%;
+}
+
+th {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .2em;
+  font-weight: bold;
+  background-color: #eee;
+}
+
+td {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .2em;
+}
+
+td.example {
+  text-align: center;
+}
+
+.grid,
+[class*="grid--"] {
+  background: #a5c3e2;
+}
+
+[class*="grid__col"] {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: .4em;
+  color: #fff;
+  text-align: center;
+}
+
+.grid {
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -1%;
+}
+
+.grid > .grid__col-1 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 6.33333%;
+  flex: 0 0 6.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-2 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 14.66667%;
+  flex: 0 0 14.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-3 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 23%;
+  flex: 0 0 23%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-4 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 31.33333%;
+  flex: 0 0 31.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-5 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 39.66667%;
+  flex: 0 0 39.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-6 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 48%;
+  flex: 0 0 48%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-7 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 56.33333%;
+  flex: 0 0 56.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-8 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 64.66667%;
+  flex: 0 0 64.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-9 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 73%;
+  flex: 0 0 73%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-10 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 81.33333%;
+  flex: 0 0 81.33333%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-11 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 89.66667%;
+  flex: 0 0 89.66667%;
+  margin: 0 1% 2%;
+}
+
+.grid > .grid__col-12 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 98%;
+  flex: 0 0 98%;
+  margin: 0 1% 2%;
+}
