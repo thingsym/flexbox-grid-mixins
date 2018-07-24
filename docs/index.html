@@ -2,18 +2,18 @@
 <html>
 <head>
 <title>Flexbox Grid Mixins</title>
-<link rel="stylesheet" href="./css/example.css">
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 </head>
 <body>
 <div class="header header--hero">
-
-<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.3</span></h1>
-
+<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.4</span></h1>
 <p class="header-description">Sass Mixins to generate Flexbox grid</p>
 
 <ul class="header-nav">
 <li><a href="#Basic-Example">Basic Example</a></li>
 <li><a href="#Grid-System-Example">Grid System Example</a></li>
+<li><a href="#Examples">Examples</a></li>
 <li><a href="#Installation">Installation</a></li>
 <li><a href="#Getting-Started">Getting Started</a></li>
 <li><a href="#Mixins-Reference">Mixins Reference</a></li>
@@ -22,11 +22,13 @@
 </ul>
 
 <ul class="header-nav">
-<li><a href="https://github.com/thingsym/flexbox-grid-mixins" class="btn">GitHub</a></li>
-<li><a href="https://www.npmjs.com/package/flexbox-grid-mixins" class="btn">npm</a></li>
+<li><a href="https://github.com/thingsym/flexbox-grid-mixins" class="btn"><i class="fab fa-github"></i> GitHub</a></li>
+<li><a href="https://www.npmjs.com/package/flexbox-grid-mixins" class="btn"><i class="fab fa-npm"></i> npm</a></li>
 </ul>
 
 </div>
+
+<div class="container">
 
 <h2>Feature</h2>
 
@@ -81,7 +83,6 @@ $default-grid-gutter: 2%;
 <pre class="scrollable">
 <code>.grid {
   box-sizing: border-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 0 -1%;
@@ -89,7 +90,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-3 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 23%;
   -ms-flex: 0 0 23%;
   flex: 0 0 23%;
   margin: 0 1% 2%;
@@ -97,7 +97,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-9 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 73%;
   -ms-flex: 0 0 73%;
   flex: 0 0 73%;
   margin: 0 1% 2%;
@@ -256,7 +255,6 @@ $default-grid-gutter: 2%;
 <code>
 .grid {
   box-sizing: border-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 0 -1%;
@@ -264,7 +262,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-1 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 6.33333%;
   -ms-flex: 0 0 6.33333%;
   flex: 0 0 6.33333%;
   margin: 0 1% 2%;
@@ -272,7 +269,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-2 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 14.66667%;
   -ms-flex: 0 0 14.66667%;
   flex: 0 0 14.66667%;
   margin: 0 1% 2%;
@@ -280,7 +276,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-3 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 23%;
   -ms-flex: 0 0 23%;
   flex: 0 0 23%;
   margin: 0 1% 2%;
@@ -288,7 +283,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-4 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 31.33333%;
   -ms-flex: 0 0 31.33333%;
   flex: 0 0 31.33333%;
   margin: 0 1% 2%;
@@ -296,23 +290,20 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-5 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 39.66667%;
   -ms-flex: 0 0 39.66667%;
   flex: 0 0 39.66667%;
   margin: 0 1% 2%;
 }
 
 .grid &gt; .grid__col-6 {
-  box-sizing: border-box;
-  -webkit-flex: 0 0 48%;
-  -ms-flex: 0 0 48%;
+ box-sizing: border-box;
+ -ms-flex: 0 0 48%;
   flex: 0 0 48%;
   margin: 0 1% 2%;
 }
 
 .grid &gt; .grid__col-7 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 56.33333%;
   -ms-flex: 0 0 56.33333%;
   flex: 0 0 56.33333%;
   margin: 0 1% 2%;
@@ -320,7 +311,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-8 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 64.66667%;
   -ms-flex: 0 0 64.66667%;
   flex: 0 0 64.66667%;
   margin: 0 1% 2%;
@@ -328,7 +318,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-9 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 73%;
   -ms-flex: 0 0 73%;
   flex: 0 0 73%;
   margin: 0 1% 2%;
@@ -336,7 +325,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-10 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 81.33333%;
   -ms-flex: 0 0 81.33333%;
   flex: 0 0 81.33333%;
   margin: 0 1% 2%;
@@ -344,7 +332,6 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-11 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 89.66667%;
   -ms-flex: 0 0 89.66667%;
   flex: 0 0 89.66667%;
   margin: 0 1% 2%;
@@ -352,14 +339,13 @@ $default-grid-gutter: 2%;
 
 .grid &gt; .grid__col-12 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 98%;
   -ms-flex: 0 0 98%;
   flex: 0 0 98%;
   margin: 0 1% 2%;
 }
 </code></pre>
 
-<h3>Other Examples</h3>
+<h2 id="Examples">Examples</h2>
 
 <ul>
 <li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
@@ -377,7 +363,13 @@ $default-grid-gutter: 2%;
 <code>$ npm install flexbox-grid-mixins --save-dev</code>
 </pre>
 
-<h3>bower</h3>
+<h3>Yarn</h3>
+
+<pre>
+<code>$ yarn add flexbox-grid-mixins --dev</code>
+</pre>
+
+<h3>Bower (deprecated)</h3>
 
 <pre>
 <code>$ bower install flexbox-grid-mixins --save</code>
@@ -429,64 +421,74 @@ Example : import form node_modules
     <th>Default value</th>
     <th>Values</th>
     <th>Description</th>
+    <th>Example</th>
     </tr>
     <tr>
     <td>$display</td>
     <td>flex</td>
     <td>flex | inline-flex</td>
     <td>generate a block-level or an inline-level grid container</td>
+    <td></td>
     </tr>
     <tr>
     <td>$flex-direction</td>
     <td>null</td>
     <td>null | row | row-reverse | column | column-reverse</td>
-    <td></td>
+    <td>define the main axis and the direction</td>
+    <td class="example"><a href="example/example.html#grid-direction"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flex-wrap</td>
     <td>null</td>
     <td>null | nowrap | wrap | wrap-reverse</td>
-    <td></td>
+    <td>whether flex items are forced into a single line or can be wrapped onto multiple lines</td>
+    <td class="example"><a href="example/example.html#wrap-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flex-flow</td>
     <td>null</td>
     <td>null | [row | row-reverse | column | column-reverse] [nowrap | wrap | wrap-reverse]</td>
     <td>a shorthand for setting the flex-direction and flex-wrap properties</td>
+    <td></td>
     </tr>
     <tr>
     <td>$justify-content</td>
     <td>null</td>
-    <td>null | flex-start | flex-end | center | space-between | space-around</td>
-    <td>defines the alignment along the main axis.</td>
+    <td>null | flex-start | flex-end | center | space-between | space-around | space-evenly</td>
+    <td>defines space between and around content items along the main-axis of container</td>
+    <td class="example"><a href="example/example.html#row-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$align-items</td>
     <td>null</td>
     <td>null | flex-start | flex-end | center | baseline | stretch</td>
-    <td></td>
+    <td>defines space between and around flex items along the cross-axis of container</td>
+    <td class="example"><a href="example/example.html#row-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$align-content</td>
     <td>null</td>
     <td>null | flex-start | flex-end | center | space-between | space-around | stretch</td>
-    <td></td>
+    <td>defines space between and around content items along the cross-axis of their container</td>
+    <td class="example"><a href="example/example.html#multi-line-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$gutter</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
-    <td><code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> generate a margin of both ends of the grid. <code>&lt;length&gt;</code> generate a margin of both ends of the grid (<code>&lt;length&gt;</code> is experimental stage).</td>
+    <td>define gutter. <code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> generate a margin of both ends of the grid. <code>&lt;length&gt;</code> generate a margin of both ends of the grid (<code>&lt;length&gt;</code> is experimental stage).</td>
+    <td class="example"><a href="example/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$grid-type</td>
     <td>skeleton</td>
     <td>skeleton | margin-offset</td>
-    <td>the type of grid</td>
+    <td>define the type of grid</td>
+    <td class="example"><a href="example/grid-type.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
 </table>
 
-<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false);</h3>
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null);</h3>
 
 <p>Generate the grid columns.</p>
 
@@ -498,78 +500,133 @@ Example : import form node_modules
     <th>Default value</th>
     <th>Values</th>
     <th>Description</th>
+    <th>Example</th>
     </tr>
     <tr>
     <td>$col</td>
     <td>null</td>
-    <td>null | initial | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt; | auto | equal | none | breakpoint | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property" target="_blank">width</a>&gt;</td>
-    <td><code>null</code> is no set columns. <code>&lt;number&gt;</code> is number of columns. <code>initial</code>, <code>auto</code>, <code>equal</code>, <code>none</code> and <code>breakpoint</code> are preset columns. <code>&lt;width&gt;</code> is unit set columns (<code>&lt;width&gt;</code> is experimental stage).</td>
+    <td>null | initial | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt; | auto | equal | none | breakpoint | positive | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property" target="_blank">width</a>&gt;</td>
+    <td>define columns. <code>null</code> is no set columns. <code>&lt;number&gt;</code> is number of columns. <code>initial</code>, <code>auto</code>, <code>equal</code>, <code>none</code>, <code>breakpoint</code> and <code>positive</code> are preset columns. <code>&lt;width&gt;</code> is unit set columns (<code>&lt;width&gt;</code> is experimental stage. <code>&lt;breakpoint&gt;</code> is deprecated, use <code>&lt;initial&gt;</code> instead).</td>
+    <td class="example"><a href="example/example.html#preset-grid-columns"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$grid-columns</td>
     <td>12</td>
     <td>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt;</td>
-    <td>the total number of columns in the grid.</td>
+    <td>define the total number of columns in the grid.</td>
+    <td class="example"><a href="example/example.html#grid-columns"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$col-offset</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt;</td>
     <td><code>&lt;percentage&gt;</code> offset a width of columns.</td>
+    <td></td>
     </tr>
     <tr>
     <td>$gutter</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
-    <td><code>null</code> is no margin between columns. <code>&lt;percentage&gt;</code> generate a margin of between columns. <code>&lt;length&gt;</code> generate a margin of between columns (<code>&lt;length&gt;</code> is experimental stage).</td>
+    <td>define gutter. <code>null</code> is no margin between columns. <code>&lt;percentage&gt;</code> generate a margin of between columns. <code>&lt;length&gt;</code> generate a margin of between columns (<code>&lt;length&gt;</code> is experimental stage).</td>
+    <td class="example"><a href="example/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$condensed</td>
     <td>false</td>
-    <td>true | false</td>
-    <td>cutting the top and bottom margins of the columns.</td>
+    <td>&lt;boolean&gt;</td>
+    <td>cutting the top and bottom margins of the columns, if <code>true</code>.</td>
+    <td class="example"><a href="example/example.html#condensed-grid"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$align-self</td>
     <td>null</td>
     <td>null | auto | flex-start | flex-end | center | baseline | stretch</td>
-    <td></td>
+    <td>override the align-items value</td>
+    <td class="example"><a href="example/example.html#items-row-alignment"><i class="fas fa-external-link-alt"></i></a> <a href="example/example.html#items-column-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flex-grow</td>
     <td>0 *</td>
     <td>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt;</td>
-    <td>grow relative to the rest of the columns in the grid</td>
+    <td>grow relative to the rest of items in the grid. specifies what amount of space inside the flex container the item should take up.</td>
+    <td></td>
     </tr>
     <tr>
     <td>$flex-shrink</td>
     <td>1 *</td>
     <td>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt;</td>
-    <td>shrink relative to the rest of the columns in the grid</td>
+    <td>shrink relative to the rest of items in the grid</td>
+    <td></td>
     </tr>
     <tr>
     <td>$flex-basis</td>
     <td>auto *</td>
     <td>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt; | auto</td>
-    <td>initial main size of the columns</td>
+    <td>specifies the initial main size of a item</td>
+    <td></td>
     </tr>
     <tr>
     <td>$order</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">integer</a>&gt;</td>
-    <td>control the order in which appear in the grid container</td>
+    <td>specifies the order in the grid container</td>
+    <td class="example"><a href="example/example.html#row-order"><i class="fas fa-external-link-alt"></i></a> <a href="example/example.html#column-order"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$grid-type</td>
     <td>skeleton</td>
     <td>skeleton | margin-offset</td>
-    <td>the type of grid</td>
+    <td>define the type of grid</td>
+    <td class="example"><a href="example/grid-type.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$last-child</td>
     <td>false</td>
-    <td>true | false</td>
-    <td>adjust the last-child of the columns, if the $grid-type is <code>margin-offset</code></td>
+    <td>&lt;boolean&gt;</td>
+    <td>adjust the last-child of the columns, if <code>true</code> and the $grid-type is <code>margin-offset</code></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$width</td>
+    <td>null</td>
+    <td>null | &lt;boolean&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property" target="_blank">width</a>&gt; | auto</td>
+    <td>specifies the width of an element</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$max-width</td>
+    <td>null</td>
+    <td>null | &lt;boolean&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property" target="_blank">width</a>&gt; | auto</td>
+    <td>sets the maximum width of an element</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$min-width</td>
+    <td>null</td>
+    <td>null | &lt;boolean&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property" target="_blank">width</a>&gt; | auto</td>
+    <td>sets the minimum width of an element</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$height</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-height-property" target="_blank">height</a>&gt;</td>
+    <td>specifies the height of an element</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$max-height</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-height-property" target="_blank">height</a>&gt;</td>
+    <td>sets the maximum height of an element</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$min-height</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-height-property" target="_blank">height</a>&gt;</td>
+    <td>sets the minimum height of an element</td>
+    <td></td>
     </tr>
 </table>
 
@@ -664,7 +721,8 @@ Example : import form node_modules
 <h2 id="Resources">Resources</h2>
 
 <ul>
-    <li><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank">CSS Flexible Box Layout Module Level 1</a></li>
+    <li><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank">CSS Flexible Box Layout Module Level 1 </a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank">CSS Flexible Box Layout - CSS: Cascading Style Sheets | MDN</a></li>
     <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a></li>
     <li><a href="http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/" target="_blank">Holy Grail Layout - Solved by Flexbox</a></li>
     <li><a href="https://www.w3.org/TR/css-values/#calc-notation" target="_blank">Mathematical Expressions: calc()</a></li>
@@ -678,25 +736,8 @@ See <a href="https://github.com/thingsym/flexbox-grid-mixins">GitHub - Flexbox G
 
 <p>The MIT License (MIT)</p>
 
-<p>Copyright (c) 2016 Thingsym</p>
+<p>Copyright (c) 2016 - 2018 Thingsym</p>
 
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
-
+</div>
 </body>
 </html>

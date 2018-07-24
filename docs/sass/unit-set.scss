@@ -5,56 +5,6 @@ $default-base-color: #0466e0;
 $default-grid-type: skeleton;
 $default-grid-columns: 12;
 
-body {
-  font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
-}
-
-.header {
-  background-color: $default-base-color;
-  color: #fff;
-  text-align: center;
-  padding: 1em;
-  min-height: 320px;
-  @include grid($flex-flow: column nowrap, $justify-content: center);
-
-  &--hero {
-    height: 100vh;
-  }
-
-  .header-title {
-    font-size: 320%;
-    margin-bottom: 0;
-  }
-  .version {
-    font-size: 25%;
-    font-weight: normal;
-  }
-  .header-description {
-    margin-top: 0;
-  }
-
-  .header-nav {
-    margin: 0;
-    padding: 0;
-    margin-top: 3em;
-
-    li {
-      font-size: 90%;
-      display: inline;
-      list-style: none;
-      margin-right: 1.2rem;
-    }
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-h2 {
-  border-bottom: solid 1px #ccc;
-}
-
 [class*="grid-unit-set-"],
 [class*="grid-gutter-"],
 [class*="grid--"] {
