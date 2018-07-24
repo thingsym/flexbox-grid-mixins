@@ -45,7 +45,6 @@ $default-grid-gutter: 2%;
 ```
 .grid {
   box-sizing: border-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 0 -1%;
@@ -53,7 +52,6 @@ $default-grid-gutter: 2%;
 
 .grid > .grid__col-3 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 23%;
   -ms-flex: 0 0 23%;
   flex: 0 0 23%;
   margin: 0 1% 2%;
@@ -61,7 +59,6 @@ $default-grid-gutter: 2%;
 
 .grid > .grid__col-9 {
   box-sizing: border-box;
-  -webkit-flex: 0 0 73%;
   -ms-flex: 0 0 73%;
   flex: 0 0 73%;
   margin: 0 1% 2%;
@@ -76,7 +73,13 @@ $default-grid-gutter: 2%;
 $ npm install flexbox-grid-mixins --save-dev
 ```
 
-### bower
+### Yarn
+
+```
+$ yarn add flexbox-grid-mixins --dev
+```
+
+### Bower (deprecated)
 
 ```
 $ bower install flexbox-grid-mixins --save
@@ -122,6 +125,10 @@ Example : import form node_modules
 ## Documentation
 
 See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-mixins/](http://thingsym.github.io/flexbox-grid-mixins/)
+
+## Package manager
+
+[flexbox-grid-mixins - npm](https://www.npmjs.com/package/flexbox-grid-mixins)
 
 ### Mixins Reference and Example
 
