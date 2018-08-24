@@ -166,6 +166,14 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.1.4
+  * update example
+  * update document
+  * fix conditional expression
+  * add optional arguments $width, $max-width, $min-width, $height, $max-height and $min-height to @mixin grid-col
+  * enable flex-grow with number column
+  * add positive preset column
+  * change readme.md file name to upper case
 * Version 0.1.3
   * rename folder to docs from doc, change gh-pages
   * update document
