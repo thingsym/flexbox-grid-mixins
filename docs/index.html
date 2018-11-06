@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="header header--hero">
-<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.4</span></h1>
+<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.5</span></h1>
 <p class="header-description">Sass Mixins to generate Flexbox grid</p>
 
 <ul class="header-nav">
@@ -488,7 +488,7 @@ Example : import form node_modules
     </tr>
 </table>
 
-<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null);</h3>
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null);</h3>
 
 <p>Generate the grid columns.</p>
 
@@ -571,6 +571,13 @@ Example : import form node_modules
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">integer</a>&gt;</td>
     <td>specifies the order in the grid container</td>
     <td class="example"><a href="example/example.html#row-order"><i class="fas fa-external-link-alt"></i></a> <a href="example/example.html#column-order"><i class="fas fa-external-link-alt"></i></a></td>
+    </tr>
+    <tr>
+    <td>$shorthand</td>
+    <td>true</td>
+    <td>true | false</td>
+    <td>use flex property as shorthand by default. use three properties flex-basis, flex-grow and flex-shrink if <code>false</code>.</td>
+    <td></td>
     </tr>
     <tr>
     <td>$grid-type</td>

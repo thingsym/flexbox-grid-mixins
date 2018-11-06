@@ -1,6 +1,6 @@
 {
   "name": "flexbox-grid-mixins",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Sass Mixins to generate Flexbox grid",
   "main": "sass/_flexbox-grid-mixins.scss",
   "author": "Thingsym",
@@ -21,15 +21,15 @@
     "grid"
   ],
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "es6-promise": "^4.2.4",
-    "gulp": "~3.9.0",
-    "gulp-autoprefixer": "^5.0.0",
+    "gulp": "~3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-load-plugins": "~1.5.0",
-    "gulp-plumber": "^1.1.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.1",
-    "gulp-scss-lint": "^0.6.1",
+    "gulp-scss-lint": "^0.7.1",
     "gulp-watch": "~5.0.1",
-    "browser-sync": "~2.24.6",
     "run-sequence": "~2.2.1"
   },
   "scripts": {

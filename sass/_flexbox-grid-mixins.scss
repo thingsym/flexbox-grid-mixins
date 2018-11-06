@@ -1,6 +1,6 @@
 // ===================================================================
 // Flexbox Grid Mixins
-// Version 0.1.4
+// Version 0.1.5
 // Description: Sass Mixins to generate Flexbox grid
 // Author: thingsym
 // GitHub: https://github.com/thingsym/flexbox-grid-mixins
@@ -47,7 +47,7 @@
 	@content;
 }
 
-@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
+@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
 	box-sizing: border-box;
 
@@ -114,7 +114,13 @@
 		$flex-basis: 0;
 	}
 
-	flex: $flex-grow $flex-shrink $flex-basis;
+	@if type-of($shorthand) == bool and $shorthand == true {
+		flex: $flex-grow $flex-shrink $flex-basis;
+	} @else {
+		flex-basis: $flex-basis;
+		flex-grow: $flex-grow;
+		flex-shrink: $flex-shrink;
+	}
 
 	@if $align-self != null {
 		align-self: $align-self;
