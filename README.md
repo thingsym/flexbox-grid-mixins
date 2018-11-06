@@ -145,12 +145,13 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 
 1. run ```$ sudo yum install nodejs npm```
 2. run ```$ sudo npm install --global gulp-cli```
-3. Forking on GitHub
-4. run ```$ cd /path/to/flexbox-grid-mixins```
-5. run ```$ npm install```
-6. run ```$ bundle install --path vendor/bundle```
-7. run ```$ gulp serve```
-8. Access URL http://localhost:3000
+3. run ```$ sudo npm install --global npm-check-updates``` (optional)
+4. Forking on GitHub
+5. run ```$ cd /path/to/flexbox-grid-mixins```
+6. run ```$ npm install```
+7. run ```$ bundle install --path vendor/bundle```
+8. run ```$ gulp serve```
+9. Access URL http://localhost:3000
 
 ## Contribution
 
