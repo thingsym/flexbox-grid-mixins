@@ -167,6 +167,9 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.1.5
+  * update package.json
+  * add optional arguments $shorthand
 * Version 0.1.4
   * update example
   * update document
