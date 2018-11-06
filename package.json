@@ -21,6 +21,7 @@
     "grid"
   ],
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "es6-promise": "^4.2.4",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": "^6.0.0",
@@ -29,7 +30,6 @@
     "gulp-sass": "^4.0.1",
     "gulp-scss-lint": "^0.7.1",
     "gulp-watch": "~5.0.1",
-    "browser-sync": "~2.24.7",
     "run-sequence": "~2.2.1"
   },
   "scripts": {
