@@ -149,9 +149,8 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 4. Forking on GitHub
 5. run ```$ cd /path/to/flexbox-grid-mixins```
 6. run ```$ npm install```
-7. run ```$ bundle install --path vendor/bundle```
-8. run ```$ gulp serve```
-9. Access URL http://localhost:3000
+7. run ```$ gulp serve```
+8. Access URL http://localhost:3000
 
 ## Contribution
 
@@ -163,7 +162,7 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 2. Create a feature branch: git checkout -b my-new-feature
 3. Commit your changes: git commit -am 'Add some feature'
 4. Push to the branch: git push origin my-new-feature
-5. Create new Pull Request
+5. Create new Pull Request on GitHub
 
 ## Changelog
 
