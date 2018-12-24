@@ -56,7 +56,9 @@ gulp.task('docs_sass', function() {
         this.emit('end');
       }
     }))
-    .pipe($.sass( { outputStyle: 'expanded' } ).on( 'error', $.sass.logError ) )
+    .pipe($.sass({
+      outputStyle: 'expanded'
+    }).on( 'error', $.sass.logError ) )
     .pipe($.autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
