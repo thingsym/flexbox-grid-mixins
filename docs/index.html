@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="header header--hero">
-<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.5</span></h1>
+<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.1.6</span></h1>
 <p class="header-description">Sass Mixins to generate Flexbox grid</p>
 
 <ul class="header-nav">
@@ -352,6 +352,7 @@ $default-grid-gutter: 2%;
 <li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
 <li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
 <li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+<li><a href="example/box-sizing.html">Box Sizing using Variable Defaults</a></li>
 <li><a href="example/grid-type.html">Grid Type</a></li>
 </ul>
 
@@ -410,6 +411,26 @@ Example : import form node_modules
 </code></pre>
 
 <h2 id="Mixins-Reference">Mixins Reference</h2>
+
+<h3 class="reference">Variable Defaults (global settings)</h3>
+
+
+<table>
+    <tr>
+    <th>Variable Defaults</th>
+    <th>Default value</th>
+    <th>Values</th>
+    <th>Description</th>
+    <th>Example</th>
+    </tr>
+    <tr>
+    <td>$flexbox-grid-mixins-box-sizing</td>
+    <td>border-box</td>
+    <td>null | content-box | border-box</td>
+    <td>define border-box property</td>
+    <td class="example"><a href="example/box-sizing.html"><i class="fas fa-external-link-alt"></i></a></td>
+    </tr>
+</table>
 
 <h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton);</h3>
 

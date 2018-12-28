@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
-var scsslint = require('gulp-scss-lint');
 require('es6-promise').polyfill();
 
 var runSequence = require('run-sequence');
@@ -24,13 +23,29 @@ var dest_paths = {
 
 gulp.task('lint:sass', function() {
   return gulp.src(src_paths.sass)
-    .pipe($.plumber())
-    .pipe(scsslint({
-        'reporterOutputFormat': 'Checkstyle',
-        'bundleExec': true,
-        'config': 'scss-lint.yml'
+    .pipe($.plumber({
+      errorHandler: function(err) {
+        console.log(err.messageFormatted);
+        this.emit('end');
+      }
     }))
-    .pipe(scsslint.failReporter());
+    .pipe($.stylelint({
+      config: {
+        extends: [
+          "stylelint-config-recommended",
+          "stylelint-scss",
+          "stylelint-config-recommended-scss"
+        ],
+        rules: {
+          "block-no-empty": null,
+          "no-descending-specificity": null
+        }
+      },
+      reporters: [{
+        formatter: 'string',
+        console: true
+      }]
+    }));
 });
 
 gulp.task('docs_sass', function() {
@@ -41,7 +56,9 @@ gulp.task('docs_sass', function() {
         this.emit('end');
       }
     }))
-    .pipe($.sass( { outputStyle: 'expanded' } ).on( 'error', $.sass.logError ) )
+    .pipe($.sass({
+      outputStyle: 'expanded'
+    }).on( 'error', $.sass.logError ) )
     .pipe($.autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false

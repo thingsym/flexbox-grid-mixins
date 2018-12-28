@@ -1,6 +1,6 @@
 // ===================================================================
 // Flexbox Grid Mixins
-// Version 0.1.5
+// Version 0.1.6
 // Description: Sass Mixins to generate Flexbox grid
 // Author: thingsym
 // GitHub: https://github.com/thingsym/flexbox-grid-mixins
@@ -9,9 +9,13 @@
 
 @charset 'utf-8';
 
+$flexbox-grid-mixins-box-sizing: border-box !default;
+
 @mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton)
 {
-	box-sizing: border-box;
+	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
+		box-sizing: $flexbox-grid-mixins-box-sizing;
+	}
 
 	@if $display {
 		display: $display;
@@ -49,7 +53,9 @@
 
 @mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
-	box-sizing: border-box;
+	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
+		box-sizing: $flexbox-grid-mixins-box-sizing;
+	}
 
 	@if type-of($col) == number and unitless($col) == true {
 		$flex-shrink: 0;
