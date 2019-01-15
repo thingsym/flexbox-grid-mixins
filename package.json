@@ -39,6 +39,7 @@
   },
   "scripts": {
     "default": "gulp",
+    "test": "npm run lint",
     "lint": "gulp lint",
     "serve": "gulp serve",
     "watch": "gulp watch"
