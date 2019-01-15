@@ -1,0 +1,21 @@
+sudo: false
+dist: trusty
+
+language: node_js
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+cache: npm
+
+node_js:
+  - 11
+  - 10
+
+install:
+  - npm install
+
+script:
+  - npm test
