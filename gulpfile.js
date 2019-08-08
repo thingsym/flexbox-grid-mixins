@@ -60,7 +60,6 @@ gulp.task('docs_sass', function() {
       outputStyle: 'expanded'
     }).on( 'error', $.sass.logError ) )
     .pipe($.autoprefixer({
-        browsers: ['last 2 versions'],
         cascade: false
     }))
     .pipe(gulp.dest(dest_paths.docs_css))
