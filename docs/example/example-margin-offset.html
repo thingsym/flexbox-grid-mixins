@@ -49,15 +49,6 @@
 </div>
 
 <div class="grid">
-<div class="grid__col-3">
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-</div>
-<div class="grid__col-9">
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-</div>
-</div>
-
-<div class="grid">
 <div class="grid__col-4">
     4
 </div>
@@ -963,7 +954,7 @@
 
 <h2 id="grid-direction">Grid Direction</h2>
 
-<h3>Row - @include grid-col($flex-direction: row);</h3>
+<h3>Row - @include grid($flex-direction: row);</h3>
 
 <div class="grid--row">
 <div class="grid__col-1">
@@ -977,7 +968,7 @@
 </div>
 </div>
 
-<h3>Row Reverse - @include grid-col($flex-direction: row-reverse);</h3>
+<h3>Row Reverse - @include grid($flex-direction: row-reverse);</h3>
 
 <div class="grid--row-reverse">
 <div class="grid__col-1">
@@ -991,7 +982,7 @@
 </div>
 </div>
 
-<h3>Column - @include grid-col($flex-direction: column);</h3>
+<h3>Column - @include grid($flex-direction: column);</h3>
 
 <div class="grid--column">
 <div class="grid__col-1">
@@ -1005,7 +996,7 @@
 </div>
 </div>
 
-<h3>Column Reverse - @include grid-col($flex-direction: column-reverse);</h3>
+<h3>Column Reverse - @include grid($flex-direction: column-reverse);</h3>
 
 <div class="grid--column-reverse">
 <div class="grid__col-1">
@@ -1021,7 +1012,7 @@
 
 <h2 id="wrap-alignment">Wrap Alignment</h2>
 
-<h3>null - @include grid-col($flex-wrap: null);</h3>
+<h3>null - @include grid($flex-wrap: null);</h3>
 
 <div class="grid--wrap-null">
 <div class="grid__col-1">
@@ -1047,7 +1038,7 @@
 </div>
 </div>
 
-<h3>nowrap - @include grid-col($flex-wrap: nowrap);</h3>
+<h3>nowrap - @include grid($flex-wrap: nowrap);</h3>
 
 <div class="grid--wrap-nowrap">
 <div class="grid__col-1">
@@ -1073,7 +1064,7 @@
 </div>
 </div>
 
-<h3>wrap - @include grid-col($flex-wrap: wrap);</h3>
+<h3>wrap - @include grid($flex-wrap: wrap);</h3>
 
 <div class="grid--wrap">
 <div class="grid__col-1">
@@ -1099,7 +1090,7 @@
 </div>
 </div>
 
-<h3>wrap reverse - @include grid-col($flex-wrap: wrap-reverse);</h3>
+<h3>wrap reverse - @include grid($flex-wrap: wrap-reverse);</h3>
 
 <div class="grid--wrap-reverse">
 <div class="grid__col-1">
@@ -1127,7 +1118,7 @@
 
 <h2 id="row-alignment">Row Alignment</h2>
 
-<h3>Left row - @include grid-col($justify-content: flex-start);</h3>
+<h3>Left row - @include grid($justify-content: flex-start);</h3>
 
 <div class="grid--left-row">
 <div class="grid__col-1">
@@ -1141,7 +1132,7 @@
 </div>
 </div>
 
-<h3>Center row - @include grid-col($justify-content: center);</h3>
+<h3>Center row - @include grid($justify-content: center);</h3>
 
 <div class="grid--center-row">
 <div class="grid__col-1">
@@ -1155,7 +1146,7 @@
 </div>
 </div>
 
-<h3>Right row - @include grid-col($justify-content: flex-end);</h3>
+<h3>Right row - @include grid($justify-content: flex-end);</h3>
 
 <div class="grid--right-row">
 <div class="grid__col-1">
@@ -1169,7 +1160,7 @@
 </div>
 </div>
 
-<h3>Space around row - @include grid-col($justify-content: space-around);</h3>
+<h3>Space around row - @include grid($justify-content: space-around);</h3>
 
 <div class="grid--space-around-row">
 <div class="grid__col-1">
@@ -1183,7 +1174,7 @@
 </div>
 </div>
 
-<h3>Space between row - @include grid-col($justify-content: space-between);</h3>
+<h3>Space between row - @include grid($justify-content: space-between);</h3>
 
 <div class="grid--space-between-row">
 <div class="grid__col-1">
@@ -1197,7 +1188,7 @@
 </div>
 </div>
 
-<h3>Space evenly row - @include grid-col($justify-content: space-evenly);</h3>
+<h3>Space evenly row - @include grid($justify-content: space-evenly);</h3>
 
 <div class="grid--space-evenly-row">
 <div class="grid__col-1">
@@ -1211,7 +1202,7 @@
 </div>
 </div>
 
-<h3>Top row - @include grid-col($align-items: flex-start);</h3>
+<h3>Top row - @include grid($align-items: flex-start);</h3>
 
 <div class="grid--top-row">
 <div class="grid__col-1">
@@ -1232,7 +1223,7 @@
 </div>
 </div>
 
-<h3>Middle row - @include grid-col($align-items: center);</h3>
+<h3>Middle row - @include grid($align-items: center);</h3>
 
 <div class="grid--middle-row">
 <div class="grid__col-1">
@@ -1253,7 +1244,7 @@
 </div>
 </div>
 
-<h3>Bottom row - @include grid-col($align-items: flex-end);</h3>
+<h3>Bottom row - @include grid($align-items: flex-end);</h3>
 
 <div class="grid--bottom-row">
 <div class="grid__col-1">
@@ -1274,7 +1265,7 @@
 </div>
 </div>
 
-<h3>Stretch row - @include grid-col($align-items: stretch);</h3>
+<h3>Stretch row - @include grid($align-items: stretch);</h3>
 
 <div class="grid--stretch-row">
 <div class="grid__col-1">
@@ -1295,7 +1286,7 @@
 </div>
 </div>
 
-<h3>Baseline row - @include grid-col($align-items: baseline);</h3>
+<h3>Baseline row - @include grid($align-items: baseline);</h3>
 
 <div class="grid--baseline-row">
 <div class="grid__col-1">
@@ -1326,6 +1317,30 @@
 </div>
 <div class="grid__col-centered">
     3<br>
+</div>
+</div>
+
+<h3>Both row</h3>
+<div class="grid--both-row">
+<div class="grid__col-both left">
+    left<br>
+</div>
+<div class="grid__col-both right">
+    right<br>
+</div>
+</div>
+
+<h3>Both row, only left</h3>
+<div class="grid--both-row">
+<div class="grid__col-both left">
+    left<br>
+</div>
+</div>
+
+<h3>Both row, only right</h3>
+<div class="grid--both-row">
+<div class="grid__col-both right">
+    right<br>
 </div>
 </div>
 
@@ -1365,7 +1380,7 @@
 
 <h2>Column Alignment</h2>
 
-<h3>Left column - @include grid-col($align-items: flex-start);</h3>
+<h3>Left column - @include grid($align-items: flex-start);</h3>
 
 <div class="grid--left-column">
 <div class="grid__col-1">
@@ -1379,7 +1394,7 @@
 </div>
 </div>
 
-<h3>Center column - @include grid-col($align-items: center);</h3>
+<h3>Center column - @include grid($align-items: center);</h3>
 
 <div class="grid--center-column">
 <div class="grid__col-1">
@@ -1393,7 +1408,7 @@
 </div>
 </div>
 
-<h3>Right column - @include grid-col($align-items: flex-end);</h3>
+<h3>Right column - @include grid($align-items: flex-end);</h3>
 
 <div class="grid--right-column">
 <div class="grid__col-1">
@@ -1525,7 +1540,7 @@
 
 <h2 id="multi-line-alignment">Multi-line Alignment</h2>
 
-<h3>Top Line - @include grid-col($align-content: flex-start);</h3>
+<h3>Top Line - @include grid($align-content: flex-start);</h3>
 <div class="grid--multi-line-top">
 <div class="grid__col-1">
     1<br>
@@ -1552,7 +1567,7 @@
 </div>
 </div>
 
-<h3>Middle Line - @include grid-col($align-content: center);</h3>
+<h3>Middle Line - @include grid($align-content: center);</h3>
 <div class="grid--multi-line-middle">
 <div class="grid__col-1">
     1<br>
@@ -1579,7 +1594,7 @@
 </div>
 </div>
 
-<h3>Bottom Line - @include grid-col($align-content: flex-end);</h3>
+<h3>Bottom Line - @include grid($align-content: flex-end);</h3>
 <div class="grid--multi-line-bottom">
 <div class="grid__col-1">
     1<br>
@@ -1606,7 +1621,7 @@
 </div>
 </div>
 
-<h3>Space between Line - @include grid-col($align-content: space-between);</h3>
+<h3>Space between Line - @include grid($align-content: space-between);</h3>
 <div class="grid--multi-line-space-between">
 <div class="grid__col-1">
     1<br>
@@ -1633,7 +1648,7 @@
 </div>
 </div>
 
-<h3>Space around Line - @include grid-col($align-content: space-around);</h3>
+<h3>Space around Line - @include grid($align-content: space-around);</h3>
 <div class="grid--multi-line-space-around">
 <div class="grid__col-1">
     1<br>
@@ -1660,7 +1675,7 @@
 </div>
 </div>
 
-<h3>Stretch Line - @include grid-col($align-content: stretch);</h3>
+<h3>Stretch Line - @include grid($align-content: stretch);</h3>
 <div class="grid--multi-line-stretch">
 <div class="grid__col-1">
     1<br>
@@ -1690,12 +1705,6 @@
 <h2>Width</h2>
 
 <div class="grid--width">
-<div class="grid__col-3">
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-</div>
-<div class="grid__col-3">
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
-</div>
 <div class="grid__col-200">
     <strong>$max-width: 200px</strong><br>
     200
@@ -1703,6 +1712,12 @@
 <div class="grid__col-100">
     <strong>$max-width: 100px</strong><br>
     100 100 100 100 100 
+</div>
+<div class="grid__col-3">
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+</div>
+<div class="grid__col-3">
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
 </div>
 </div>
 
