@@ -45,7 +45,8 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 
 	@if $flexbox-grid-mixins-grid-type == skeleton {
 		@if $gutter {
-			@include grid-margin($margin: 0 $gutter / 2 * -1);
+			margin-left: $gutter / 2 * -1;
+			margin-right: $gutter / 2 * -1;
 		}
 	}
 
@@ -167,40 +168,17 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 
 	@if $gutter and unitless($gutter) == false {
 		@if $flexbox-grid-mixins-grid-type == skeleton {
-				@include grid-col-margin($margin: 0 $gutter / 2 $gutter);
+			margin-left: $gutter / 2;
+			margin-right: $gutter / 2;
 		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if type-of($last-child) == bool and $last-child == true {
-				@include grid-col-margin($margin-right: 0);
+				margin-right: 0;
 			} @else {
-				@include grid-col-margin($margin-right: $gutter);
+				margin-right: $gutter;
 			}
 
 		}
 	}
 
 	@content;
-}
-
-@mixin grid-margin($margin: null, $margin-top: null, $margin-right: null, $margin-bottom: null, $margin-left: null)
-{
-	@if $margin != null {
-		margin: $margin;
-	}
-	@if $margin-top != null {
-		margin-top: $margin-top;
-	}
-	@if $margin-bottom != null {
-		margin-bottom: $margin-bottom;
-	}
-	@if $margin-left != null {
-		margin-left: $margin-left;
-	}
-	@if $margin-right != null {
-		margin-right: $margin-right;
-	}
-}
-
-@mixin grid-col-margin($margin: null, $margin-top: null, $margin-right: null, $margin-bottom: null, $margin-left: null)
-{
-	@include grid-margin($margin, $margin-top, $margin-right, $margin-bottom, $margin-left);
 }
