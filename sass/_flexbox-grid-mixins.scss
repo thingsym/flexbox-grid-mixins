@@ -106,12 +106,6 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 		$flex-grow: 0;
 		$flex-shrink: 1;
 		$flex-basis: auto;
-	} @else if type-of($col) == string and $col == 'breakpoint' {
-		// deprecated
-		$flex-grow: 0;
-		$flex-shrink: 1;
-		$flex-basis: auto;
-		$width: 100%;
 	} @else if type-of($col) == string and $col == 'positive' {
 		// positive number
 		@if $flex-grow == 0 {
