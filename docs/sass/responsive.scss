@@ -60,11 +60,11 @@ footer {
 
     .HolyGrail-content,
     .HolyGrail-aside {
-      @include grid-col($col: breakpoint);
+      @include grid-col($col: initial);
     }
 
     .HolyGrail-nav {
-      @include grid-col($col: breakpoint, $order: 0);
+      @include grid-col($col: initial, $order: 0);
     }
   }
 }

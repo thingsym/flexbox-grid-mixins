@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Box Sizing - Flexbox Grid Mixins</title>
+<title>Stack - Flexbox Grid Mixins Example</title>
 <link rel="stylesheet" href="../css/default.css">
-<link rel="stylesheet" href="../css/box-sizing.css">
+<link rel="stylesheet" href="../css/stack.css">
 </head>
 <body>
 
@@ -14,17 +14,18 @@
 
 <div class="container">
 
-<h2>Box Sizing using Variable Defaults</h2>
+<h2>Stack</h2>
 
-<h3>Default (Variable Defaults as border-box)</h3>
 
-<div class="grid--default">
+<h3>Default (Variable Defaults as margin-bottom)</h3>
+
+<div class="grid">
 <div class="grid__col-12">
     12
 </div>
 </div>
 
-<div class="grid--default">
+<div class="grid">
 <div class="grid__col-1">
     1
 </div>
@@ -33,7 +34,7 @@
 </div>
 </div>
 
-<div class="grid--default">
+<div class="grid">
 <div class="grid__col-2">
     2
 </div>
@@ -42,7 +43,7 @@
 </div>
 </div>
 
-<div class="grid--default">
+<div class="grid">
 <div class="grid__col-3">
     3
 </div>
@@ -51,7 +52,7 @@
 </div>
 </div>
 
-<div class="grid--default">
+<div class="grid">
 <div class="grid__col-4">
     4
 </div>
@@ -60,7 +61,7 @@
 </div>
 </div>
 
-<div class="grid--default">
+<div class="grid">
 <div class="grid__col-5">
     5
 </div>
@@ -69,7 +70,7 @@
 </div>
 </div>
 
-<div class="grid--default">
+<div class="grid">
 <div class="grid__col-6">
     6
 </div>
@@ -78,15 +79,15 @@
 </div>
 </div>
 
-<h3>$flexbox-grid-mixins-box-sizing: border-box;</h3>
+<h3>$flexbox-grid-mixins-stack: unset</h3>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-12">
     12
 </div>
 </div>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-1">
     1
 </div>
@@ -95,7 +96,7 @@
 </div>
 </div>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-2">
     2
 </div>
@@ -104,7 +105,7 @@
 </div>
 </div>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-3">
     3
 </div>
@@ -113,7 +114,7 @@
 </div>
 </div>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-4">
     4
 </div>
@@ -122,7 +123,7 @@
 </div>
 </div>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-5">
     5
 </div>
@@ -131,7 +132,7 @@
 </div>
 </div>
 
-<div class="grid--border-box">
+<div class="grid--unset">
 <div class="grid__col-6">
     6
 </div>
@@ -140,15 +141,16 @@
 </div>
 </div>
 
-<h3>$flexbox-grid-mixins-box-sizing: content-box;</h3>
 
-<div class="grid--content-box">
+<h3>$flexbox-grid-mixins-stack: margin-top</h3>
+
+<div class="grid--margin-top">
 <div class="grid__col-12">
     12
 </div>
 </div>
 
-<div class="grid--content-box">
+<div class="grid--margin-top">
 <div class="grid__col-1">
     1
 </div>
@@ -157,7 +159,7 @@
 </div>
 </div>
 
-<div class="grid--content-box">
+<div class="grid--margin-top">
 <div class="grid__col-2">
     2
 </div>
@@ -166,7 +168,7 @@
 </div>
 </div>
 
-<div class="grid--content-box">
+<div class="grid--margin-top">
 <div class="grid__col-3">
     3
 </div>
@@ -175,7 +177,7 @@
 </div>
 </div>
 
-<div class="grid--content-box">
+<div class="grid--margin-top">
 <div class="grid__col-4">
     4
 </div>
@@ -184,7 +186,7 @@
 </div>
 </div>
 
-<div class="grid--content-box">
+<div class="grid--margin-top">
 <div class="grid__col-5">
     5
 </div>
@@ -193,7 +195,7 @@
 </div>
 </div>
 
-<div class="grid--content-box">
+<div class="grid--margin-top">
 <div class="grid__col-6">
     6
 </div>
@@ -202,15 +204,17 @@
 </div>
 </div>
 
-<h3>$flexbox-grid-mixins-box-sizing: null; (Not output box-sizing property. Usually the initial box size value as content-box)</h3>
 
-<div class="grid--null">
+
+<h3>$flexbox-grid-mixins-stack: margin-bottom</h3>
+
+<div class="grid--margin-bottom">
 <div class="grid__col-12">
     12
 </div>
 </div>
 
-<div class="grid--null">
+<div class="grid--margin-bottom">
 <div class="grid__col-1">
     1
 </div>
@@ -219,7 +223,7 @@
 </div>
 </div>
 
-<div class="grid--null">
+<div class="grid--margin-bottom">
 <div class="grid__col-2">
     2
 </div>
@@ -228,7 +232,7 @@
 </div>
 </div>
 
-<div class="grid--null">
+<div class="grid--margin-bottom">
 <div class="grid__col-3">
     3
 </div>
@@ -237,7 +241,7 @@
 </div>
 </div>
 
-<div class="grid--null">
+<div class="grid--margin-bottom">
 <div class="grid__col-4">
     4
 </div>
@@ -246,7 +250,7 @@
 </div>
 </div>
 
-<div class="grid--null">
+<div class="grid--margin-bottom">
 <div class="grid__col-5">
     5
 </div>
@@ -255,7 +259,70 @@
 </div>
 </div>
 
-<div class="grid--null">
+<div class="grid--margin-bottom">
+<div class="grid__col-6">
+    6
+</div>
+<div class="grid__col-6">
+    6
+</div>
+</div>
+
+
+<h3>$flexbox-grid-mixins-stack: margin-both</h3>
+
+<div class="grid--margin-both">
+<div class="grid__col-12">
+    12
+</div>
+</div>
+
+<div class="grid--margin-both">
+<div class="grid__col-1">
+    1
+</div>
+<div class="grid__col-11">
+    11
+</div>
+</div>
+
+<div class="grid--margin-both">
+<div class="grid__col-2">
+    2
+</div>
+<div class="grid__col-10">
+    10
+</div>
+</div>
+
+<div class="grid--margin-both">
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-9">
+    9
+</div>
+</div>
+
+<div class="grid--margin-both">
+<div class="grid__col-4">
+    4
+</div>
+<div class="grid__col-8">
+    8
+</div>
+</div>
+
+<div class="grid--margin-both">
+<div class="grid__col-5">
+    5
+</div>
+<div class="grid__col-7">
+    7
+</div>
+</div>
+
+<div class="grid--margin-both">
 <div class="grid__col-6">
     6
 </div>

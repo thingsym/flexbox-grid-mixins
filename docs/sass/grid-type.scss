@@ -4,7 +4,6 @@ $default-base-color: #0466e0;
 
 $default-grid-columns: 12;
 $default-grid-gutter: 2%;
-$default-condensed: false;
 
 $default-breakpoints: (
   lg: 1200px,
@@ -13,24 +12,15 @@ $default-breakpoints: (
   xs: 480px
 );
 
-.grid,
-.grid-margin-offset {
-  background: #a5c3e2;
-}
-[class*="grid__col"] {
-  background: #0e72da;
-  border: 1px solid #130e7d;
-  padding: .4em;
-  color: #fff;
-  text-align: center;
-}
+
+$flexbox-grid-mixins-grid-type: skeleton;
 
 .grid {
   @include grid($gutter: $default-grid-gutter);
 
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: $default-condensed);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -41,35 +31,31 @@ $default-breakpoints: (
       @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
 
       > [class*="grid__col"] {
-        @include grid-col($col: breakpoint, $gutter: $default-grid-gutter, $condensed: $default-condensed);
+        @include grid-col($col: initial, $gutter: $default-grid-gutter);
       }
     }
   }
 }
 
-.grid-margin-offset {
-  @include grid($gutter: $default-grid-gutter, $grid-type: margin-offset);
+$flexbox-grid-mixins-grid-type: margin-offset;
+
+.grid--margin-offset {
+  @include grid($gutter: $default-grid-gutter);
 
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: $default-condensed, $grid-type: margin-offset);
-    }
-  }
-
-  > [class*="grid__col"] {
-    &:last-child {
-      @include grid-col-margin($margin-right: 0);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
 
 @each $key in sm, xs {
   @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
-    .grid-margin-offset--responsive {
-      @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $grid-type: margin-offset);
+    .grid--margin-offset--responsive {
+      @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
 
       > [class*="grid__col"] {
-        @include grid-col($col: breakpoint, $gutter: $default-grid-gutter, $condensed: $default-condensed, $grid-type: margin-offset);
+        @include grid-col($col: initial, $gutter: $default-grid-gutter);
       }
     }
   }

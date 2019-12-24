@@ -1,23 +1,8 @@
 @import '../../sass/flexbox-grid-mixins';
 
 $default-base-color: #0466e0;
-
 $default-grid-columns: 12;
 $default-grid-gutter: 2%;
-
-.grid,
-.grid-3-columns,
-.grid-24-columns,
-[class*="grid--"] {
-  background: #a5c3e2;
-}
-[class*="grid__col"] {
-  background: #0e72da;
-  border: 1px solid #130e7d;
-  padding: .4em;
-  color: #fff;
-  text-align: center;
-}
 
 .grid {
   @include grid($gutter: $default-grid-gutter);
@@ -115,7 +100,7 @@ ul.grid {
   }
 }
 
-.grid--no-margin {
+.grid--no-gutter {
   @include grid();
 
   .grid__col {
@@ -125,20 +110,6 @@ ul.grid {
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
       @include grid-col($col: $i);
-    }
-  }
-}
-
-.grid--condensed {
-  @include grid($gutter: $default-grid-gutter);
-
-  .grid__col {
-    @include grid-col($gutter: $default-grid-gutter, $condensed: true);
-  }
-
-  @for $i from 1 through $default-grid-columns {
-    > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
     }
   }
 }
@@ -345,27 +316,31 @@ ul.grid {
   }
 }
 
+$flexbox-grid-mixins-stack: unset;
+
 .grid--items-row-alignment {
   @include grid($gutter: $default-grid-gutter);
   > .grid__col {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: none);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none);
   }
   > .grid__col-top {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-start);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start);
   }
   > .grid__col-middle {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: center);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: center);
   }
   > .grid__col-bottom {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-end);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-end);
   }
   > .grid__col-stretch {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: stretch);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: stretch);
   }
   > .grid__col-baseline {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: baseline);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: baseline);
   }
 }
+
+$flexbox-grid-mixins-stack: margin-bottom;
 
 .grid--left-column {
   @include grid($flex-direction: column, $gutter: $default-grid-gutter, $align-items: flex-start);
@@ -404,21 +379,25 @@ ul.grid {
   }
 }
 
+$flexbox-grid-mixins-stack: unset;
+
 .grid--items-column-alignment {
   @include grid($flex-direction: column, $gutter: $default-grid-gutter);
   > .grid__col {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: none, $width: true);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none, $width: true);
   }
   > .grid__col-top {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-start, $width: true);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start, $width: true);
   }
   > .grid__col-middle {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: center, $width: true);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: center, $width: true);
   }
   > .grid__col-bottom {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $condensed: true, $align-self: flex-end, $width: true);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-end, $width: true);
   }
 }
+
+$flexbox-grid-mixins-stack: margin-bottom;
 
 .grid--order-row {
   @include grid($gutter: $default-grid-gutter);
@@ -458,6 +437,8 @@ ul.grid {
   }
 }
 
+$flexbox-grid-mixins-stack: unset;
+
 .grid--multi-line-top {
   @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $align-content: flex-start) {
     height: 18em;
@@ -465,7 +446,7 @@ ul.grid {
 
   @for $i from 1 through 6 {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -476,7 +457,7 @@ ul.grid {
 
   @for $i from 1 through 6 {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -487,7 +468,7 @@ ul.grid {
 
   @for $i from 1 through 6 {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -498,7 +479,7 @@ ul.grid {
 
   @for $i from 1 through 6 {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -509,7 +490,7 @@ ul.grid {
 
   @for $i from 1 through 6 {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
@@ -520,10 +501,12 @@ ul.grid {
 
   @for $i from 1 through 6 {
     > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condensed: true);
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
     }
   }
 }
+
+$flexbox-grid-mixins-stack: margin-bottom;
 
 .grid--width {
   @include grid($gutter: $default-grid-gutter);
