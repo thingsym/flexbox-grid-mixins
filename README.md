@@ -79,12 +79,6 @@ $ npm install flexbox-grid-mixins --save-dev
 $ yarn add flexbox-grid-mixins --dev
 ```
 
-### Bower (deprecated)
-
-```
-$ bower install flexbox-grid-mixins --save
-```
-
 ### Manual Install
 
 Include sass/\_flexbox-grid-mixins.scss in the appropriate location in your project.
