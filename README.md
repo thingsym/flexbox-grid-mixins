@@ -166,6 +166,16 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.2.0
+  * update example
+  * update package.json
+  * add Variable Defaults flexbox-grid-mixins-stack
+  * change margin property, remove @mixin, grid-margin and grid-col-margin
+  * remove breakpoint value of col argument
+  * remove condensed argument
+  * change grid-type from argument to Variable Defaults flexbox-grid-mixins-grid-type
+  * remove bower.json
+  * add .travis.yml
 * Version 0.1.6
   * add Variable Defaults $flexbox-grid-mixins-box-sizing
   * update package.json
