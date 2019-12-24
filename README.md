@@ -124,16 +124,22 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 
 [flexbox-grid-mixins - npm](https://www.npmjs.com/package/flexbox-grid-mixins)
 
-### Mixins Reference and Example
+## Mixins Reference
 
 * [Mixins Reference](http://thingsym.github.io/flexbox-grid-mixins/#Mixins-Reference)
+
+## Example
+
 * [Basic Example](http://thingsym.github.io/flexbox-grid-mixins/#Basic-Example)
 * [Grid System Example](http://thingsym.github.io/flexbox-grid-mixins/#Grid-System-Example)
 * [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example/example.html)
 * [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/holy-grail-layout.html)
 * [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/responsive.html)
 * [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example/unit-set.html)
+* [Box Sizing using Variable Defaults](http://thingsym.github.io/flexbox-grid-mixins/example/box-sizing.html)
+* [Stack](http://thingsym.github.io/flexbox-grid-mixins/example/stack.html)
 * [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
+* [Testing Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example/test-stick-out.html)
 
 ### Development
 
@@ -199,4 +205,4 @@ Licensed under the MIT License.
 
 [thingsym](https://github.com/thingsym)
 
-Copyright (c) 2016 thingsym
+Copyright (c) 2016-2020 thingsym
