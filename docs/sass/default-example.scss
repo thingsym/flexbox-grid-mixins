@@ -1,0 +1,28 @@
+@import '../../sass/flexbox-grid-mixins';
+
+$default-base-color: #0466e0;
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid,
+[class*="grid--"] {
+  background: #a5c3e2;
+}
+[class*="grid__col"] {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: .4em;
+  color: #fff;
+  text-align: center;
+}
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}

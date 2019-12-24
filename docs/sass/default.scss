@@ -2,9 +2,6 @@
 
 $default-base-color: #0466e0;
 
-$default-grid-columns: 12;
-$default-grid-gutter: 2%;
-
 body {
   font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
   margin: 0;
@@ -131,6 +128,8 @@ td.example {
 }
 
 .grid,
+.grid-3-columns,
+.grid-24-columns,
 [class*="grid--"] {
   background: #a5c3e2;
 }
@@ -140,14 +139,4 @@ td.example {
   padding: .4em;
   color: #fff;
   text-align: center;
-}
-
-.grid {
-  @include grid($gutter: $default-grid-gutter);
-
-  @for $i from 1 through $default-grid-columns {
-    > .grid__col-#{$i} {
-      @include grid-col($col: $i, $gutter: $default-grid-gutter);
-    }
-  }
 }
