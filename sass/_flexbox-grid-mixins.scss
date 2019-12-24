@@ -9,9 +9,10 @@
 
 @charset 'utf-8';
 
+$flexbox-grid-mixins-grid-type: skeleton !default;
 $flexbox-grid-mixins-box-sizing: border-box !default;
 
-@mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $grid-type: skeleton)
+@mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null)
 {
 	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
 		box-sizing: $flexbox-grid-mixins-box-sizing;
@@ -42,7 +43,7 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 		align-content: $align-content;
 	}
 
-	@if $grid-type == skeleton {
+	@if $flexbox-grid-mixins-grid-type == skeleton {
 		@if $gutter {
 			@include grid-margin($margin: 0 $gutter / 2 * -1);
 		}
@@ -51,7 +52,7 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 	@content;
 }
 
-@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $grid-type: skeleton, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
+@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $condensed: false, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
 	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
 		box-sizing: $flexbox-grid-mixins-box-sizing;
@@ -61,14 +62,14 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 		$flex-shrink: 0;
 		$flex-basis: percentage($col / $grid-columns);
 
-		@if $grid-type == skeleton {
+		@if $flexbox-grid-mixins-grid-type == skeleton {
 			@if $gutter and unit($gutter) == '%' {
 				$flex-basis: $flex-basis - $gutter;
 			} @else if $gutter and unitless($gutter) == false {
 				$flex-basis: calc( #{$flex-basis} - #{$gutter});
 			}
 
-		} @else if $grid-type == margin-offset {
+		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if $gutter and unit($gutter) == '%' {
 				$flex-basis: (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
 			} @else if $gutter and unitless($gutter) == false {
@@ -171,13 +172,13 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 	}
 
 	@if $gutter and unitless($gutter) == false {
-		@if $grid-type == skeleton {
+		@if $flexbox-grid-mixins-grid-type == skeleton {
 			@if type-of($condensed) == bool and $condensed == true {
 				@include grid-col-margin($margin: 0 $gutter / 2);
 			} @else {
 				@include grid-col-margin($margin: 0 $gutter / 2 $gutter);
 			}
-		} @else if $grid-type == margin-offset {
+		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if type-of($col) == string and $col == 'breakpoint' {
 				@include grid-col-margin($margin-right: 0);
 			} @else if type-of($last-child) == bool and $last-child == true {
