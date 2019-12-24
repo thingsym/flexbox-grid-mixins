@@ -11,6 +11,7 @@
 
 $flexbox-grid-mixins-grid-type: skeleton !default;
 $flexbox-grid-mixins-box-sizing: border-box !default;
+$flexbox-grid-mixins-stack: margin-bottom !default;
 
 @mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null)
 {
@@ -176,7 +177,15 @@ $flexbox-grid-mixins-box-sizing: border-box !default;
 			} @else {
 				margin-right: $gutter;
 			}
+		}
 
+		@if $flexbox-grid-mixins-stack == margin-top {
+			margin-top: $gutter;
+		} @else if $flexbox-grid-mixins-stack == margin-bottom {
+			margin-bottom: $gutter;
+		} @else if $flexbox-grid-mixins-stack == margin-both {
+			margin-top: $gutter / 2;
+			margin-bottom: $gutter / 2;
 		}
 	}
 

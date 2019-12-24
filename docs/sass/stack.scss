@@ -1,0 +1,62 @@
+@import '../../sass/flexbox-grid-mixins';
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+$flexbox-grid-mixins-stack: margin-bottom;
+
+.grid--margin-bottom {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+$flexbox-grid-mixins-stack: margin-top;
+
+.grid--margin-top {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+$flexbox-grid-mixins-stack: margin-both;
+
+.grid--margin-both {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+$flexbox-grid-mixins-stack: unset;
+
+.grid--unset {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
