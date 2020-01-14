@@ -23,26 +23,25 @@
   ],
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "core-js": "^3.6.2",
     "es6-promise": "^4.2.8",
-    "gulp": "~3.9.1",
-    "gulp-autoprefixer": "^6.1.0",
+    "gulp": "~4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-load-plugins": "~2.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
-    "gulp-stylelint": "^9.0.0",
-    "gulp-watch": "~5.0.1",
-    "run-sequence": "~2.2.1",
-    "stylelint": "^10.1.0",
+    "gulp-stylelint": "^11.0.0",
+    "stylelint": "^12.0.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-recommended-scss": "^4.1.0",
     "stylelint-scss": "^3.13.0"
   },
   "scripts": {
-    "default": "gulp",
+    "default": "gulp --tasks",
+    "gulp": "gulp",
     "test": "npm run lint",
     "lint": "gulp lint",
-    "serve": "gulp serve",
-    "watch": "gulp watch"
+    "serve": "gulp serve"
   },
   "browserslist": [
     "last 2 versions"
