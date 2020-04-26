@@ -44,24 +44,35 @@ $default-grid-gutter: 2%;
 
 ```
 .grid {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -1%;
+  margin-left: -1%;
+  margin-right: -1%;
 }
 
 .grid > .grid__col-3 {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-flex: 0;
   -ms-flex: 0 0 23%;
   flex: 0 0 23%;
-  margin: 0 1% 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 2%;
 }
 
 .grid > .grid__col-9 {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-flex: 0;
   -ms-flex: 0 0 73%;
   flex: 0 0 73%;
-  margin: 0 1% 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 2%;
 }
 ```
 
@@ -120,13 +131,9 @@ Example : import form node_modules
 
 See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-mixins/](http://thingsym.github.io/flexbox-grid-mixins/)
 
-## Package manager
-
-[flexbox-grid-mixins - npm](https://www.npmjs.com/package/flexbox-grid-mixins)
-
 ## Mixins Reference
 
-* [Mixins Reference](http://thingsym.github.io/flexbox-grid-mixins/#Mixins-Reference)
+[Mixins Reference](http://thingsym.github.io/flexbox-grid-mixins/#Mixins-Reference)
 
 ## Example
 
@@ -141,7 +148,11 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 * [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
 * [Testing Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example/test-stick-out.html)
 
-### Development
+## Package manager
+
+[flexbox-grid-mixins - npm](https://www.npmjs.com/package/flexbox-grid-mixins)
+
+## Development
 
 1. run ```$ sudo yum install nodejs npm```
 2. run ```$ sudo npm install --global gulp-cli```
