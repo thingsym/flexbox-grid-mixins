@@ -1,5 +1,5 @@
-sudo: false
-dist: trusty
+os: linux
+dist: xenial
 
 language: node_js
 
@@ -19,3 +19,12 @@ install:
 
 script:
   - npm test
+
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    branch: master
+    tags: true
+    condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
