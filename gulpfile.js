@@ -1,27 +1,24 @@
 'use strict';
 
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 
 require('es6-promise').polyfill();
 
-var runSequence = require('run-sequence');
+const browserSync = require('browser-sync').create();
 
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-
-var src_paths = {
+const src_paths = {
   sass: ['sass/_flexbox-grid-mixins.scss'],
   docs_sass: ['docs/sass/*.scss'],
   docs_static: ['docs/*.html', 'docs/**/*.html']
 };
 
-var dest_paths = {
+const dest_paths = {
   browserSync: 'docs',
   docs_css: 'docs/css/'
 };
 
-gulp.task('lint:sass', function() {
+function lint_sass() {
   return gulp.src(src_paths.sass)
     .pipe($.plumber({
       errorHandler: function(err) {
@@ -46,9 +43,9 @@ gulp.task('lint:sass', function() {
         console: true
       }]
     }));
-});
+};
 
-gulp.task('docs_sass', function() {
+function docs_sass() {
   return gulp.src(src_paths.docs_sass)
     .pipe($.plumber({
       errorHandler: function(err) {
@@ -64,32 +61,30 @@ gulp.task('docs_sass', function() {
     }))
     .pipe(gulp.dest(dest_paths.docs_css))
     .pipe(browserSync.stream());
-});
+}
 
-gulp.task('browser-sync', function() {
+function browser_sync(done) {
   browserSync.init({
     server: {
       baseDir: dest_paths.browserSync
-    }
+    },
+    reloadOnRestart: true
   });
+  done();
+}
 
-  gulp.watch(src_paths.sass, ['default']).on('change', reload);
-  gulp.watch(src_paths.docs_sass, ['docs_sass']);
-  gulp.watch(src_paths.docs_static).on('change', reload);
-});
+function watch_files(done) {
+  const browserReload = () => {
+    browserSync.reload();
+    done();
+  };
 
-gulp.task('lint', ['lint:sass']);
-gulp.task('serve', ['browser-sync']);
+  gulp.watch(src_paths.sass).on('change', gulp.series(lint_sass, docs_sass, browserReload));
+  gulp.watch(src_paths.docs_sass).on('change', gulp.series(lint_sass, docs_sass, browserReload));
+  gulp.watch(src_paths.docs_static).on('change', browserReload);
+}
 
-gulp.task('default', function(callback) {
-  runSequence(
-    'lint',
-    'docs_sass',
-    callback
-  );
-});
-
-gulp.task('watch', function() {
-  gulp.watch(src_paths.sass, ['default']);
-  gulp.watch(src_paths.docs_sass, ['docs_sass']);
-});
+exports.docs_sass = docs_sass;
+exports.lint = lint_sass;
+exports.serve = gulp.series(browser_sync, watch_files);
+exports.default = gulp.series(lint_sass, docs_sass);
