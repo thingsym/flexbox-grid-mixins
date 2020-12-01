@@ -1,0 +1,26 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Install Node.js package dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm test
