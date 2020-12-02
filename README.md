@@ -177,6 +177,9 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.2.1
+  * auto release to npm only version tags
+  * gulp bump up version to 4.0
 * Version 0.2.0
   * update example
   * update package.json
