@@ -1,6 +1,7 @@
 @import '../../sass/flexbox-grid-mixins';
 
 $default-base-color: #0466e0;
+$default-grid-gutter: 2%;
 
 body {
   font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
@@ -74,7 +75,7 @@ pre {
 
   &.scrollable {
     max-height: 240px;
-    overflow-y: scroll;
+    overflow: scroll;
   }
 
   > code {
@@ -125,6 +126,18 @@ td {
 
 td.example {
   text-align: center;
+}
+
+.column {
+  @include grid($gutter: $default-grid-gutter);
+
+    > .columns {
+        @include grid-col($col: 6, $gutter: $default-grid-gutter, $width: 48%, $max-width: 48%);
+    }
+
+    h3, h4 {
+      margin: 0;
+    }
 }
 
 .grid,

@@ -28,7 +28,7 @@ $flexbox-grid-mixins-grid-type: skeleton;
 @each $key in sm, xs {
   @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
     .grid--responsive {
-      @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
+      @include grid($flex-flow: column nowrap, $gutter: $default-grid-gutter);
 
       > [class*="grid__col"] {
         @include grid-col($col: initial, $gutter: $default-grid-gutter);
@@ -52,10 +52,11 @@ $flexbox-grid-mixins-grid-type: margin-offset;
 @each $key in sm, xs {
   @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
     .grid--margin-offset--responsive {
-      @include grid($flex-flow: row wrap, $gutter: $default-grid-gutter);
+      @include grid($flex-flow: column nowrap, $gutter: $default-grid-gutter);
 
       > [class*="grid__col"] {
         @include grid-col($col: initial, $gutter: $default-grid-gutter);
+        margin-right: 0;
       }
     }
   }

@@ -23,8 +23,8 @@ $default-grid-columns: 12;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 4, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 4, $gutter: $default-grid-gutter);
+  }
 }
 
 .grid-unit-set-px {
@@ -32,8 +32,8 @@ $default-grid-columns: 12;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 200px, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 200px, $gutter: $default-grid-gutter);
+  }
 }
 
 .grid-unit-set-em {
@@ -41,16 +41,16 @@ $default-grid-columns: 12;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 30em, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 30em, $gutter: $default-grid-gutter);
+  }
 }
 .grid-unit-set-per {
   $default-grid-gutter: 5%;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 25%, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 25%, $gutter: $default-grid-gutter);
+  }
 }
 
 
@@ -60,48 +60,48 @@ $default-grid-columns: 12;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 200px, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 200px, $gutter: $default-grid-gutter);
+  }
 }
 .grid-unit-set-px-em {
   $default-grid-gutter: 2em;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 25%, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 25%, $gutter: $default-grid-gutter);
+  }
 }
 .grid-unit-set-em-per {
   $default-grid-gutter: 5%;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 30em, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 30em, $gutter: $default-grid-gutter);
+  }
 }
 .grid-unit-set-em-px {
   $default-grid-gutter: 15px;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 30em, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 30em, $gutter: $default-grid-gutter);
+  }
 }
 .grid-unit-set-per-px {
   $default-grid-gutter: 15px;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 25%, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 25%, $gutter: $default-grid-gutter);
+  }
 }
 .grid-unit-set-per-em {
   $default-grid-gutter: 2em;
   @include grid($gutter: $default-grid-gutter);
 
   .grid__col {
-      @include grid-col($col: 200px, $gutter: $default-grid-gutter);
-    }
+    @include grid-col($col: 200px, $gutter: $default-grid-gutter);
+  }
 }
 
 $default-grid-gutter: 12px;

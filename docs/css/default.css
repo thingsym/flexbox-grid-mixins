@@ -22,46 +22,38 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-
 .header--hero {
   height: 100vh;
 }
-
 .header .header-title {
   font-size: 320%;
   margin-bottom: 0;
 }
-
 .header .version {
   font-size: 25%;
   font-weight: normal;
 }
-
 .header .header-description {
   margin-top: 0;
 }
-
 .header .header-nav {
   margin: 0;
   padding: 0;
   margin-top: 3em;
 }
-
 .header .header-nav li {
   font-size: 90%;
   display: inline;
   list-style: none;
   margin-right: 1.2rem;
 }
-
 .header a {
   color: #fff;
 }
-
 .header .btn {
-  padding: .8em;
+  padding: 0.8em;
   border: solid rgba(255, 255, 255, 0.4) 1px;
-  border-radius: .4em;
+  border-radius: 0.4em;
 }
 
 .container {
@@ -79,36 +71,32 @@ pre {
   line-height: 1.45;
   background-color: #f7f7f7;
   padding: 1em;
-  border-radius: .4em;
+  border-radius: 0.4em;
 }
-
 pre.scrollable {
   max-height: 240px;
-  overflow-y: scroll;
+  overflow: scroll;
 }
-
 pre > code {
   background: transparent;
 }
 
 code {
-  padding: .2em;
+  padding: 0.2em;
   background-color: rgba(0, 0, 0, 0.04);
-  border-radius: .2em;
+  border-radius: 0.2em;
 }
 
 .reference {
   background-color: #0466e0;
   color: #fff;
   padding: 1em;
-  border-radius: .4em;
+  border-radius: 0.4em;
 }
-
 .reference .small {
   font-size: 80%;
   font-weight: normal;
 }
-
 .reference .big {
   font-size: 160%;
 }
@@ -124,7 +112,7 @@ table {
 th {
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  padding: .2em;
+  padding: 0.2em;
   font-weight: bold;
   background-color: #eee;
 }
@@ -132,24 +120,49 @@ th {
 td {
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  padding: .2em;
+  padding: 0.2em;
 }
 
 td.example {
   text-align: center;
 }
 
+.column {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -1%;
+  margin-right: -1%;
+}
+.column > .columns {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 48%;
+  flex: 0 0 48%;
+  width: 48%;
+  max-width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 2%;
+}
+.column h3, .column h4 {
+  margin: 0;
+}
+
 .grid,
 .grid-3-columns,
 .grid-24-columns,
-[class*="grid--"] {
+[class*=grid--] {
   background: #a5c3e2;
 }
 
-[class*="grid__col"] {
+[class*=grid__col] {
   background: #0e72da;
   border: 1px solid #130e7d;
-  padding: .4em;
+  padding: 0.4em;
   color: #fff;
   text-align: center;
 }

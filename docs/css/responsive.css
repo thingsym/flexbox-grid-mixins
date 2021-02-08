@@ -43,16 +43,16 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 48.66667%;
-  flex: 0 0 48.66667%;
+  -ms-flex: 0 0 48.6666666667%;
+  flex: 0 0 48.6666666667%;
 }
 
 .HolyGrail-nav {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 23.66667%;
-  flex: 0 0 23.66667%;
+  -ms-flex: 0 0 23.6666666667%;
+  flex: 0 0 23.6666666667%;
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
@@ -62,8 +62,8 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 23.66667%;
-  flex: 0 0 23.66667%;
+  -ms-flex: 0 0 23.6666666667%;
+  flex: 0 0 23.6666666667%;
 }
 
 header,
@@ -79,6 +79,7 @@ footer {
   .HolyGrail-container {
     width: 100%;
   }
+
   .HolyGrail-body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -93,14 +94,16 @@ footer {
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
+
   .HolyGrail-content,
-  .HolyGrail-aside {
+.HolyGrail-aside {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
+
   .HolyGrail-nav {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -112,11 +115,11 @@ footer {
     order: 0;
   }
 }
-
 @media screen and (max-width: 480px) {
   .HolyGrail-container {
     width: 100%;
   }
+
   .HolyGrail-body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -131,14 +134,16 @@ footer {
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
+
   .HolyGrail-content,
-  .HolyGrail-aside {
+.HolyGrail-aside {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
+
   .HolyGrail-nav {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -150,7 +155,6 @@ footer {
     order: 0;
   }
 }
-
 .HolyGrail-body {
   background: #a5c3e2;
 }
