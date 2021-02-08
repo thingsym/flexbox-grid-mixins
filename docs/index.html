@@ -62,13 +62,17 @@
 </code></pre>
 
 <h3>Sass</h3>
+
+<div class="column">
+<div class="columns">
+<h4 id="Examples">LibSass</h4>
 <pre>
 <code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 
 $default-grid-gutter: 2%;
 
 .grid {
-	@include grid($gutter: $default-grid-gutter);
+    @include grid($gutter: $default-grid-gutter);
 
     &gt; .grid__col-3 {
         @include grid-col($col: 3, $gutter: $default-grid-gutter);
@@ -78,6 +82,28 @@ $default-grid-gutter: 2%;
     }
 }
 </code></pre>
+</div>
+<div class="columns">
+<h4 id="Examples">Dart Sass</h4>
+<pre>
+<code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2%;
+
+.grid {
+    @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+    &gt; .grid__col-3 {
+        @include flexbox-grid-mixins.grid-col($col: 3, $gutter: $default-grid-gutter);
+    }
+    &gt; .grid__col-9 {
+        @include flexbox-grid-mixins.grid-col($col: 9, $gutter: $default-grid-gutter);
+    }
+}
+</code></pre>
+
+</div>
+</div>
 
 <h3>CSS</h3>
 
@@ -244,6 +270,9 @@ $default-grid-gutter: 2%;
 
 <h3>Sass</h3>
 
+<div class="column">
+<div class="columns">
+<h4 id="Examples">LibSass</h4>
 <pre>
 <code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 
@@ -251,21 +280,42 @@ $default-grid-columns: 12;
 $default-grid-gutter: 2%;
 
 .grid {
-	@include grid($gutter: $default-grid-gutter);
+    @include grid($gutter: $default-grid-gutter);
 
-	@for $i from 1 through $default-grid-columns {
-		&gt; .grid__col-#{$i} {
-			@include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
-		}
-	}
+    @for $i from 1 through $default-grid-columns {
+        &gt; .grid__col-#{$i} {
+            @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+        }
+    }
 }
 </code></pre>
+</div>
+<div class="columns">
+<h4 id="Examples">Dart Sass</h4>
+<pre>
+<code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid {
+    @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+    @for $i from 1 through $default-grid-columns {
+        &gt; .grid__col-#{$i} {
+            @include flexbox-grid-mixins.grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+        }
+    }
+}
+</code></pre>
+
+</div>
+</div>
 
 <h3>CSS</h3>
 
 <pre class="scrollable">
-<code>
-.grid {
+<code>.grid {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
@@ -410,16 +460,36 @@ $default-grid-gutter: 2%;
 
 <h2 id="Examples">Examples</h2>
 
+<div class="column">
+<div class="columns">
+    <h3 id="Examples">LibSass</h3>
+    <ul>
+    <li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
+    <li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
+    <li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
+    <li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+    <li><a href="example/box-sizing.html">Box Sizing using Default Values</a></li>
+    <li><a href="example/stack.html">Stack</a></li>
+    <li><a href="example/grid-type.html">Grid Type</a></li>
+    <li><a href="example/test-stick-out.html">Testing Stick Out Grid</a></li>
+    </ul>
+</div>
+<div class="columns">
+
+<h3 id="Examples">Dart Sass</h3>
 <ul>
-<li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
-<li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
-<li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
-<li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
-<li><a href="example/box-sizing.html">Box Sizing using Variable Defaults</a></li>
-<li><a href="example/stack.html">Stack</a></li>
-<li><a href="example/grid-type.html">Grid Type</a></li>
-<li><a href="example/test-stick-out.html">Testing Stick Out Grid</a></li>
+<li><a href="example-dart-sass/example.html">Flexbox Grid Mixins Example</a></li>
+<li><a href="example-dart-sass/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
+<li><a href="example-dart-sass/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
+<li><a href="example-dart-sass/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+<li><a href="example-dart-sass/box-sizing.html">Box Sizing using Default Values</a></li>
+<li><a href="example-dart-sass/stack.html">Stack</a></li>
+<li><a href="example-dart-sass/grid-type.html">Grid Type</a></li>
+<li><a href="example-dart-sass/test-stick-out.html">Testing Stick Out Grid</a></li>
 </ul>
+
+</div>
+</div>
 
 <h2 id="Installation">Installation</h2>
 
@@ -437,29 +507,62 @@ $default-grid-gutter: 2%;
 
 <h3>Manual Install</h3>
 
-Include sass/_flexbox-grid-mixins.scss in the appropriate location in your project.
+Include <code>sass/_flexbox-grid-mixins.scss</code> or <code>dart-sass/_flexbox-grid-mixins.scss</code> in the appropriate location in your project.
 
 <h2 id="Getting-Started">Getting Started</h2>
 
+
+<p>Note: <a href="https://sass-lang.com/blog/libsass-is-deprecated" target="_blank">LibSass is Deprecated</a>. See <a href="https://sass-lang.com/blog/the-module-system-is-launched#future-plans" target="_blank">Future Plans</a>.</p>
+
 <h3>1. Import Flexbox Grid Mixins in Sass/SCSS file</h3>
 
+<div class="column">
+<div class="columns">
+<h4 id="Examples">LibSass</h4>
 <pre><code>@import 'flexbox-grid-mixins';</code></pre>
 
-Example : import form node_modules
+Example: import form node_modules
 
 <pre><code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';</code></pre>
+</div>
+<div class="columns">
+<h4 id="Examples">Dart Sass</h4>
+<pre><code>@use 'flexbox-grid-mixins';</code></pre>
 
+Example: import form node_modules
+
+<pre><code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';</code></pre>
+
+</div>
+</div>
 
 <h3>2. Define the grid container</h3>
 
+<div class="column">
+<div class="columns">
+<h4 id="Examples">LibSass</h4>
 <pre>
 <code>.grid {
     @include grid();
 }
 </code></pre>
+</div>
+<div class="columns">
+<h4 id="Examples">Dart Sass</h4>
+<pre>
+<code>.grid {
+    @include flexbox-grid-mixins.grid();
+}
+</code></pre>
+
+</div>
+</div>
 
 <h3>3. Generate the grid columns</h3>
 
+<div class="column">
+<div class="columns">
+<h4 id="Examples">LibSass</h4>
 <pre>
 <code>.grid__col-3 {
     @include grid-col(3);
@@ -468,15 +571,29 @@ Example : import form node_modules
     @include grid-col(9);
 }
 </code></pre>
+</div>
+<div class="columns">
+<h4 id="Examples">Dart Sass</h4>
+<pre>
+<code>.grid__col-3 {
+    @include flexbox-grid-mixins.grid-col(3);
+}
+.grid__col-9 {
+    @include flexbox-grid-mixins.grid-col(9);
+}
+</code></pre>
+
+</div>
+</div>
 
 <h2 id="Mixins-Reference">Mixins Reference</h2>
 
-<h3 class="reference">Variable Defaults (global settings)</h3>
+<h3 class="reference">Default Values (global settings)</h3>
 
 
 <table>
     <tr>
-    <th>Variable Defaults</th>
+    <th>Default Values</th>
     <th>Default value</th>
     <th>Values</th>
     <th>Description</th>
@@ -730,7 +847,7 @@ See <a href="https://github.com/thingsym/flexbox-grid-mixins">GitHub - Flexbox G
 
 <p>The MIT License (MIT)</p>
 
-<p>Copyright (c) 2016 - 2020 Thingsym</p>
+<p>Copyright (c) 2016 - 2021 Thingsym</p>
 
 </div>
 </body>
