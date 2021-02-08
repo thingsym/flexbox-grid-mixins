@@ -16,6 +16,8 @@
   "keywords": [
     "sass",
     "scss",
+    "node-sass",
+    "dart-sass",
     "css",
     "flexbox",
     "mixin",
