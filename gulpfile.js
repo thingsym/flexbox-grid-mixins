@@ -124,8 +124,8 @@ function watch_files(done) {
   gulp.watch(watch_paths.docs_static, { usePolling: true }).on('change', browserReload);
 }
 
-exports.docs_sass = docs_sass();
-exports.docs_dart_sass = docs_dart_sass();
-exports.lint = lint_sass();
+exports.docs_sass = docs_sass;
+exports.docs_dart_sass = docs_dart_sass;
+exports.lint = lint_sass;
 exports.serve = gulp.series(browser_sync, watch_files);
 exports.default = gulp.series(lint_sass, docs_sass, docs_dart_sass);
