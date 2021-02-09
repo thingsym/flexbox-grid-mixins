@@ -125,7 +125,7 @@ Note: [LibSass is Deprecated](https://sass-lang.com/blog/libsass-is-deprecated).
 @import 'flexbox-grid-mixins';
 ```
 
-Example : import form node_modules
+Example : import from node_modules
 
 ```
 @import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
@@ -158,7 +158,7 @@ Example : import form node_modules
 @use 'flexbox-grid-mixins';
 ```
 
-Example : import form node_modules
+Example : import from node_modules
 
 ```
 @use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
