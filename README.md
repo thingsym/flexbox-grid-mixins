@@ -248,6 +248,10 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.0
+  * add example for dart sass
+  * add Flexbox Grid Mixins for Dart Sass
+  * add dart sass workfows with gulpfile.js
 * Version 0.2.2
   * remove .travis.yml, change CI/CD to GitHub Actions
 * Version 0.2.1
