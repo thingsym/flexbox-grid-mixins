@@ -1,0 +1,86 @@
+@use '../../dart-sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 4%;
+$default-col-offset: -($default-grid-gutter / 3);
+
+$default-breakpoints: (
+  lg: 1200px,
+  md: 980px,
+  sm: 768px,
+  xs: 480px
+);
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.HolyGrail-container {
+  width: 980px;
+  height: 100%;
+  @include flexbox-grid-mixins.grid($flex-flow: column nowrap);
+  margin: auto;
+}
+
+.HolyGrail-body {
+  @include flexbox-grid-mixins.grid-col($flex-grow: 1, $flex-shrink: 0, $flex-basis: auto);
+  @include flexbox-grid-mixins.grid($justify-content: space-between);
+}
+
+.HolyGrail-content {
+  @include flexbox-grid-mixins.grid-col($col: 6, $col-offset: $default-col-offset);
+}
+.HolyGrail-nav {
+  @include flexbox-grid-mixins.grid-col($col: 3, $col-offset: $default-col-offset, $order: -1);
+}
+.HolyGrail-aside {
+  @include flexbox-grid-mixins.grid-col($col: 3, $col-offset: $default-col-offset);
+}
+
+header,
+footer {
+  @include flexbox-grid-mixins.grid-col($col: none);
+}
+
+@each $key in sm, xs {
+  @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
+    .HolyGrail-container {
+      width: 100%;
+    }
+
+    .HolyGrail-body {
+      @include flexbox-grid-mixins.grid($flex-flow: column nowrap, $justify-content: flex-start);
+    }
+
+    .HolyGrail-content,
+    .HolyGrail-aside {
+      @include flexbox-grid-mixins.grid-col($col: initial);
+    }
+
+    .HolyGrail-nav {
+      @include flexbox-grid-mixins.grid-col($col: initial, $order: 0);
+    }
+  }
+}
+
+.HolyGrail-body {
+  background: #a5c3e2;
+}
+
+header,
+footer,
+.HolyGrail-content,
+.HolyGrail-nav,
+.HolyGrail-aside {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: 1em;
+  color: #fff;
+  text-align: center;;
+}

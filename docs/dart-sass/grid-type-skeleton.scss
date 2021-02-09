@@ -1,0 +1,37 @@
+@use '../../dart-sass/flexbox-grid-mixins' with (
+  $flexbox-grid-mixins-grid-type: skeleton
+);
+
+$default-base-color: #0466e0;
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+$default-breakpoints: (
+  lg: 1200px,
+  md: 980px,
+  sm: 768px,
+  xs: 480px
+);
+
+.grid {
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include flexbox-grid-mixins.grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+@each $key in sm, xs {
+  @media screen and (max-width: #{map-get($default-breakpoints, $key)}) {
+    .grid--responsive {
+      @include flexbox-grid-mixins.grid($flex-flow: column nowrap, $gutter: $default-grid-gutter);
+
+      > [class*="grid__col"] {
+        @include flexbox-grid-mixins.grid-col($col: initial, $gutter: $default-grid-gutter);
+      }
+    }
+  }
+}

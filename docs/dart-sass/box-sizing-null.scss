@@ -1,0 +1,16 @@
+@use '../../dart-sass/flexbox-grid-mixins' with (
+  $flexbox-grid-mixins-box-sizing: null
+);
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid--null {
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include flexbox-grid-mixins.grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}

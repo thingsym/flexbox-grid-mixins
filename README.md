@@ -23,6 +23,8 @@ Flexbox Grid Mixins documentation: [https://thingsym.github.io/flexbox-grid-mixi
 
 ### Sass
 
+#### LibSass
+
 ```
 @import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 
@@ -36,6 +38,25 @@ $default-grid-gutter: 2%;
   }
   > .grid__col-9 {
     @include grid-col($col: 9, $gutter: $default-grid-gutter);
+  }
+}
+```
+
+#### Dart Sass
+
+```
+@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2%;
+
+.grid {
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  > .grid__col-3 {
+    @include flexbox-grid-mixins.grid-col($col: 3, $gutter: $default-grid-gutter);
+  }
+  > .grid__col-9 {
+    @include flexbox-grid-mixins.grid-col($col: 9, $gutter: $default-grid-gutter);
   }
 }
 ```
@@ -92,9 +113,11 @@ $ yarn add flexbox-grid-mixins --dev
 
 ### Manual Install
 
-Include sass/\_flexbox-grid-mixins.scss in the appropriate location in your project.
+Include `sass/\_flexbox-grid-mixins.scss` or `dart-sass/\_flexbox-grid-mixins.scss` in the appropriate location in your project.
 
-## Getting Started
+## Getting Started using LibSass
+
+Note: [LibSass is Deprecated](https://sass-lang.com/blog/libsass-is-deprecated). See [Future Plans](https://sass-lang.com/blog/the-module-system-is-launched#future-plans).
 
 ### 1. Import Flexbox Grid Mixins in Sass/SCSS file
 
@@ -102,7 +125,7 @@ Include sass/\_flexbox-grid-mixins.scss in the appropriate location in your proj
 @import 'flexbox-grid-mixins';
 ```
 
-Example : import form node_modules
+Example : import from node_modules
 
 ```
 @import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
@@ -127,6 +150,39 @@ Example : import form node_modules
 }
 ```
 
+## Getting Started using Dart Sass
+
+### 1. Import Flexbox Grid Mixins in Sass/SCSS file
+
+```
+@use 'flexbox-grid-mixins';
+```
+
+Example : import from node_modules
+
+```
+@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+```
+
+### 2. Define the grid container
+
+```
+.grid {
+  @include flexbox-grid-mixins.grid();
+}
+```
+
+### 3. Generate the grid columns
+
+```
+.grid__col-3 {
+  @include flexbox-grid-mixins.grid-col(3);
+}
+.grid__col-9 {
+  @include flexbox-grid-mixins.grid-col(9);
+}
+```
+
 ## Documentation
 
 See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-mixins/](http://thingsym.github.io/flexbox-grid-mixins/)
@@ -139,14 +195,29 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 
 * [Basic Example](http://thingsym.github.io/flexbox-grid-mixins/#Basic-Example)
 * [Grid System Example](http://thingsym.github.io/flexbox-grid-mixins/#Grid-System-Example)
+
+### LibSass
+
 * [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example/example.html)
 * [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/holy-grail-layout.html)
 * [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/responsive.html)
 * [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example/unit-set.html)
-* [Box Sizing using Variable Defaults](http://thingsym.github.io/flexbox-grid-mixins/example/box-sizing.html)
+* [Box Sizing using Default Values](http://thingsym.github.io/flexbox-grid-mixins/example/box-sizing.html)
 * [Stack](http://thingsym.github.io/flexbox-grid-mixins/example/stack.html)
 * [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
 * [Testing Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example/test-stick-out.html)
+
+
+### Dart Sass
+
+* [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/example.html)
+* [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/holy-grail-layout.html)
+* [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/responsive.html)
+* [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/unit-set.html)
+* [Box Sizing using Default Values](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/box-sizing.html)
+* [Stack](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/stack.html)
+* [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/grid-type.html)
+* [Testing Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/test-stick-out.html)
 
 ## Package manager
 
@@ -177,6 +248,10 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.0
+  * add example for dart sass
+  * add Flexbox Grid Mixins for Dart Sass
+  * add dart sass workfows with gulpfile.js
 * Version 0.2.2
   * remove .travis.yml, change CI/CD to GitHub Actions
 * Version 0.2.1
@@ -185,15 +260,15 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 * Version 0.2.0
   * update example
   * update package.json
-  * add Variable Defaults flexbox-grid-mixins-stack
+  * add Default Values flexbox-grid-mixins-stack
   * change margin property, remove @mixin, grid-margin and grid-col-margin
   * remove breakpoint value of col argument
   * remove condensed argument
-  * change grid-type from argument to Variable Defaults flexbox-grid-mixins-grid-type
+  * change grid-type from argument to Default Values flexbox-grid-mixins-grid-type
   * remove bower.json
   * add .travis.yml
 * Version 0.1.6
-  * add Variable Defaults $flexbox-grid-mixins-box-sizing
+  * add Default Values $flexbox-grid-mixins-box-sizing
   * update package.json
   * change lint from scss-lint to stylelint
 * Version 0.1.5

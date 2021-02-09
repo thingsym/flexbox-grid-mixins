@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Unit-Set Grid - Flexbox Grid Mixins</title>
+<link rel="stylesheet" href="../css-dart-sass/default.css">
+<link rel="stylesheet" href="../css-dart-sass/unit-set.css">
+</head>
+<body>
+
+<div class="header">
+<h1 class="header-title">Flexbox Grid Mixins</h1>
+<p class="header-description">Sass Mixins to generate Flexbox grid</p>
+</div>
+
+<div class="container">
+
+<h2>Unit-Set Grid (Experimental stage)</h2>
+
+<p>The use of CSS calc() is experimental stage. If $col sets <code>&lt;number&gt;</code> or <code>&lt;width&gt;</code> and $gutter sets <code>&lt;length&gt;</code>, use CSS calc().</p>
+
+<h3>$gutter: 12px;</h3>
+
+<div class="grid-gutter-px">
+<div class="grid__col-12">
+    12
+</div>
+</div>
+
+<div class="grid-gutter-px">
+<div class="grid__col-1">
+    1
+</div>
+<div class="grid__col-11">
+    11
+</div>
+</div>
+
+<div class="grid-gutter-px">
+<div class="grid__col-2">
+    2
+</div>
+<div class="grid__col-10">
+    10
+</div>
+</div>
+
+<div class="grid-gutter-px">
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-9">
+    9
+</div>
+</div>
+
+<div class="grid-gutter-px">
+<div class="grid__col-4">
+    4
+</div>
+<div class="grid__col-8">
+    8
+</div>
+</div>
+
+<div class="grid-gutter-px">
+<div class="grid__col-5">
+    5
+</div>
+<div class="grid__col-7">
+    7
+</div>
+</div>
+
+<div class="grid-gutter-px">
+<div class="grid__col-6">
+    6
+</div>
+<div class="grid__col-6">
+    6
+</div>
+</div>
+
+
+<h3>$gutter: 2em;</h3>
+
+<div class="grid-gutter-em">
+<div class="grid__col-12">
+    12
+</div>
+</div>
+
+<div class="grid-gutter-em">
+<div class="grid__col-1">
+    1
+</div>
+<div class="grid__col-11">
+    11
+</div>
+</div>
+
+<div class="grid-gutter-em">
+<div class="grid__col-2">
+    2
+</div>
+<div class="grid__col-10">
+    10
+</div>
+</div>
+
+<div class="grid-gutter-em">
+<div class="grid__col-3">
+    3
+</div>
+<div class="grid__col-9">
+    9
+</div>
+</div>
+
+<div class="grid-gutter-em">
+<div class="grid__col-4">
+    4
+</div>
+<div class="grid__col-8">
+    8
+</div>
+</div>
+
+<div class="grid-gutter-em">
+<div class="grid__col-5">
+    5
+</div>
+<div class="grid__col-7">
+    7
+</div>
+</div>
+
+<div class="grid-gutter-em">
+<div class="grid__col-6">
+    6
+</div>
+<div class="grid__col-6">
+    6
+</div>
+</div>
+
+
+<h2>$col and $gutter are same Unit-Set</h2>
+
+<h3>$col: 200px, $gutter: 15px</h3>
+<div class="grid-unit-set-px">
+<div class="grid__col">
+    200px
+</div>
+<div class="grid__col">
+    200px
+</div>
+</div>
+
+<h3>$col: 30em, $gutter: 2em</h3>
+<div class="grid-unit-set-em">
+<div class="grid__col">
+    30em
+</div>
+<div class="grid__col">
+    30em
+</div>
+</div>
+
+<h3>$col: 25%, $gutter: 5%</h3>
+<div class="grid-unit-set-per">
+<div class="grid__col">
+    25%
+</div>
+<div class="grid__col">
+    25%
+</div>
+</div>
+
+<h2>$col and $gutter are different Unit-Set</h2>
+
+<h3>$col: 4, $gutter: 40px, using CSS calc()</h3>
+<div class="grid-unit-set-num">
+<div class="grid__col">
+    4
+</div>
+<div class="grid__col">
+    4
+</div>
+</div>
+
+<h3>$col: 200px, $gutter: 5%</h3>
+<div class="grid-unit-set-px-per">
+<div class="grid__col">
+    200px
+</div>
+<div class="grid__col">
+    200px
+</div>
+</div>
+
+<h3>$col: 200px, $gutter: 2em</h3>
+<div class="grid-unit-set-px-em">
+<div class="grid__col">
+    200px
+</div>
+<div class="grid__col">
+    200px
+</div>
+</div>
+
+<h3>$col: 30em, $gutter: 5%</h3>
+<div class="grid-unit-set-em-per">
+<div class="grid__col">
+    30em
+</div>
+<div class="grid__col">
+    30em
+</div>
+</div>
+
+<h3>$col: 30em, $gutter: 15px</h3>
+<div class="grid-unit-set-em-px">
+<div class="grid__col">
+    30em
+</div>
+<div class="grid__col">
+    30em
+</div>
+</div>
+
+<h3>$col: 25%, $gutter: 15px</h3>
+<div class="grid-unit-set-per-px">
+<div class="grid__col">
+    25%
+</div>
+<div class="grid__col">
+    25%
+</div>
+</div>
+
+<h3>$col: 25%, $gutter: 2em</h3>
+<div class="grid-unit-set-per-em">
+<div class="grid__col">
+    25%
+</div>
+<div class="grid__col">
+    25%
+</div>
+</div>
+
+</div>
+</body>
+</html>

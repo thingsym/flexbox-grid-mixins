@@ -1,0 +1,151 @@
+@use '../../dart-sass/flexbox-grid-mixins';
+
+$default-base-color: #0466e0;
+$default-grid-gutter: 2%;
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  background-color: $default-base-color;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  min-height: 320px;
+  @include flexbox-grid-mixins.grid($flex-flow: column nowrap, $justify-content: center);
+
+  &--hero {
+    height: 100vh;
+  }
+
+  .header-title {
+    font-size: 320%;
+    margin-bottom: 0;
+  }
+  .version {
+    font-size: 25%;
+    font-weight: normal;
+  }
+  .header-description {
+    margin-top: 0;
+  }
+
+  .header-nav {
+    margin: 0;
+    padding: 0;
+    margin-top: 3em;
+
+    li {
+      font-size: 90%;
+      display: inline;
+      list-style: none;
+      margin-right: 1.2rem;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .btn {
+    padding: .8em;
+    border: solid rgba(255, 255, 255, .4) 1px;
+    border-radius: .4em;
+  }
+}
+
+.container {
+  margin: 0 2rem;
+}
+
+h2 {
+  font-size: 180%;
+  border-bottom: solid 2px #ccc;
+  margin-top: 4rem;
+}
+
+pre {
+  overflow: auto;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  padding: 1em;
+  border-radius: .4em;
+
+  &.scrollable {
+    max-height: 240px;
+    overflow-y: scroll;
+  }
+
+  > code {
+    background: transparent;
+  }
+}
+
+code {
+  padding: .2em;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: .2em;
+}
+
+.reference {
+  background-color: $default-base-color;
+  color: #fff;
+  padding: 1em;
+  border-radius: .4em;
+
+  .small {
+    font-size: 80%;
+    font-weight: normal;
+  }
+  .big {
+    font-size: 160%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 2px solid #ccc;
+  margin: 0 0 1.625em;
+  width: 100%;
+}
+th {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .2em;
+  font-weight: bold;
+  background-color: #eee;
+}
+td {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: .2em;
+}
+
+td.example {
+  text-align: center;
+}
+
+.column {
+	@include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+    > .columns {
+        @include flexbox-grid-mixins.grid-col($col: 6, $gutter: $default-grid-gutter);
+    }
+}
+
+.grid,
+.grid-3-columns,
+.grid-24-columns,
+[class*="grid--"] {
+  background: #a5c3e2;
+}
+[class*="grid__col"] {
+  background: #0e72da;
+  border: 1px solid #130e7d;
+  padding: .4em;
+  color: #fff;
+  text-align: center;
+}
