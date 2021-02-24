@@ -148,6 +148,7 @@ td.example {
 }
 
 .grid,
+.grid-global,
 .grid-3-columns,
 .grid-24-columns,
 [class*=grid--] {
