@@ -248,6 +248,10 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.1
+  * update example
+  * fix items row/column alignment example
+  * add auto margin example
 * Version 0.3.0
   * add example for dart sass
   * add Flexbox Grid Mixins for Dart Sass

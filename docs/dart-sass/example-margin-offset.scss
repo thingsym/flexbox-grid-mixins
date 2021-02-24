@@ -374,22 +374,6 @@ ul.grid {
   }
 }
 
-.grid--both-row {
-  @include flexbox-grid-mixins.grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
-
-  > .grid__col-both {
-    @include flexbox-grid-mixins.grid-col($col: 5.9, $align-self: stretch);
-    
-		&.left {
-			text-align: left;
-		}
-		&.right{
-			text-align: right;
-			margin-left: auto;
-		}
-  }
-}
-
 .grid--left-column {
   @include flexbox-grid-mixins.grid($flex-direction: column, $gutter: $default-grid-gutter, $align-items: flex-start);
 

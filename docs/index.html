@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="header header--hero">
-<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.3.0</span></h1>
+<h1 class="header-title">Flexbox Grid Mixins <span class="version">v.0.3.1</span></h1>
 <p class="header-description">Sass Mixins to generate Flexbox grid</p>
 
 <ul class="header-nav">
@@ -65,7 +65,7 @@
 
 <div class="column">
 <div class="columns">
-<h4 id="Examples">LibSass</h4>
+<h4>LibSass</h4>
 <pre>
 <code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 
@@ -84,7 +84,7 @@ $default-grid-gutter: 2%;
 </code></pre>
 </div>
 <div class="columns">
-<h4 id="Examples">Dart Sass</h4>
+<h4>Dart Sass</h4>
 <pre>
 <code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
 
@@ -272,7 +272,7 @@ $default-grid-gutter: 2%;
 
 <div class="column">
 <div class="columns">
-<h4 id="Examples">LibSass</h4>
+<h4>LibSass</h4>
 <pre>
 <code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 
@@ -291,7 +291,7 @@ $default-grid-gutter: 2%;
 </code></pre>
 </div>
 <div class="columns">
-<h4 id="Examples">Dart Sass</h4>
+<h4>Dart Sass</h4>
 <pre>
 <code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
 
@@ -462,30 +462,32 @@ $default-grid-gutter: 2%;
 
 <div class="column">
 <div class="columns">
-    <h3 id="Examples">LibSass</h3>
+    <h3>LibSass</h3>
     <ul>
     <li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
     <li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
     <li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
-    <li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+    <li><a href="example/auto-margin.html">Auto margin</a></li>
     <li><a href="example/box-sizing.html">Box Sizing using Default Values</a></li>
     <li><a href="example/stack.html">Stack</a></li>
     <li><a href="example/grid-type.html">Grid Type</a></li>
-    <li><a href="example/test-stick-out.html">Testing Stick Out Grid</a></li>
+    <li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+    <li><a href="example/test-stick-out.html">[Test] Stick Out Grid</a></li>
     </ul>
 </div>
 <div class="columns">
 
-<h3 id="Examples">Dart Sass</h3>
+<h3>Dart Sass</h3>
 <ul>
 <li><a href="example-dart-sass/example.html">Flexbox Grid Mixins Example</a></li>
 <li><a href="example-dart-sass/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
 <li><a href="example-dart-sass/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
-<li><a href="example-dart-sass/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+<li><a href="example-dart-sass/auto-margin.html">Auto margin</a></li>
 <li><a href="example-dart-sass/box-sizing.html">Box Sizing using Default Values</a></li>
 <li><a href="example-dart-sass/stack.html">Stack</a></li>
 <li><a href="example-dart-sass/grid-type.html">Grid Type</a></li>
-<li><a href="example-dart-sass/test-stick-out.html">Testing Stick Out Grid</a></li>
+<li><a href="example-dart-sass/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+<li><a href="example-dart-sass/test-stick-out.html">[Test] Stick Out Grid</a></li>
 </ul>
 
 </div>
@@ -518,7 +520,7 @@ Include <code>sass/_flexbox-grid-mixins.scss</code> or <code>dart-sass/_flexbox-
 
 <div class="column">
 <div class="columns">
-<h4 id="Examples">LibSass</h4>
+<h4>LibSass</h4>
 <pre><code>@import 'flexbox-grid-mixins';</code></pre>
 
 Example: import from node_modules
@@ -526,7 +528,7 @@ Example: import from node_modules
 <pre><code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';</code></pre>
 </div>
 <div class="columns">
-<h4 id="Examples">Dart Sass</h4>
+<h4>Dart Sass</h4>
 <pre><code>@use 'flexbox-grid-mixins';</code></pre>
 
 Example: import from node_modules
@@ -540,7 +542,7 @@ Example: import from node_modules
 
 <div class="column">
 <div class="columns">
-<h4 id="Examples">LibSass</h4>
+<h4>LibSass</h4>
 <pre>
 <code>.grid {
     @include grid();
@@ -548,7 +550,7 @@ Example: import from node_modules
 </code></pre>
 </div>
 <div class="columns">
-<h4 id="Examples">Dart Sass</h4>
+<h4>Dart Sass</h4>
 <pre>
 <code>.grid {
     @include flexbox-grid-mixins.grid();
@@ -562,7 +564,7 @@ Example: import from node_modules
 
 <div class="column">
 <div class="columns">
-<h4 id="Examples">LibSass</h4>
+<h4>LibSass</h4>
 <pre>
 <code>.grid__col-3 {
     @include grid-col(3);
@@ -573,7 +575,7 @@ Example: import from node_modules
 </code></pre>
 </div>
 <div class="columns">
-<h4 id="Examples">Dart Sass</h4>
+<h4>Dart Sass</h4>
 <pre>
 <code>.grid__col-3 {
     @include flexbox-grid-mixins.grid-col(3);
