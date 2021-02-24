@@ -300,22 +300,6 @@ ul.grid {
   }
 }
 
-.grid--both-row {
-  @include grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
-
-  > .grid__col-both {
-    @include grid-col($col: 5.9, $align-self: stretch);
-    
-		&.left {
-			text-align: left;
-		}
-		&.right{
-			text-align: right;
-			margin-left: auto;
-		}
-  }
-}
-
 $flexbox-grid-mixins-stack: unset;
 
 .grid--items-row-alignment {

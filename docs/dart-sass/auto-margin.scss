@@ -1,0 +1,38 @@
+@use '../../dart-sass/flexbox-grid-mixins';
+
+$default-base-color: #0466e0;
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid--auto-margin {
+  @include flexbox-grid-mixins.grid($flex-wrap: nowrap);
+  margin-bottom: 2rem;
+
+  > .grid__col {
+    @include flexbox-grid-mixins.grid-col($col: 2);
+
+    &.left {
+      margin-right: auto;
+    }
+    &.right {
+      margin-left: auto;
+    }
+  }
+}
+
+.grid--pagination {
+  @include flexbox-grid-mixins.grid($flex-wrap: nowrap, $justify-content: space-between, $align-items: center);
+
+  > .grid__col {
+    @include flexbox-grid-mixins.grid-col($col: 5.9, $align-self: stretch);
+
+    &.left {
+      text-align: left;
+      margin-right: auto;
+    }
+    &.right{
+      text-align: right;
+      margin-left: auto;
+    }
+  }
+}
