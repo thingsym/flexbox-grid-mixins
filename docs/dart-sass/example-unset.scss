@@ -9,7 +9,7 @@ $default-grid-gutter: 2%;
 .grid--items-row-alignment {
   @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
   > .grid__col {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none);
+    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: null);
   }
   > .grid__col-top {
     @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start);
@@ -31,7 +31,10 @@ $default-grid-gutter: 2%;
 .grid--items-column-alignment {
   @include flexbox-grid-mixins.grid($flex-direction: column, $gutter: $default-grid-gutter);
   > .grid__col {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none, $width: true);
+    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: null, $width: true);
+  }
+  > .grid__col-auto {
+    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: auto, $width: true);
   }
   > .grid__col-top {
     @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start, $width: true);

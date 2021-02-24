@@ -10,29 +10,35 @@ $default-grid-gutter: 2%;
 .grid--items-row-alignment {
   @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
   > .grid__col {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none);
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: null);
+  }
+  > .grid__col-auto {
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: auto);
   }
   > .grid__col-top {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start);
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: flex-start);
   }
   > .grid__col-middle {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: center);
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: center);
   }
   > .grid__col-bottom {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-end);
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: flex-end);
   }
   > .grid__col-stretch {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: stretch);
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: stretch);
   }
   > .grid__col-baseline {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: baseline);
+    @include flexbox-grid-mixins.grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: baseline);
   }
 }
 
 .grid--items-column-alignment {
   @include flexbox-grid-mixins.grid($flex-direction: column, $gutter: $default-grid-gutter);
   > .grid__col {
-    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none, $width: true);
+    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: null, $width: true);
+  }
+  > .grid__col-auto {
+    @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: auto, $width: true);
   }
   > .grid__col-top {
     @include flexbox-grid-mixins.grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start, $width: true);

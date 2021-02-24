@@ -380,22 +380,25 @@ $flexbox-grid-mixins-stack: unset;
 .grid--items-row-alignment {
   @include grid($gutter: $default-grid-gutter);
   > .grid__col {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none);
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: null);
+  }
+  > .grid__col-auto {
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: auto);
   }
   > .grid__col-top {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start);
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: flex-start);
   }
   > .grid__col-middle {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: center);
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: center);
   }
   > .grid__col-bottom {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-end);
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: flex-end);
   }
   > .grid__col-stretch {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: stretch);
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: stretch);
   }
   > .grid__col-baseline {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: baseline);
+    @include grid-col($col: equal, $gutter: $default-grid-gutter, $align-self: baseline);
   }
 }
 
@@ -443,7 +446,10 @@ $flexbox-grid-mixins-stack: unset;
 .grid--items-column-alignment {
   @include grid($flex-direction: column, $gutter: $default-grid-gutter);
   > .grid__col {
-    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: none, $width: true);
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: null, $width: true);
+  }
+  > .grid__col-auto {
+    @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: auto, $width: true);
   }
   > .grid__col-top {
     @include grid-col($col: 2, $gutter: $default-grid-gutter, $align-self: flex-start, $width: true);
