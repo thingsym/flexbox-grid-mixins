@@ -50,8 +50,8 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 
 	@if $flexbox-grid-mixins-grid-type == skeleton {
 		@if $gutter {
-			margin-left: $gutter / 2 * -1;
-			margin-right: $gutter / 2 * -1;
+			margin-left: math.div($gutter, 2) * -1;
+			margin-right: math.div($gutter, 2) * -1;
 		}
 	}
 
@@ -66,7 +66,7 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 
 	@if meta.type-of($col) == number and math.is-unitless($col) == true {
 		$flex-shrink: 0;
-		$flex-basis: math.percentage($col / $grid-columns);
+		$flex-basis: math.percentage(math.div($col, $grid-columns));
 
 		@if $flexbox-grid-mixins-grid-type == skeleton {
 			@if $gutter and math.unit($gutter) == '%' {
@@ -77,9 +77,9 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 
 		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if $gutter and math.unit($gutter) == '%' {
-				$flex-basis: (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
+				$flex-basis: math.div(100% - ($gutter * (math.div($grid-columns, $col) - 1)), math.div($grid-columns, $col));
 			} @else if $gutter and math.is-unitless($gutter) == false {
-				$flex-basis: calc( #{$flex-basis} - #{$gutter * ($grid-columns / $col - 1) / ($grid-columns / $col)});
+				$flex-basis: calc( #{$flex-basis} - #{$gutter * math.div(math.div($grid-columns, $col) - 1, math.div($grid-columns, $col))});
 			}
 		}
 
@@ -173,8 +173,8 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 
 	@if $gutter and math.is-unitless($gutter) == false {
 		@if $flexbox-grid-mixins-grid-type == skeleton {
-			margin-left: $gutter / 2;
-			margin-right: $gutter / 2;
+			margin-left: math.div($gutter, 2);
+			margin-right: math.div($gutter, 2);
 		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if meta.type-of($last-child) == bool and $last-child == true {
 				margin-right: 0;
@@ -188,8 +188,8 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 		} @else if $flexbox-grid-mixins-stack == margin-bottom {
 			margin-bottom: $gutter;
 		} @else if $flexbox-grid-mixins-stack == margin-both {
-			margin-top: $gutter / 2;
-			margin-bottom: $gutter / 2;
+			margin-top: math.div($gutter, 2);
+			margin-bottom: math.div($gutter, 2);
 		}
 	}
 
