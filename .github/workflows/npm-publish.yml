@@ -9,6 +9,7 @@ jobs:
   publish:
     name: Publish to npm registry
     runs-on: ubuntu-18.04
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v2
