@@ -226,13 +226,11 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 ## Development
 
 1. run ```$ sudo yum install nodejs npm```
-2. run ```$ sudo npm install --global gulp-cli```
-3. run ```$ sudo npm install --global npm-check-updates``` (optional)
-4. Forking on GitHub
-5. run ```$ cd /path/to/flexbox-grid-mixins```
-6. run ```$ npm install```
-7. run ```$ gulp serve```
-8. Access URL http://localhost:3000
+2. Forking on GitHub
+3. run ```$ cd /path/to/flexbox-grid-mixins```
+4. run ```$ npm install```
+5. run ```$ npm run serve```
+6. Access URL http://localhost:3000
 
 ## Contribution
 
@@ -248,6 +246,11 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.2
+  * fix gulp-sass compiler
+  * update package.json
+  * fix Deprecation Warning: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+  * add timeout-minutes to workflows
 * Version 0.3.1
   * update example
   * fix items row/column alignment example

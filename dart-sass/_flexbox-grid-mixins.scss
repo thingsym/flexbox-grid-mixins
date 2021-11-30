@@ -1,6 +1,6 @@
 // ===================================================================
 // Flexbox Grid Mixins (Dart Sass)
-// Version 0.3.1
+// Version 0.3.2
 // Description: Sass Mixins to generate Flexbox grid
 // Author: thingsym
 // GitHub: https://github.com/thingsym/flexbox-grid-mixins
@@ -72,21 +72,21 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 			@if $gutter and math.unit($gutter) == '%' {
 				$flex-basis: $flex-basis - $gutter;
 			} @else if $gutter and math.is-unitless($gutter) == false {
-				$flex-basis: calc( #{$flex-basis} - #{$gutter});
+				$flex-basis: calc( #{$flex-basis} - #{$gutter} );
 			}
 
 		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if $gutter and math.unit($gutter) == '%' {
 				$flex-basis: math.div(100% - ($gutter * (math.div($grid-columns, $col) - 1)), math.div($grid-columns, $col));
 			} @else if $gutter and math.is-unitless($gutter) == false {
-				$flex-basis: calc( #{$flex-basis} - #{$gutter * math.div(math.div($grid-columns, $col) - 1, math.div($grid-columns, $col))});
+				$flex-basis: calc( #{$flex-basis} - #{$gutter * math.div(math.div($grid-columns, $col) - 1, math.div($grid-columns, $col))} );
 			}
 		}
 
 		@if $col-offset and math.unit($col-offset) == '%' {
 			$flex-basis: $flex-basis + $col-offset;
 		} @else if $col-offset and math.is-unitless($col-offset) == false {
-			$flex-basis: calc( #{$flex-basis} + #{$col-offset});
+			$flex-basis: calc( #{$flex-basis} + #{$col-offset} );
 		}
 	} @else if meta.type-of($col) == number and math.is-unitless($col) == false {
 		$flex-grow: 0;
