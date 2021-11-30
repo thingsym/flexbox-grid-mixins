@@ -5,11 +5,8 @@ const $ = require('gulp-load-plugins')();
 
 var Fiber = require('fibers');
 
-var sass = require('gulp-sass');
-sass.compiler = require('node-sass');
-
-var dart_sass = require('gulp-sass');
-dart_sass.compiler = require('sass');
+var sass = require('gulp-sass')(require('node-sass'));
+var dart_sass = require('gulp-sass')(require('sass'));
 
 require('es6-promise').polyfill();
 
