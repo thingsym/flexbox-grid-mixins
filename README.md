@@ -246,6 +246,11 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.2
+  * fix gulp-sass compiler
+  * update package.json
+  * fix Deprecation Warning: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+  * add timeout-minutes to workflows
 * Version 0.3.1
   * update example
   * fix items row/column alignment example
