@@ -73,7 +73,7 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 	@content;
 }
 
-@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
+@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $condense: false, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
 	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
 		box-sizing: $flexbox-grid-mixins-box-sizing;
@@ -215,13 +215,15 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 			}
 		}
 
-		@if $flexbox-grid-mixins-stack == margin-top {
-			margin-top: $gutter;
-		} @else if $flexbox-grid-mixins-stack == margin-bottom {
-			margin-bottom: $gutter;
-		} @else if $flexbox-grid-mixins-stack == margin-both {
-			margin-top: math.div($gutter, 2);
-			margin-bottom: math.div($gutter, 2);
+		@if $condense == false {
+			@if $flexbox-grid-mixins-stack == margin-top {
+				margin-top: $gutter;
+			} @else if $flexbox-grid-mixins-stack == margin-bottom {
+				margin-bottom: $gutter;
+			} @else if $flexbox-grid-mixins-stack == margin-both {
+				margin-top: math.div($gutter, 2);
+				margin-bottom: math.div($gutter, 2);
+			}
 		}
 	}
 
