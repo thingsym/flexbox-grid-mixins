@@ -467,6 +467,7 @@ $default-grid-gutter: 2%;
     <li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
     <li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
     <li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
+    <li><a href="example/gap.html">Gap (grid-gap) css property</a></li>
     <li><a href="example/auto-margin.html">Auto margin</a></li>
     <li><a href="example/box-sizing.html">Box Sizing using Default Values</a></li>
     <li><a href="example/stack.html">Stack</a></li>
@@ -482,6 +483,7 @@ $default-grid-gutter: 2%;
 <li><a href="example-dart-sass/example.html">Flexbox Grid Mixins Example</a></li>
 <li><a href="example-dart-sass/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
 <li><a href="example-dart-sass/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
+<li><a href="example-dart-sass/gap.html">Gap (grid-gap) css property</a></li>
 <li><a href="example-dart-sass/auto-margin.html">Auto margin</a></li>
 <li><a href="example-dart-sass/box-sizing.html">Box Sizing using Default Values</a></li>
 <li><a href="example-dart-sass/stack.html">Stack</a></li>
@@ -624,7 +626,7 @@ Example: import from node_modules
     </tr>
 </table>
 
-<h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null);</h3>
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null);</h3>
 
 <p>Define the grid container.</p>
 
@@ -689,12 +691,33 @@ Example: import from node_modules
     <td>$gutter</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
-    <td>define gutter. <code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> generate a margin of both ends of the grid. <code>&lt;length&gt;</code> generate a margin of both ends of the grid (<code>&lt;length&gt;</code> is experimental stage).</td>
+    <td>define gutters using margin CSS property. <code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> generate a margin of both ends of the grid. <code>&lt;length&gt;</code> generate a margin of both ends of the grid (<code>&lt;length&gt;</code> is experimental stage).</td>
     <td class="example"><a href="example/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
+    </tr>
+    <tr>
+    <td>$gap</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
+    <td>define gutters using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
+    <td class="example"><a href="example/gap.html"><i class="fas fa-external-link-alt"></i></a></td>
+    </tr>
+    <tr>
+    <td>$row-gap</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
+    <td>define row gutter using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap">row-gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$column-gap</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
+    <td>define column gutter using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap">column-gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
+    <td></td>
     </tr>
 </table>
 
-<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null);</h3>
+<h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null, $gutter: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $condense: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null);</h3>
 
 <p>Generate the grid columns.</p>
 
@@ -733,8 +756,29 @@ Example: import from node_modules
     <td>$gutter</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
-    <td>define gutter. <code>null</code> is no margin between columns. <code>&lt;percentage&gt;</code> generate a margin of between columns. <code>&lt;length&gt;</code> generate a margin of between columns (<code>&lt;length&gt;</code> is experimental stage).</td>
+    <td>define gutters using margin CSS property. <code>null</code> is no margin between columns. <code>&lt;percentage&gt;</code> generate a margin of between columns. <code>&lt;length&gt;</code> generate a margin of between columns (<code>&lt;length&gt;</code> is experimental stage).</td>
     <td class="example"><a href="example/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
+    </tr>
+    <tr>
+    <td>$gap</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
+    <td>define gutters using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
+    <td class="example"><a href="example/gap.html"><i class="fas fa-external-link-alt"></i></a></td>
+    </tr>
+    <tr>
+    <td>$row-gap</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
+    <td>define row gutter using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap">row-gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>$column-gap</td>
+    <td>null</td>
+    <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
+    <td>define column gutter using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap">column-gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
+    <td></td>
     </tr>
     <tr>
     <td>$align-self</td>
@@ -777,6 +821,13 @@ Example: import from node_modules
     <td>true | false</td>
     <td>use flex property as shorthand by default. use three properties flex-basis, flex-grow and flex-shrink if <code>false</code>.</td>
     <td></td>
+    </tr>
+    <tr>
+    <td>$condense</td>
+    <td>null</td>
+    <td>false | true</td>
+    <td>remove the Stack (the top or bottom margin), if <code>true</code></td>
+    <td class="example"><a href="example/example.html#condense"><i class="fas fa-external-link-alt"></i></a> <a href="example/stack.html#with-condense"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$last-child</td>
