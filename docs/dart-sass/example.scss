@@ -401,3 +401,14 @@ ul.grid {
     @include flexbox-grid-mixins.grid-col($col: auto, $gutter: $default-grid-gutter, $max-width: 200px, $min-width: 100px);
   }
 }
+
+.grid--condense {
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter );
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include flexbox-grid-mixins.grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true );
+    }
+  }
+}
+

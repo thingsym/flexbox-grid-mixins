@@ -13,6 +13,16 @@ $default-grid-gutter: 2%;
   }
 }
 
+.grid-condense {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true);
+    }
+  }
+}
+
 $flexbox-grid-mixins-stack: margin-bottom;
 
 .grid--margin-bottom {
@@ -21,6 +31,16 @@ $flexbox-grid-mixins-stack: margin-bottom;
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
       @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid-condense--margin-bottom {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true);
     }
   }
 }
@@ -37,6 +57,16 @@ $flexbox-grid-mixins-stack: margin-top;
   }
 }
 
+.grid-condense--margin-top {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true);
+    }
+  }
+}
+
 $flexbox-grid-mixins-stack: margin-both;
 
 .grid--margin-both {
@@ -49,6 +79,16 @@ $flexbox-grid-mixins-stack: margin-both;
   }
 }
 
+.grid-condense--margin-both {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true);
+    }
+  }
+}
+
 $flexbox-grid-mixins-stack: unset;
 
 .grid--unset {
@@ -57,6 +97,16 @@ $flexbox-grid-mixins-stack: unset;
   @for $i from 1 through $default-grid-columns {
     > .grid__col-#{$i} {
       @include grid-col($col: $i, $gutter: $default-grid-gutter);
+    }
+  }
+}
+
+.grid-condense--unset {
+  @include grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true);
     }
   }
 }
