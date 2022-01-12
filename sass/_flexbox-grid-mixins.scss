@@ -13,7 +13,7 @@ $flexbox-grid-mixins-grid-type: skeleton !default;
 $flexbox-grid-mixins-box-sizing: border-box !default;
 $flexbox-grid-mixins-stack: margin-bottom !default;
 
-@mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null)
+@mixin grid($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null)
 {
 	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
 		box-sizing: $flexbox-grid-mixins-box-sizing;
@@ -51,13 +51,38 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 		}
 	}
 
+	@if $gap != null {
+		@if length($gap) == 1 {
+			gap: $gap;
+		} @else if length($gap) == 2 {
+			$row-gap: nth($gap, 1);
+			$column-gap: nth($gap, 2);
+
+			row-gap: $row-gap;
+			column-gap: $column-gap;
+		}
+	} @else {
+		row-gap: $row-gap;
+		column-gap: $column-gap;
+	}
+
 	@content;
 }
 
-@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
+@mixin grid-col($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
 	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
 		box-sizing: $flexbox-grid-mixins-box-sizing;
+	}
+
+	@if $gap != null {
+		@if length($gap) == 1 {
+			$row-gap: $gap;
+			$column-gap: $gap;
+		} @else if length($gap) == 2 {
+			$row-gap: nth($gap, 1);
+			$column-gap: nth($gap, 2);
+		}
 	}
 
 	@if type-of($col) == number and unitless($col) == true {
@@ -71,6 +96,13 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 				$flex-basis: calc( #{$flex-basis} - #{$gutter});
 			}
 
+			@if $column-gap and unit($column-gap) == '%' {
+				$flex-basis: $flex-basis - $column-gap + $column-gap / $grid-columns * $col;
+			} @else if $column-gap and unitless($column-gap) == false {
+				@if ( $grid-columns != $col ) {
+					$flex-basis: calc( #{$flex-basis} - #{$column-gap} + #{$column-gap / $grid-columns * $col});
+				}
+			}
 		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			@if $gutter and unit($gutter) == '%' {
 				$flex-basis: (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
