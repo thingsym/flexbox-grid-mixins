@@ -65,25 +65,6 @@
 
 <div class="column">
 <div class="columns">
-<h4>LibSass</h4>
-<pre>
-<code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
-
-$default-grid-gutter: 2%;
-
-.grid {
-    @include grid($gutter: $default-grid-gutter);
-
-    &gt; .grid__col-3 {
-        @include grid-col($col: 3, $gutter: $default-grid-gutter);
-    }
-    &gt; .grid__col-9 {
-        @include grid-col($col: 9, $gutter: $default-grid-gutter);
-    }
-}
-</code></pre>
-</div>
-<div class="columns">
 <h4>Dart Sass</h4>
 <pre>
 <code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
@@ -102,6 +83,25 @@ $default-grid-gutter: 2%;
 }
 </code></pre>
 
+</div>
+<div class="columns">
+<h4>LibSass</h4>
+<pre>
+<code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2%;
+
+.grid {
+    @include grid($gutter: $default-grid-gutter);
+
+    &gt; .grid__col-3 {
+        @include grid-col($col: 3, $gutter: $default-grid-gutter);
+    }
+    &gt; .grid__col-9 {
+        @include grid-col($col: 9, $gutter: $default-grid-gutter);
+    }
+}
+</code></pre>
 </div>
 </div>
 
@@ -272,25 +272,6 @@ $default-grid-gutter: 2%;
 
 <div class="column">
 <div class="columns">
-<h4>LibSass</h4>
-<pre>
-<code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
-
-$default-grid-columns: 12;
-$default-grid-gutter: 2%;
-
-.grid {
-    @include grid($gutter: $default-grid-gutter);
-
-    @for $i from 1 through $default-grid-columns {
-        &gt; .grid__col-#{$i} {
-            @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
-        }
-    }
-}
-</code></pre>
-</div>
-<div class="columns">
 <h4>Dart Sass</h4>
 <pre>
 <code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
@@ -309,6 +290,25 @@ $default-grid-gutter: 2%;
 }
 </code></pre>
 
+</div>
+<div class="columns">
+<h4>LibSass</h4>
+<pre>
+<code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+.grid {
+    @include grid($gutter: $default-grid-gutter);
+
+    @for $i from 1 through $default-grid-columns {
+        &gt; .grid__col-#{$i} {
+            @include grid-col($col: $i, $grid-columns: $default-grid-columns, $gutter: $default-grid-gutter);
+        }
+    }
+}
+</code></pre>
 </div>
 </div>
 
@@ -462,22 +462,6 @@ $default-grid-gutter: 2%;
 
 <div class="column">
 <div class="columns">
-    <h3>LibSass</h3>
-    <ul>
-    <li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
-    <li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
-    <li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
-    <li><a href="example/gap.html">Gap (grid-gap) css property</a></li>
-    <li><a href="example/auto-margin.html">Auto margin</a></li>
-    <li><a href="example/box-sizing.html">Box Sizing using Default Values</a></li>
-    <li><a href="example/stack.html">Stack</a></li>
-    <li><a href="example/grid-type.html">Grid Type</a></li>
-    <li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
-    <li><a href="example/test-stick-out.html">[Test] Stick Out Grid</a></li>
-    </ul>
-</div>
-<div class="columns">
-
 <h3>Dart Sass</h3>
 <ul>
 <li><a href="example-dart-sass/example.html">Flexbox Grid Mixins Example</a></li>
@@ -492,6 +476,21 @@ $default-grid-gutter: 2%;
 <li><a href="example-dart-sass/test-stick-out.html">[Test] Stick Out Grid</a></li>
 </ul>
 
+</div>
+<div class="columns">
+<h3>LibSass</h3>
+<ul>
+<li><a href="example/example.html">Flexbox Grid Mixins Example</a></li>
+<li><a href="example/holy-grail-layout.html">Holy Grail Layout - Using Flexbox Grid Mixins</a></li>
+<li><a href="example/responsive.html">Responsive web design - Using Flexbox Grid Mixins</a></li>
+<li><a href="example/gap.html">Gap (grid-gap) css property</a></li>
+<li><a href="example/auto-margin.html">Auto margin</a></li>
+<li><a href="example/box-sizing.html">Box Sizing using Default Values</a></li>
+<li><a href="example/stack.html">Stack</a></li>
+<li><a href="example/grid-type.html">Grid Type</a></li>
+<li><a href="example/unit-set.html">Unit-Set Grid (Experimental stage)</a></li>
+<li><a href="example/test-stick-out.html">[Test] Stick Out Grid</a></li>
+</ul>
 </div>
 </div>
 
@@ -511,24 +510,13 @@ $default-grid-gutter: 2%;
 
 <h3>Manual Install</h3>
 
-Include <code>sass/_flexbox-grid-mixins.scss</code> or <code>dart-sass/_flexbox-grid-mixins.scss</code> in the appropriate location in your project.
+Include <code>dart-sass/_flexbox-grid-mixins.scss</code> or <code>sass/_flexbox-grid-mixins.scss</code> in the appropriate location in your project.
 
 <h2 id="Getting-Started">Getting Started</h2>
-
-
-<p>Note: <a href="https://sass-lang.com/blog/libsass-is-deprecated" target="_blank">LibSass is Deprecated</a>. See <a href="https://sass-lang.com/blog/the-module-system-is-launched#future-plans" target="_blank">Future Plans</a>.</p>
 
 <h3>1. Import Flexbox Grid Mixins in Sass/SCSS file</h3>
 
 <div class="column">
-<div class="columns">
-<h4>LibSass</h4>
-<pre><code>@import 'flexbox-grid-mixins';</code></pre>
-
-Example: import from node_modules
-
-<pre><code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';</code></pre>
-</div>
 <div class="columns">
 <h4>Dart Sass</h4>
 <pre><code>@use 'flexbox-grid-mixins';</code></pre>
@@ -538,19 +526,23 @@ Example: import from node_modules
 <pre><code>@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';</code></pre>
 
 </div>
+<div class="columns">
+<h4>LibSass</h4>
+
+<pre><code>@import 'flexbox-grid-mixins';</code></pre>
+
+Example: import from node_modules
+
+<pre><code>@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';</code></pre>
+
+<p>Note: <a href="https://sass-lang.com/blog/libsass-is-deprecated" target="_blank">LibSass is Deprecated</a>. See <a href="https://sass-lang.com/blog/the-module-system-is-launched#future-plans" target="_blank">Future Plans</a>.</p>
+</div>
+
 </div>
 
 <h3>2. Define the grid container</h3>
 
 <div class="column">
-<div class="columns">
-<h4>LibSass</h4>
-<pre>
-<code>.grid {
-    @include grid();
-}
-</code></pre>
-</div>
 <div class="columns">
 <h4>Dart Sass</h4>
 <pre>
@@ -560,22 +552,19 @@ Example: import from node_modules
 </code></pre>
 
 </div>
+<div class="columns">
+<h4>LibSass</h4>
+<pre>
+<code>.grid {
+    @include grid();
+}
+</code></pre>
+</div>
 </div>
 
 <h3>3. Generate the grid columns</h3>
 
 <div class="column">
-<div class="columns">
-<h4>LibSass</h4>
-<pre>
-<code>.grid__col-3 {
-    @include grid-col(3);
-}
-.grid__col-9 {
-    @include grid-col(9);
-}
-</code></pre>
-</div>
 <div class="columns">
 <h4>Dart Sass</h4>
 <pre>
@@ -588,12 +577,22 @@ Example: import from node_modules
 </code></pre>
 
 </div>
+<div class="columns">
+<h4>LibSass</h4>
+<pre>
+<code>.grid__col-3 {
+    @include grid-col(3);
+}
+.grid__col-9 {
+    @include grid-col(9);
+}
+</code></pre>
+</div>
 </div>
 
 <h2 id="Mixins-Reference">Mixins Reference</h2>
 
 <h3 class="reference">Default Values (global settings)</h3>
-
 
 <table>
     <tr>
@@ -608,27 +607,27 @@ Example: import from node_modules
     <td>skeleton</td>
     <td>skeleton | margin-offset</td>
     <td>define the type of grid</td>
-    <td class="example"><a href="example/grid-type.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/grid-type.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flexbox-grid-mixins-box-sizing</td>
     <td>border-box</td>
     <td>null | content-box | border-box</td>
     <td>define border-box property</td>
-    <td class="example"><a href="example/box-sizing.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/box-sizing.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flexbox-grid-mixins-stack</td>
     <td>margin-bottom</td>
     <td>unset | margin-top | margin-bottom | margin-both</td>
     <td>define the top or bottom or both margins of the columns</td>
-    <td class="example"><a href="example/stack.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/stack.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
 </table>
 
 <h3 class="reference"><span class="small">@include</span> <span class="big">grid</span>($display: flex, $flex-direction: null, $flex-wrap: null, $flex-flow: null, $justify-content: null, $align-items: null, $align-content: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null);</h3>
 
-<p>Define the grid container.</p>
+<p>@include grid() define the grid container.</p>
 
 <table>
     <tr>
@@ -650,14 +649,14 @@ Example: import from node_modules
     <td>null</td>
     <td>null | row | row-reverse | column | column-reverse</td>
     <td>define the main axis and the direction</td>
-    <td class="example"><a href="example/example.html#grid-direction"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#grid-direction"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flex-wrap</td>
     <td>null</td>
     <td>null | nowrap | wrap | wrap-reverse</td>
     <td>whether flex items are forced into a single line or can be wrapped onto multiple lines</td>
-    <td class="example"><a href="example/example.html#wrap-alignment"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#wrap-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flex-flow</td>
@@ -671,35 +670,35 @@ Example: import from node_modules
     <td>null</td>
     <td>null | flex-start | flex-end | center | space-between | space-around | space-evenly</td>
     <td>defines space between and around content items along the main-axis of container</td>
-    <td class="example"><a href="example/example.html#row-alignment"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#row-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$align-items</td>
     <td>null</td>
     <td>null | flex-start | flex-end | center | baseline | stretch</td>
     <td>defines space between and around flex items along the cross-axis of container</td>
-    <td class="example"><a href="example/example.html#row-alignment"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#row-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$align-content</td>
     <td>null</td>
     <td>null | flex-start | flex-end | center | space-between | space-around | stretch</td>
     <td>defines space between and around content items along the cross-axis of their container</td>
-    <td class="example"><a href="example/example.html#multi-line-alignment"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#multi-line-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$gutter</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
     <td>define gutters using margin CSS property. <code>null</code> is no margin of both ends of the grid. <code>&lt;percentage&gt;</code> generate a margin of both ends of the grid. <code>&lt;length&gt;</code> generate a margin of both ends of the grid (<code>&lt;length&gt;</code> is experimental stage).</td>
-    <td class="example"><a href="example/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example-dart-sass/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$gap</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
     <td>define gutters using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
-    <td class="example"><a href="example/gap.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/gap.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$row-gap</td>
@@ -719,7 +718,7 @@ Example: import from node_modules
 
 <h3 class="reference"><span class="small">@include</span> <span class="big">grid-col</span>($col: null, $grid-columns: 12, $col-offset: null, $gutter: null, $gap: null, $row-gap: null, $column-gap: null, $gutter: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $condense: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null);</h3>
 
-<p>Generate the grid columns.</p>
+<p>@include grid-col() generate the grid columns.</p>
 
 <p>The use of CSS calc() is experimental stage. If $col sets <code>&lt;number&gt;</code> or <code>&lt;width&gt;</code> and $gutter sets <code>&lt;length&gt;</code>, use CSS calc().</p>
 
@@ -736,14 +735,14 @@ Example: import from node_modules
     <td>null</td>
     <td>null | initial | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt; | auto | equal | none | positive | &lt;<a href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property" target="_blank">width</a>&gt;</td>
     <td>define columns. <code>null</code> is no set columns. <code>&lt;number&gt;</code> is number of columns. <code>initial</code>, <code>auto</code>, <code>equal</code>, <code>none</code>, <code>positive</code> are preset columns. <code>&lt;width&gt;</code> is unit set columns (<code>&lt;width&gt;</code> is experimental stage. <code>&lt;breakpoint&gt;</code> is deprecated, use <code>&lt;initial&gt;</code> instead).</td>
-    <td class="example"><a href="example/example.html#preset-grid-columns"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#preset-grid-columns"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$grid-columns</td>
     <td>12</td>
     <td>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt;</td>
     <td>define the total number of columns in the grid.</td>
-    <td class="example"><a href="example/example.html#grid-columns"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#grid-columns"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$col-offset</td>
@@ -757,14 +756,14 @@ Example: import from node_modules
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
     <td>define gutters using margin CSS property. <code>null</code> is no margin between columns. <code>&lt;percentage&gt;</code> generate a margin of between columns. <code>&lt;length&gt;</code> generate a margin of between columns (<code>&lt;length&gt;</code> is experimental stage).</td>
-    <td class="example"><a href="example/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#flexbox-grid-mixins-example"><i class="fas fa-external-link-alt"></i></a> <a href="example-dart-sass/unit-set.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$gap</td>
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt;</td>
     <td>define gutters using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap CSS property</a>. <code>null</code> is no gaps between rows and columns. <code>&lt;percentage&gt;</code> generate a gaps between rows and columns. <code>&lt;length&gt;</code> generate a gaps between rows and columns.</td>
-    <td class="example"><a href="example/gap.html"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/gap.html"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$row-gap</td>
@@ -785,7 +784,7 @@ Example: import from node_modules
     <td>null</td>
     <td>null | auto | flex-start | flex-end | center | baseline | stretch</td>
     <td>override the align-items value</td>
-    <td class="example"><a href="example/example.html#items-row-alignment"><i class="fas fa-external-link-alt"></i></a> <a href="example/example.html#items-column-alignment"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#items-row-alignment"><i class="fas fa-external-link-alt"></i></a> <a href="example-dart-sass/example.html#items-column-alignment"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$flex-grow</td>
@@ -813,7 +812,7 @@ Example: import from node_modules
     <td>null</td>
     <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">integer</a>&gt;</td>
     <td>specifies the order in the grid container</td>
-    <td class="example"><a href="example/example.html#row-order"><i class="fas fa-external-link-alt"></i></a> <a href="example/example.html#column-order"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#row-order"><i class="fas fa-external-link-alt"></i></a> <a href="example-dart-sass/example.html#column-order"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$shorthand</td>
@@ -827,7 +826,7 @@ Example: import from node_modules
     <td>null</td>
     <td>false | true</td>
     <td>remove the Stack (the top or bottom margin), if <code>true</code></td>
-    <td class="example"><a href="example/example.html#condense"><i class="fas fa-external-link-alt"></i></a> <a href="example/stack.html#with-condense"><i class="fas fa-external-link-alt"></i></a></td>
+    <td class="example"><a href="example-dart-sass/example.html#condense"><i class="fas fa-external-link-alt"></i></a> <a href="example-dart-sass/stack.html#with-condense"><i class="fas fa-external-link-alt"></i></a></td>
     </tr>
     <tr>
     <td>$last-child</td>
@@ -890,6 +889,7 @@ Example: import from node_modules
     <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a></li>
     <li><a href="http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/" target="_blank">Holy Grail Layout - Solved by Flexbox</a></li>
     <li><a href="https://www.w3.org/TR/css-values/#calc-notation" target="_blank">Mathematical Expressions: calc()</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank">gap (grid-gap)</a></li>
 </ul>
 
 <h2 id="Contribute">Contribute</h2>
@@ -900,7 +900,7 @@ See <a href="https://github.com/thingsym/flexbox-grid-mixins">GitHub - Flexbox G
 
 <p>The MIT License (MIT)</p>
 
-<p>Copyright (c) 2016 - 2021 Thingsym</p>
+<p>Copyright (c) 2016 - 2022 Thingsym</p>
 
 </div>
 </body>
