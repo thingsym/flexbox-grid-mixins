@@ -14,3 +14,13 @@ $default-grid-gutter: 2%;
     }
   }
 }
+
+.grid-condense--margin-bottom {
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  @for $i from 1 through $default-grid-columns {
+    > .grid__col-#{$i} {
+      @include flexbox-grid-mixins.grid-col($col: $i, $gutter: $default-grid-gutter, $condense: true);
+    }
+  }
+}

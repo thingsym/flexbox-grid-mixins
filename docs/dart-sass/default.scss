@@ -128,10 +128,10 @@ td.example {
   text-align: center;
 }
 
-.column {
+.columns {
 	@include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
 
-    > .columns {
+    > .column {
         @include flexbox-grid-mixins.grid-col($col: 6, $gutter: $default-grid-gutter);
     }
 }

@@ -23,25 +23,6 @@ Flexbox Grid Mixins documentation: [https://thingsym.github.io/flexbox-grid-mixi
 
 ### Sass
 
-#### LibSass
-
-```
-@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
-
-$default-grid-gutter: 2%;
-
-.grid {
-  @include grid($gutter: $default-grid-gutter);
-
-  > .grid__col-3 {
-    @include grid-col($col: 3, $gutter: $default-grid-gutter);
-  }
-  > .grid__col-9 {
-    @include grid-col($col: 9, $gutter: $default-grid-gutter);
-  }
-}
-```
-
 #### Dart Sass
 
 ```
@@ -57,6 +38,25 @@ $default-grid-gutter: 2%;
   }
   > .grid__col-9 {
     @include flexbox-grid-mixins.grid-col($col: 9, $gutter: $default-grid-gutter);
+  }
+}
+```
+
+#### LibSass
+
+```
+@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2%;
+
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+
+  > .grid__col-3 {
+    @include grid-col($col: 3, $gutter: $default-grid-gutter);
+  }
+  > .grid__col-9 {
+    @include grid-col($col: 9, $gutter: $default-grid-gutter);
   }
 }
 ```
@@ -113,7 +113,40 @@ $ yarn add flexbox-grid-mixins --dev
 
 ### Manual Install
 
-Include `sass/\_flexbox-grid-mixins.scss` or `dart-sass/\_flexbox-grid-mixins.scss` in the appropriate location in your project.
+Include `dart-sass/\_flexbox-grid-mixins.scss` or `sass/\_flexbox-grid-mixins.scss` in the appropriate location in your project.
+
+## Getting Started using Dart Sass
+
+### 1. Import Flexbox Grid Mixins in Sass/SCSS file
+
+```
+@use 'flexbox-grid-mixins';
+```
+
+Example : import from node_modules
+
+```
+@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
+```
+
+### 2. Define the grid container
+
+```
+.grid {
+  @include flexbox-grid-mixins.grid();
+}
+```
+
+### 3. Generate the grid columns
+
+```
+.grid__col-3 {
+  @include flexbox-grid-mixins.grid-col(3);
+}
+.grid__col-9 {
+  @include flexbox-grid-mixins.grid-col(9);
+}
+```
 
 ## Getting Started using LibSass
 
@@ -150,39 +183,6 @@ Example : import from node_modules
 }
 ```
 
-## Getting Started using Dart Sass
-
-### 1. Import Flexbox Grid Mixins in Sass/SCSS file
-
-```
-@use 'flexbox-grid-mixins';
-```
-
-Example : import from node_modules
-
-```
-@use 'node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins';
-```
-
-### 2. Define the grid container
-
-```
-.grid {
-  @include flexbox-grid-mixins.grid();
-}
-```
-
-### 3. Generate the grid columns
-
-```
-.grid__col-3 {
-  @include flexbox-grid-mixins.grid-col(3);
-}
-.grid__col-9 {
-  @include flexbox-grid-mixins.grid-col(9);
-}
-```
-
 ## Documentation
 
 See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-mixins/](http://thingsym.github.io/flexbox-grid-mixins/)
@@ -196,28 +196,31 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 * [Basic Example](http://thingsym.github.io/flexbox-grid-mixins/#Basic-Example)
 * [Grid System Example](http://thingsym.github.io/flexbox-grid-mixins/#Grid-System-Example)
 
-### LibSass
-
-* [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example/example.html)
-* [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/holy-grail-layout.html)
-* [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/responsive.html)
-* [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example/unit-set.html)
-* [Box Sizing using Default Values](http://thingsym.github.io/flexbox-grid-mixins/example/box-sizing.html)
-* [Stack](http://thingsym.github.io/flexbox-grid-mixins/example/stack.html)
-* [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
-* [Testing Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example/test-stick-out.html)
-
-
 ### Dart Sass
 
 * [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/example.html)
 * [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/holy-grail-layout.html)
 * [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/responsive.html)
-* [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/unit-set.html)
+* [Gap (grid-gap) css property](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/gap.html)
+* [Auto margin](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/auto-margin.html)
 * [Box Sizing using Default Values](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/box-sizing.html)
 * [Stack](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/stack.html)
 * [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/grid-type.html)
-* [Testing Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/test-stick-out.html)
+* [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/unit-set.html)
+* [Test] [Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example-dart-sass/test-stick-out.html)
+
+### LibSass
+
+* [Flexbox Grid Mixins Example](http://thingsym.github.io/flexbox-grid-mixins/example/example.html)
+* [Holy Grail Layout - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/holy-grail-layout.html)
+* [Responsive web design - Using Flexbox Grid Mixins](http://thingsym.github.io/flexbox-grid-mixins/example/responsive.html)
+* [Gap (grid-gap) css property](http://thingsym.github.io/flexbox-grid-mixins/example/gap.html)
+* [Auto margin](http://thingsym.github.io/flexbox-grid-mixins/example/auto-margin.html)
+* [Box Sizing using Default Values](http://thingsym.github.io/flexbox-grid-mixins/example/box-sizing.html)
+* [Stack](http://thingsym.github.io/flexbox-grid-mixins/example/stack.html)
+* [Grid Type](http://thingsym.github.io/flexbox-grid-mixins/example/grid-type.html)
+* [Unit-Set Grid (Experimental stage)](http://thingsym.github.io/flexbox-grid-mixins/example/unit-set.html)
+* [Test] [Stick Out Grid](http://thingsym.github.io/flexbox-grid-mixins/example/test-stick-out.html)
 
 ## Package manager
 
@@ -246,6 +249,12 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.3
+  * update README
+  * update index.html
+  * update example
+  * add condense
+  * add $gap argument for gap CSS property
 * Version 0.3.2
   * fix gulp-sass compiler
   * update package.json
@@ -313,4 +322,4 @@ Licensed under the MIT License.
 
 [thingsym](https://github.com/thingsym)
 
-Copyright (c) 2016-2020 thingsym
+Copyright (c) 2016-2022 thingsym
