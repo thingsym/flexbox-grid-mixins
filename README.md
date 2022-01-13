@@ -249,6 +249,12 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.3
+  * update README
+  * update index.html
+  * update example
+  * add condense
+  * add $gap argument for gap CSS property
 * Version 0.3.2
   * fix gulp-sass compiler
   * update package.json
