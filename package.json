@@ -34,7 +34,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "5.0.0",
     "gulp-stylelint": "^13.0.0",
-    "node-sass": "~6",
+    "node-sass": "~7",
     "npm-check-updates": "~12",
     "sass": "^1.43.5",
     "stylelint": "^13.13.1",
