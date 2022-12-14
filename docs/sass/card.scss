@@ -1,0 +1,30 @@
+@import '../../sass/flexbox-grid-mixins';
+
+$default-grid-gutter: 2rem;
+
+.cards {
+  @include grid($flex-wrap: wrap, $gap: $default-grid-gutter);
+}
+
+.card {
+  @include grid-col($col: 4, $gap: $default-grid-gutter);
+  border: solid 3px #ddd;
+  padding: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: .8rem;
+  background: #ec9f10;
+  border: solid 1px #ddd;
+}
+
+.cards.with-button {
+  .card {
+    @include grid($flex-direction: column);
+  }
+}
+
+.column {
+  @include grid-col($flex-grow: 1, $flex-shrink: 1, $flex-basis: 0);
+}
