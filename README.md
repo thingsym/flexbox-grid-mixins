@@ -266,6 +266,15 @@ Small patches and bug reports can be submitted a issue tracker in Github. Forkin
 
 ## Changelog
 
+* Version 0.3.4
+  * fix npm script
+  * fix Mixins Reference
+  * add Docker Development Environment
+  * gulpfile.js for docker
+  * update package.json
+  * update github actions, Node.js 12 actions are deprecated
+  * fix layout margin
+  * add Cards Layout example
 * Version 0.3.3
   * update README
   * update index.html
