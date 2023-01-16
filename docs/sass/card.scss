@@ -1,13 +1,13 @@
 @import '../../sass/flexbox-grid-mixins';
 
-$default-grid-gutter: 2rem;
+$default-grid-gap: 2rem 1rem;
 
 .cards {
-  @include grid($flex-wrap: wrap, $gap: $default-grid-gutter);
+  @include grid($flex-wrap: wrap, $gap: $default-grid-gap);
 }
 
 .card {
-  @include grid-col($col: 4, $gap: $default-grid-gutter);
+  @include grid-col($col: 4, $gap: $default-grid-gap);
   border: solid 3px #ddd;
   padding: 1rem;
 }

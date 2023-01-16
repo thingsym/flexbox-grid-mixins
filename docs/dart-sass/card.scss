@@ -1,13 +1,13 @@
 @use '../../dart-sass/flexbox-grid-mixins';
 
-$default-grid-gutter: 2rem;
+$default-grid-gap: 2rem 1rem;
 
 .cards {
-  @include flexbox-grid-mixins.grid($flex-wrap: wrap, $gap: $default-grid-gutter);
+  @include flexbox-grid-mixins.grid($flex-wrap: wrap, $gap: $default-grid-gap);
 }
 
 .card {
-  @include flexbox-grid-mixins.grid-col($col: 4, $gap: $default-grid-gutter);
+  @include flexbox-grid-mixins.grid-col($col: 4, $gap: $default-grid-gap);
   border: solid 3px #ddd;
   padding: 1rem;
 }
