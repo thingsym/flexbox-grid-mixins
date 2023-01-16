@@ -235,6 +235,23 @@ See Flexbox Grid Mixins documentation: [http://thingsym.github.io/flexbox-grid-m
 5. run ```$ npm run serve```
 6. Access URL http://localhost:3000
 
+## Docker Development Environment
+
+### Build and launch website
+
+```
+docker-compose run --rm node npm install
+docker-compose run --rm  -p 3000:3000 node npm run serve
+```
+
+Access to URL http://localhost:3000
+
+### listing tasks
+
+```
+docker-compose run --rm node npm run
+```
+
 ## Contribution
 
 ### Patches and Bug Fixes
