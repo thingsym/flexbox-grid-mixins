@@ -79,7 +79,6 @@ footer {
   .HolyGrail-container {
     width: 100%;
   }
-
   .HolyGrail-body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -94,16 +93,14 @@ footer {
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
-
   .HolyGrail-content,
-.HolyGrail-aside {
+  .HolyGrail-aside {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
-
   .HolyGrail-nav {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -119,7 +116,6 @@ footer {
   .HolyGrail-container {
     width: 100%;
   }
-
   .HolyGrail-body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -134,16 +130,14 @@ footer {
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
-
   .HolyGrail-content,
-.HolyGrail-aside {
+  .HolyGrail-aside {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
   }
-
   .HolyGrail-nav {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;

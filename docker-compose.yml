@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  node:
+    image: node:14-buster
+    container_name: flexbox-grid-mixins
+    volumes:
+      - .:/flexbox-grid-mixins
+    working_dir: /flexbox-grid-mixins
+
