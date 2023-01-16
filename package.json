@@ -50,6 +50,7 @@
     "gulp": "gulp",
     "ncu": "ncu",
     "test": "npm run lint",
+    "build": "gulp default",
     "lint": "gulp lint",
     "serve": "gulp serve"
   }
