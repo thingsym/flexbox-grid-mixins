@@ -3,15 +3,15 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 
-var Fiber = require('fibers');
+const Fiber = require('fibers');
 
-var sass = require('gulp-sass')(require('node-sass'));
-var dart_sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass')(require('node-sass'));
+const dart_sass = require('gulp-sass')(require('sass'));
 
 require('es6-promise').polyfill();
 
 const browserSync = require('browser-sync').create();
-const browserSync_baseDir = 'docs';
+const browserSync_baseDir = './docs';
 
 const entry_paths = {
   sass: ['sass/_flexbox-grid-mixins.scss'],
@@ -49,8 +49,8 @@ function lint_sass() {
           "stylelint-config-recommended-scss"
         ],
         rules: {
-          "block-no-empty": null,
-          "no-descending-specificity": null
+          "scss/at-if-no-null": null,
+          "scss/no-global-function-names": null
         }
       },
       reporters: [{
@@ -101,9 +101,35 @@ function docs_dart_sass() {
 function browser_sync(done) {
   browserSync.init({
     server: {
+      baseDir: browserSync_baseDir,
+      index : 'index.html',
+    },
+    open: false,
+    reloadOnRestart: true,
+    ui: false
+  });
+  done();
+}
+
+function browser_sync_proxy(done) {
+  browserSync.init({
+    proxy: 'localhost:3000',
+    port: 3000,
+    files: ['./docs/**/*'],
+    online: true,
+    ui: false
+  });
+  done();
+}
+
+function browser_sync_server(done) {
+  browserSync.init({
+    server: {
       baseDir: browserSync_baseDir
     },
-    reloadOnRestart: true
+    open: false,
+    reloadOnRestart: true,
+    ui: false
   });
   done();
 }
